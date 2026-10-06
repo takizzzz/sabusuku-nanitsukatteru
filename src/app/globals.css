@@ -17,6 +17,9 @@
   --pr: #8f0055;
   --pr-soft: #ffd9e4;
   --like: #c2185b;
+  --danger: #ba1a1a;
+  --danger-soft: #ffdad6;
+  --ok: #15803d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,6 +39,9 @@
     --pr: #ffb0cd;
     --pr-soft: #4a1030;
     --like: #ff7aa8;
+    --danger: #ffb4ab;
+    --danger-soft: #5c1410;
+    --ok: #6ee7a0;
   }
 }
 
@@ -55,6 +61,9 @@
   --color-pr: var(--pr);
   --color-pr-soft: var(--pr-soft);
   --color-like: var(--like);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-ok: var(--ok);
   --font-sans: var(--font-jakarta), var(--font-noto-jp), system-ui, sans-serif;
 }
 

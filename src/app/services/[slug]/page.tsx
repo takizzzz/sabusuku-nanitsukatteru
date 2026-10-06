@@ -11,7 +11,7 @@ import { Stars } from "@/components/stars";
 import { Tag } from "@/components/tag";
 import { getIndex } from "@/lib/data";
 import { percent, yearMonth, yen } from "@/lib/format";
-import { MIN_USERS_FOR_STATS, serviceDetail } from "@/lib/stacks";
+import { MIN_USERS_FOR_STATS, pairSlug, serviceDetail } from "@/lib/stacks";
 
 export const revalidate = 300;
 
@@ -133,7 +133,7 @@ export default async function ServicePage({ params, searchParams }: PageProps<"/
             <ul className="space-y-3">
               {d.coUsage.map((c) => (
                 <li key={c.service.id}>
-                  <Link href={`/stacks?services=${service.slug}&services=${c.service.slug}`} className="block hover:opacity-80">
+                  <Link href={`/compare/${pairSlug(service, c.service)}`} className="block hover:opacity-80">
                     <div className="flex items-center gap-2 text-sm">
                       <ServiceLogo service={c.service} size="sm" />
                       <span className="flex-1 font-bold">{c.service.name}</span>

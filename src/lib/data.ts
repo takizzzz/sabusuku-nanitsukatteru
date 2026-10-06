@@ -4,6 +4,7 @@ import { cache } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { seedDataset } from "@/data/seed";
 import { buildIndex } from "./stacks";
+import { groupTags, toCategory, toPlan, toProfile, toService, toSubscription } from "./mappers";
 import type { Dataset } from "./types";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -39,84 +40,15 @@ async function loadDataset(): Promise<Dataset> {
     if (r.error) throw r.error;
   }
 
-  const tagName = (row: { tags: unknown }) =>
-    (Array.isArray(row.tags) ? row.tags[0]?.name : (row.tags as { name?: string } | null)?.name) ?? null;
-
-  const tagsByUser = new Map<string, string[]>();
-  for (const row of userTags.data!) {
-    const name = tagName(row);
-    if (name) tagsByUser.set(row.user_id, [...(tagsByUser.get(row.user_id) ?? []), name]);
-  }
-  const tagsBySub = new Map<string, string[]>();
-  for (const row of subTags.data!) {
-    const name = tagName(row);
-    if (name)
-      tagsBySub.set(row.user_subscription_id, [
-        ...(tagsBySub.get(row.user_subscription_id) ?? []),
-        name,
-      ]);
-  }
-  const month = (d: string | null) => (d ? d.slice(0, 7) : null);
+  const tagsByUser = groupTags(userTags.data!, "user_id");
+  const tagsBySub = groupTags(subTags.data!, "user_subscription_id");
 
   return {
-    categories: categories.data!.map((c) => ({
-      id: c.id,
-      slug: c.slug,
-      name: c.name,
-      sortOrder: c.sort_order,
-    })),
-    services: services.data!.map((s) => ({
-      id: s.id,
-      slug: s.slug,
-      name: s.name,
-      company: s.company,
-      categoryId: s.category_id,
-      logoUrl: s.logo_url,
-      brandColor: s.brand_color,
-      officialUrl: s.official_url,
-      affiliateUrl: s.affiliate_url,
-      affiliateActive: s.affiliate_active,
-    })),
-    plans: plans.data!.map((p) => ({
-      id: p.id,
-      serviceId: p.service_id,
-      name: p.name,
-      price: p.price,
-      billingCycle: p.billing_cycle,
-      priceCheckedAt: p.price_checked_at,
-    })),
-    profiles: profiles.data!.map((p) => ({
-      id: p.id,
-      handle: p.handle,
-      displayName: p.display_name,
-      avatarUrl: p.avatar_url,
-      occupation: p.occupation,
-      ageRange: p.age_range,
-      bio: p.bio,
-      visibility: p.visibility,
-      tags: tagsByUser.get(p.id) ?? [],
-      createdAt: p.created_at,
-      updatedAt: p.updated_at,
-    })),
-    subscriptions: subs.data!.map((s) => ({
-      id: s.id,
-      userId: s.user_id,
-      serviceId: s.service_id,
-      planId: s.plan_id,
-      monthlyPrice: s.monthly_price,
-      satisfaction: s.satisfaction,
-      comment: s.comment,
-      startedOn: month(s.started_on),
-      status: s.status,
-      cancelledOn: month(s.cancelled_on),
-      cancelReason: s.cancel_reason,
-      cancelReasonDetail: s.cancel_reason_detail,
-      switchedToServiceId: s.switched_to_service_id,
-      isHidden: s.is_hidden,
-      sortOrder: s.sort_order,
-      tags: tagsBySub.get(s.id) ?? [],
-      updatedAt: s.updated_at,
-    })),
+    categories: categories.data!.map(toCategory),
+    services: services.data!.map(toService),
+    plans: plans.data!.map(toPlan),
+    profiles: profiles.data!.map((p) => toProfile(p, tagsByUser.get(p.id) ?? [])),
+    subscriptions: subs.data!.map((s) => toSubscription(s, tagsBySub.get(s.id) ?? [])),
     likes: likes.data!.map((l) => ({ userId: l.user_id, targetUserId: l.target_user_id })),
   };
 }

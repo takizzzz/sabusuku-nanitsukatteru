@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, CirclePlus, Heart, MessageSquareText } from "lucide-react";
+import { ArrowRight, CirclePlus, MessageSquareText } from "lucide-react";
 import { AffiliateLink } from "@/components/affiliate-link";
 import { Avatar } from "@/components/avatar";
 import { CategoryBar } from "@/components/category-bar";
 import { Price } from "@/components/price";
 import { ServiceLogo } from "@/components/service-logo";
 import { ShareButtons } from "@/components/share-buttons";
+import { StackActions } from "@/components/stack-actions";
 import { StackCard } from "@/components/stack-card";
 import { Stars } from "@/components/stars";
 import { Tag } from "@/components/tag";
@@ -71,18 +72,11 @@ export default async function StackPage({ params }: PageProps<"/u/[handle]">) {
           </p>
         </div>
         <div className="flex flex-col items-start gap-2 md:items-end">
-          <Link
-            href={`/login?next=/@${profile.handle}`}
-            className="flex min-h-11 items-center gap-1.5 rounded-lg border border-line px-3 text-sm font-bold text-like hover:border-like"
-            aria-label={`いいね（${stack.likeCount}件）`}
-          >
-            <Heart className="size-4" aria-hidden />
-            <span className="num">{stack.likeCount}</span>
-          </Link>
+          <StackActions targetUserId={profile.id} handle={profile.handle} initialCount={stack.likeCount} />
           <ShareButtons
             url={url}
             text={`@${profile.handle} さんのサブスクは月¥${yen(stack.monthlyTotal)}！ #さぶすくなにつかってる`}
-            reportHref={`/login?next=/@${profile.handle}`}
+            reportHref={`/report?type=stack&id=${profile.id}`}
           />
         </div>
       </section>
@@ -151,7 +145,12 @@ export default async function StackPage({ params }: PageProps<"/u/[handle]">) {
                     使い分けコメント
                   </summary>
                   <p className="mt-1.5 text-sm">{e.sub.comment}</p>
-                  {e.sub.startedOn && <p className="mt-1 text-xs text-subtle">{yearMonth(e.sub.startedOn)}から利用</p>}
+                  <p className="mt-1 flex items-center justify-between gap-2 text-xs text-subtle">
+                    <span>{e.sub.startedOn && `${yearMonth(e.sub.startedOn)}から利用`}</span>
+                    <Link href={`/report?type=comment&id=${e.sub.id}`} className="hover:underline">
+                      通報
+                    </Link>
+                  </p>
                 </details>
               )}
             </li>

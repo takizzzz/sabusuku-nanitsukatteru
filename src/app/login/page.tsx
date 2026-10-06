@@ -1,7 +1,8 @@
-import { ComingSoon } from "@/components/coming-soon";
+import type { Metadata } from "next";
+import { AuthPage } from "@/components/auth/auth-page";
 
-export const metadata = { title: "ログイン・会員登録", robots: { index: false } };
+export const metadata: Metadata = { title: "ログイン", robots: { index: false } };
 
-export default function Page() {
-  return <ComingSoon title="ログイン・会員登録" />;
+export default function LoginPage({ searchParams }: PageProps<"/login">) {
+  return <AuthPage mode="login" searchParams={searchParams} />;
 }

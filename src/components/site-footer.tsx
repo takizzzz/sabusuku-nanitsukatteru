@@ -9,6 +9,8 @@ const groups = [
       { href: "/stacks?sort=new", label: "新着の構成" },
       { href: "/services", label: "サービス一覧" },
       { href: "/ranking", label: "ランキング" },
+      { href: "/compare", label: "併用比較" },
+      { href: "/services/request", label: "サービス追加の申請" },
     ],
   },
   {

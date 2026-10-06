@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Check, Ellipsis, Flag, Link as LinkIcon } from "lucide-react";
 
 /** X・LINE 共有、URLコピー、三点メニュー（通報） */
-export function ShareButtons({ url, text, reportHref }: { url: string; text: string; reportHref: string }) {
+export function ShareButtons({ url, text, reportHref }: { url: string; text: string; reportHref?: string }) {
   const [copied, setCopied] = useState(false);
   const [menu, setMenu] = useState(false);
   const x = `https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
@@ -33,6 +33,7 @@ export function ShareButtons({ url, text, reportHref }: { url: string; text: str
         {copied ? <Check className="size-4" aria-hidden /> : <LinkIcon className="size-4" aria-hidden />}
         {copied ? "コピーしました" : "URLコピー"}
       </button>
+      {reportHref && (
       <div className="relative">
         <button
           type="button"
@@ -52,6 +53,7 @@ export function ShareButtons({ url, text, reportHref }: { url: string; text: str
           </div>
         )}
       </div>
+      )}
     </div>
   );
 }
