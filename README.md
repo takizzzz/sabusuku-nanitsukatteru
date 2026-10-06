@@ -49,8 +49,8 @@ Supabase 未接続のあいだは、ログインが必要な画面もダミー�
 
 ## Supabase の準備
 
-1. プロジェクトを作り、`supabase/migrations/` の SQL を番号順に実行する
-2. `.env.local`（Vercel では環境変数）に URL・anon key・service role key・サイトURLを入れる
+1. プロジェクトを作り、SQL Editor で `supabase/migrations/` の SQL を番号順に実行し、続けて `supabase/seed/master.sql`（カテゴリ・サービス・プランの初期データ。価格は仮）を実行する。どれも2回流しても壊れない
+2. `.env.local`（Vercel では環境変数）に URL・Publishable key（`NEXT_PUBLIC_SUPABASE_ANON_KEY`）・Secret key（`SUPABASE_SERVICE_ROLE_KEY`）・サイトURLを入れる
 3. Authentication → URL Configuration の Redirect URLs に `<サイトURL>/auth/callback` を足す
 4. Google と X（OAuth 2.0）のプロバイダを有効にする
 5. 管理者にする人は `profiles.role` を SQL で `admin` にする
