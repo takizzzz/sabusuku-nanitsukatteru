@@ -69,8 +69,12 @@ function toEntry(idx: Index, sub: UserSubscription): StackEntry | null {
   };
 }
 
-export function buildStack(idx: Index, profile: Profile): Stack {
-  const subs = [...(idx.subsByUser.get(profile.id) ?? [])].sort(
+export function buildStack(
+  idx: Index,
+  profile: Profile,
+  own: UserSubscription[] = idx.subsByUser.get(profile.id) ?? [],
+): Stack {
+  const subs = [...own].sort(
     (a, b) => a.sortOrder - b.sortOrder,
   );
   const entries = subs.map((s) => toEntry(idx, s)).filter((e) => e !== null);
@@ -451,4 +455,134 @@ export function serviceDetail(idx: Index, slug: string): ServiceDetail | null {
       .sort((a, b) => b.likeCount - a.likeCount)
       .slice(0, 6),
   };
+}
+
+/** サービスごとによく付く用途タグ（入力候補に使う） */
+export function serviceTopTags(idx: Index, n = 6): Record<string, string[]> {
+  const count = new Map<string, Map<string, number>>();
+  for (const p of statProfiles(idx)) {
+    for (const s of idx.subsByUser.get(p.id) ?? []) {
+      const m = count.get(s.serviceId) ?? new Map<string, number>();
+      for (const t of s.tags) m.set(t, (m.get(t) ?? 0) + 1);
+      count.set(s.serviceId, m);
+    }
+  }
+  return Object.fromEntries(
+    [...count.entries()].map(([id, m]) => [id, [...m.entries()].sort((a, b) => b[1] - a[1]).slice(0, n).map(([t]) => t)]),
+  );
+}
+
+
+// ---------------------------------------------------------------
+// 併用比較（S-06）
+// ---------------------------------------------------------------
+
+/** 比較ページのURL用。slug を辞書順に並べて - でつなぐ */
+export function pairSlug(a: Service, b: Service): string {
+  return [a.slug, b.slug].sort().join("-");
+}
+
+/** "chatgpt-claude" のような文字列を2つのサービスに分ける（slug 自体にハイフンを含むことがある） */
+export function parsePair(idx: Index, pair: string): [Service, Service] | null {
+  const bySlug = new Map(idx.ds.services.map((s) => [s.slug, s]));
+  for (let i = pair.indexOf("-"); i !== -1; i = pair.indexOf("-", i + 1)) {
+    const a = bySlug.get(pair.slice(0, i));
+    const b = bySlug.get(pair.slice(i + 1));
+    if (a && b && a.id !== b.id) return [a, b];
+  }
+  return null;
+}
+
+type Side = {
+  service: Service;
+  users: number; // 契約者数
+  coRate: number; // このサービスの契約者のうち、もう片方も契約している割合
+  avgSatisfaction: number | null; // 併用者の平均満足度
+  tagShares: { tag: string; ratio: number }[]; // 併用者の用途タグ
+  plans: Plan[];
+};
+
+export type CompareDetail = {
+  a: Side;
+  b: Side;
+  coUsers: number;
+  enough: boolean;
+  avgPairMonthly: number | null; // 併用者が2つに払っている月額の平均
+  avgStackMonthly: number | null; // 併用者の構成全体の平均月額
+  comments: { profile: Profile; a: StackEntry; b: StackEntry }[];
+  stacks: Stack[];
+};
+
+export function compareServices(idx: Index, a: Service, b: Service): CompareDetail {
+  const profiles = statProfiles(idx);
+  const co: { profile: Profile; sa: UserSubscription; sb: UserSubscription }[] = [];
+  const users = { a: 0, b: 0 };
+  for (const profile of profiles) {
+    const subs = (idx.subsByUser.get(profile.id) ?? []).filter((s) => s.status === "active");
+    const sa = subs.find((s) => s.serviceId === a.id);
+    const sb = subs.find((s) => s.serviceId === b.id);
+    if (sa) users.a += 1;
+    if (sb) users.b += 1;
+    if (sa && sb) co.push({ profile, sa, sb });
+  }
+  const n = co.length;
+  const enough = n >= MIN_USERS_FOR_STATS;
+  const avg = (xs: number[]) => (xs.length ? xs.reduce((s, x) => s + x, 0) / xs.length : null);
+  const tags = (subs: UserSubscription[]) => {
+    const m = new Map<string, number>();
+    for (const s of subs) for (const t of new Set(s.tags)) m.set(t, (m.get(t) ?? 0) + 1);
+    return [...m.entries()]
+      .sort((x, y) => y[1] - x[1])
+      .slice(0, 5)
+      .map(([tag, c]) => ({ tag, ratio: c / Math.max(subs.length, 1) }));
+  };
+  const side = (service: Service, key: "a" | "b"): Side => {
+    const subs = co.map((c) => (key === "a" ? c.sa : c.sb));
+    const sats = subs.map((s) => s.satisfaction).filter((x): x is number => x !== null);
+    return {
+      service,
+      users: users[key],
+      coRate: users[key] ? n / users[key] : 0,
+      avgSatisfaction: enough ? avg(sats) : null,
+      tagShares: tags(subs),
+      plans: idx.ds.plans.filter((p) => p.serviceId === service.id),
+    };
+  };
+  const pub = co.filter((c) => c.profile.visibility === "public");
+  return {
+    a: side(a, "a"),
+    b: side(b, "b"),
+    coUsers: n,
+    enough,
+    avgPairMonthly: enough ? avg(co.map((c) => c.sa.monthlyPrice + c.sb.monthlyPrice)) : null,
+    avgStackMonthly: enough ? avg(co.map((c) => buildStack(idx, c.profile).monthlyTotal)) : null,
+    comments: pub
+      .filter((c) => c.sa.comment || c.sb.comment)
+      .map((c) => ({ profile: c.profile, a: toEntry(idx, c.sa)!, b: toEntry(idx, c.sb)! })),
+    stacks: pub
+      .map((c) => buildStack(idx, c.profile))
+      .sort((x, y) => y.likeCount - x.likeCount)
+      .slice(0, 6),
+  };
+}
+
+/** よく併用されているペア */
+export function topPairs(idx: Index, n = 8): { a: Service; b: Service; users: number }[] {
+  const count = new Map<string, number>();
+  for (const p of statProfiles(idx)) {
+    const ids = [...new Set((idx.subsByUser.get(p.id) ?? []).filter((s) => s.status === "active").map((s) => s.serviceId))].sort();
+    for (let i = 0; i < ids.length; i++)
+      for (let j = i + 1; j < ids.length; j++) {
+        const k = `${ids[i]}|${ids[j]}`;
+        count.set(k, (count.get(k) ?? 0) + 1);
+      }
+  }
+  return [...count.entries()]
+    .sort((x, y) => y[1] - x[1])
+    .slice(0, n)
+    .map(([k, users]) => {
+      const [a, b] = k.split("|");
+      return { a: idx.services.get(a)!, b: idx.services.get(b)!, users };
+    })
+    .filter((p) => p.a && p.b);
 }

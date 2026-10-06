@@ -25,3 +25,8 @@ export function percent(ratio: number): string {
 
 export const SITE_NAME = "さぶすくなにつかってる！？";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
+/** ログイン後の戻り先。サイト内の相対パスだけ通す */
+export function safeNextPath(next: string | string[] | undefined, fallback = "/me"): string {
+  return typeof next === "string" && next.startsWith("/") && !next.startsWith("//") ? next : fallback;
+}
