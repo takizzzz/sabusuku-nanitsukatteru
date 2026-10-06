@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# さぶすくなにつかってる！？
 
-## Getting Started
+みんなの契約中サブスクと「どう使い分けているか」を公開・共有する Web サービス。
 
-First, run the development server:
+- Next.js（App Router）＋ Tailwind CSS v4
+- Supabase（Postgres・Auth）、Vercel にデプロイする想定
+
+## 開発
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`.env.local` に Supabase の値がなければ、`src/data/seed.ts` のダミーデータで全画面が見られる。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 構成
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| パス | 内容 |
+|---|---|
+| `supabase/migrations/` | DB スキーマと RLS（要件定義書 7章） |
+| `src/lib/stacks.ts` | 月額合計・統計・検索・ランキングの集計（純粋関数） |
+| `src/lib/data.ts` | データの読み込み（Supabase かダミーデータ） |
+| `src/data/seed.ts` | ダミーデータ（価格は仮） |
+| `src/app/` | 画面。構成ページの公開 URL は `/@handle`（内部は `/u/[handle]`） |
 
-## Learn More
+## 画面の実装状況
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| ID | 画面 | 状況 |
+|---|---|---|
+| S-01 | トップ `/` | ✓ |
+| S-02 | 構成を探す `/stacks` | ✓ |
+| S-03 | 構成詳細 `/@handle`（OGP画像つき） | ✓（いいね・通報はログイン実装後） |
+| S-07 | ランキング `/ranking` | ✓（急上昇・前回比は履歴データができてから） |
+| S-04, S-05, S-08〜S-13, S-16 | | 準備中 |
+| S-14 | `/ads` | ✓（規約・プライバシーは準備中） |
