@@ -349,3 +349,106 @@ export function occupationCounts(idx: Index): { occupation: string; count: numbe
     .map(([occupation, c]) => ({ occupation, count: c }))
     .sort((a, b) => b.count - a.count);
 }
+
+// ---------------------------------------------------------------
+// サービス詳細（S-05）
+// ---------------------------------------------------------------
+
+export type ServiceDetail = {
+  stat: ServiceStat;
+  plans: { plan: Plan; users: number; ratio: number }[];
+  coUsage: { service: Service; users: number; ratio: number }[] | null; // 利用者が少なければ null
+  tagShares: { tag: string; users: number; ratio: number }[];
+  comments: { entry: StackEntry; profile: Profile }[];
+  cancelReasons: { reason: string; count: number }[];
+  switchedTo: { service: Service; count: number }[];
+  cancelComments: { entry: StackEntry; profile: Profile }[];
+  stacks: Stack[];
+};
+
+export function serviceDetail(idx: Index, slug: string): ServiceDetail | null {
+  const service = idx.ds.services.find((s) => s.slug === slug);
+  if (!service) return null;
+  const stat = serviceStats(idx).find((s) => s.service.id === service.id)!;
+  const profiles = statProfiles(idx);
+  const profileById = new Map(profiles.map((p) => [p.id, p]));
+
+  const activeSubs: { sub: UserSubscription; profile: Profile }[] = [];
+  const cancelledSubs: { sub: UserSubscription; profile: Profile }[] = [];
+  for (const [userId, subs] of idx.subsByUser) {
+    const profile = profileById.get(userId);
+    if (!profile) continue;
+    for (const sub of subs) {
+      if (sub.serviceId !== service.id) continue;
+      (sub.status === "active" ? activeSubs : cancelledSubs).push({ sub, profile });
+    }
+  }
+  const n = activeSubs.length;
+
+  const plans = idx.ds.plans
+    .filter((p) => p.serviceId === service.id)
+    .map((plan) => {
+      const users = activeSubs.filter((a) => a.sub.planId === plan.id).length;
+      return { plan, users, ratio: n ? users / n : 0 };
+    });
+
+  let coUsage: ServiceDetail["coUsage"] = null;
+  if (n >= MIN_USERS_FOR_STATS) {
+    const count = new Map<string, number>();
+    for (const { profile } of activeSubs) {
+      for (const s of idx.subsByUser.get(profile.id) ?? []) {
+        if (s.status !== "active" || s.serviceId === service.id) continue;
+        count.set(s.serviceId, (count.get(s.serviceId) ?? 0) + 1);
+      }
+    }
+    coUsage = [...count.entries()]
+      .map(([id, users]) => ({ service: idx.services.get(id)!, users, ratio: users / n }))
+      .filter((c) => c.service)
+      .sort((a, b) => b.users - a.users)
+      .slice(0, 5);
+  }
+
+  const tagCount = new Map<string, number>();
+  for (const { sub } of activeSubs) for (const t of new Set(sub.tags)) tagCount.set(t, (tagCount.get(t) ?? 0) + 1);
+  const tagShares = [...tagCount.entries()]
+    .map(([tag, users]) => ({ tag, users, ratio: n ? users / n : 0 }))
+    .sort((a, b) => b.users - a.users)
+    .slice(0, 10);
+
+  const visible = (p: Profile) => p.visibility === "public";
+  const comments = activeSubs
+    .filter((a) => a.sub.comment && visible(a.profile))
+    .map((a) => ({ entry: toEntry(idx, a.sub)!, profile: a.profile }))
+    .sort((a, b) => b.entry.sub.updatedAt.localeCompare(a.entry.sub.updatedAt));
+
+  const reasonCount = new Map<string, number>();
+  const switchCount = new Map<string, number>();
+  for (const { sub } of cancelledSubs) {
+    if (sub.cancelReason) reasonCount.set(sub.cancelReason, (reasonCount.get(sub.cancelReason) ?? 0) + 1);
+    if (sub.switchedToServiceId)
+      switchCount.set(sub.switchedToServiceId, (switchCount.get(sub.switchedToServiceId) ?? 0) + 1);
+  }
+
+  return {
+    stat,
+    plans,
+    coUsage,
+    tagShares,
+    comments,
+    cancelReasons: [...reasonCount.entries()]
+      .map(([reason, count]) => ({ reason, count }))
+      .sort((a, b) => b.count - a.count),
+    switchedTo: [...switchCount.entries()]
+      .map(([id, count]) => ({ service: idx.services.get(id)!, count }))
+      .filter((s) => s.service)
+      .sort((a, b) => b.count - a.count),
+    cancelComments: cancelledSubs
+      .filter((c) => c.sub.cancelReasonDetail && visible(c.profile))
+      .map((c) => ({ entry: toEntry(idx, c.sub)!, profile: c.profile })),
+    stacks: activeSubs
+      .filter((a) => visible(a.profile))
+      .map((a) => buildStack(idx, a.profile))
+      .sort((a, b) => b.likeCount - a.likeCount)
+      .slice(0, 6),
+  };
+}
