@@ -38,15 +38,6 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ja" className={`${jakarta.variable} ${notoJp.variable} antialiased`}>
-      <head>
-        {/* デザインと同じ Material Symbols のアイコンフォント */}
-        {/* アイコン名の文字が一瞬見えないよう display=block にする */}
-        {/* eslint-disable-next-line @next/next/no-page-custom-font, @next/next/google-font-display */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
-        />
-      </head>
       <body className="flex min-h-dvh flex-col font-sans">
         <SiteHeader />
         <main className="flex-1">{children}</main>
