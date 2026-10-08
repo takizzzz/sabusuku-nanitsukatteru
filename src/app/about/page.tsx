@@ -14,11 +14,19 @@ export default function AboutPage() {
         <p>現在はベータ版です。機能や表示は予告なく変わることがあります。</p>
       </Article>
       <Article title="運営者">
-        <dl className="grid grid-cols-[6rem_1fr] gap-y-2">
-          <dt className="font-bold text-fg">運営者</dt>
-          <dd>{OPERATOR.name ?? <Placeholder />}</dd>
-          <dt className="font-bold text-fg">連絡先</dt>
-          <dd>{OPERATOR.contact ?? <Placeholder />}</dd>
+        <dl className="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-2 font-body-sm text-body-sm">
+          <div className="flex items-center justify-between gap-space-sm py-1">
+            <dt className="text-on-surface-variant">サービス名</dt>
+            <dd className="font-bold text-on-surface text-right">{SITE_NAME}</dd>
+          </div>
+          <div className="flex items-center justify-between gap-space-sm py-1">
+            <dt className="text-on-surface-variant">運営者</dt>
+            <dd className="font-bold text-on-surface text-right">{OPERATOR.name ?? <Placeholder />}</dd>
+          </div>
+          <div className="flex items-center justify-between gap-space-sm py-1">
+            <dt className="text-on-surface-variant">連絡先</dt>
+            <dd className="font-bold text-on-surface text-right break-all">{OPERATOR.contact ?? <Placeholder />}</dd>
+          </div>
         </dl>
       </Article>
     </LegalPage>
