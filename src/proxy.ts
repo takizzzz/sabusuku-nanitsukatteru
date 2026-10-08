@@ -3,6 +3,14 @@ import { createServerClient } from "@supabase/ssr";
 
 /** Supabase のセッションを毎リクエストで更新する。認可は各ページとサーバー関数で確認する */
 export async function proxy(request: NextRequest) {
+  // Redirect URLs に無い戻り先は Site URL のトップに ?code= 付きで返ってくるので、コールバックへ回す
+  const code = request.nextUrl.searchParams.get("code");
+  if (request.nextUrl.pathname === "/" && code) {
+    const callback = new URL("/auth/callback", request.url);
+    callback.searchParams.set("code", code);
+    return NextResponse.redirect(callback);
+  }
+
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   let response = NextResponse.next({ request });
