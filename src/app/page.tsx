@@ -25,7 +25,12 @@ const CATEGORY_EMOJI: Record<string, string> = {
   video: "🎬",
   music: "🎵",
   work: "💼",
-  learning: "📚",
+  learning: "🎓",
+  books: "📚",
+  news: "📰",
+  game: "🎮",
+  dev: "💻",
+  life: "🏠",
 };
 
 export default async function TopPage() {

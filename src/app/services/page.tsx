@@ -30,6 +30,8 @@ export default async function ServicesPage({ searchParams }: PageProps<"/service
     )
     .sort((a, b) => b.activeUsers - a.activeUsers || a.service.name.localeCompare(b.service.name, "ja"));
 
+  // 絞り込みが無いときは、カテゴリごとに上位だけ見せる
+  const perGroup = category || q ? Infinity : 8;
   const groups = categories
     .map((c) => ({ category: c, items: stats.filter((s) => s.category.id === c.id) }))
     .filter((g) => g.items.length > 0);
@@ -134,10 +136,19 @@ export default async function ServicesPage({ searchParams }: PageProps<"/service
                 }
               />
               <Card className="divide-y divide-surface-container p-space-xs">
-                {g.items.map((s) => (
+                {g.items.slice(0, perGroup).map((s) => (
                   <ServiceRow key={s.service.id} stat={s} />
                 ))}
               </Card>
+              {g.items.length > perGroup && (
+                <Link
+                  href={href(g.category.slug)}
+                  className="mt-space-xs flex items-center justify-center gap-0.5 rounded-xl py-2.5 font-label-md text-label-md font-bold text-primary transition-colors hover:bg-surface-container-low"
+                >
+                  {g.category.name}をすべて見る（<span className="num">{g.items.length}</span>件）
+                  <Icon name="chevron_right" className="text-[16px]" />
+                </Link>
+              )}
             </section>
           ))
         )}
