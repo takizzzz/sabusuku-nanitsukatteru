@@ -2,6 +2,8 @@
 
 /* デザインのトークン（designs/*.html の配色をもとに、アクセント1色＋オフホワイト基調） */
 :root {
+  /* 渡されたデザインに合わせてライト表示だけにする（OS のダークモードには追従しない） */
+  color-scheme: light;
   --bg: #faf8ff;
   --surface: #ffffff;
   --surface-2: #f2f3ff;
@@ -20,29 +22,6 @@
   --danger: #ba1a1a;
   --danger-soft: #ffdad6;
   --ok: #15803d;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f1220;
-    --surface: #171a2b;
-    --surface-2: #1e2236;
-    --surface-3: #262b43;
-    --fg: #eef0ff;
-    --muted: #c3c5d9;
-    --subtle: #9a9cb3;
-    --line: #2c3150;
-    --accent: #8f88ff;
-    --accent-strong: #b4b0ff;
-    --accent-soft: #2b2870;
-    --on-accent: #0f0069;
-    --pr: #ffb0cd;
-    --pr-soft: #4a1030;
-    --like: #ff7aa8;
-    --danger: #ffb4ab;
-    --danger-soft: #5c1410;
-    --ok: #6ee7a0;
-  }
 }
 
 @theme inline {

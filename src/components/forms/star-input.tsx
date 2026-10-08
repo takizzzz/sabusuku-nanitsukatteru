@@ -25,7 +25,7 @@ export function StarInput({
           aria-checked={value === i}
           aria-label={`★${i}`}
           onClick={() => onChange(value === i ? null : i)}
-          className="flex size-10 items-center justify-center rounded-lg text-amber-500 hover:bg-surface-3 dark:text-amber-400"
+          className="flex size-10 items-center justify-center rounded-lg text-amber-500 hover:bg-surface-3"
         >
           <Star className={`size-6 ${value !== null && i <= value ? "fill-current" : "opacity-35"}`} aria-hidden />
         </button>

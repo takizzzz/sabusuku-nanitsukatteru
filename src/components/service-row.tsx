@@ -30,7 +30,7 @@ export function ServiceRow({ stat, rank }: { stat: ServiceStat; rank?: number })
             {stat.activeUsers}人（{percent(stat.usageRate)}）
           </span>
           {stat.avgSatisfaction !== null ? (
-            <span className="num inline-flex items-center gap-0.5 font-semibold text-amber-600 dark:text-amber-400">
+            <span className="num inline-flex items-center gap-0.5 font-semibold text-amber-600">
               <Star className="size-3 fill-current" aria-hidden />
               <span className="sr-only">平均満足度</span>
               {stat.avgSatisfaction.toFixed(1)}
