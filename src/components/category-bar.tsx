@@ -15,18 +15,18 @@ export function CategoryBar({ shares }: { shares: CategoryShare[] }) {
   if (shares.length === 0) return null;
   return (
     <div>
-      <div className="flex h-3 overflow-hidden rounded-full bg-surface-3" role="img" aria-label="カテゴリ別の内訳">
+      <div className="flex h-3 overflow-hidden rounded-full bg-surface-container-high" role="img" aria-label="カテゴリ別の内訳">
         {shares.map((s) => (
           <span key={s.category.id} style={{ width: `${s.ratio * 100}%`, background: CATEGORY_COLORS[s.category.slug] ?? "#888" }} />
         ))}
       </div>
       <ul className="mt-4 space-y-2">
         {shares.map((s) => (
-          <li key={s.category.id} className="flex items-center gap-2 text-sm">
+          <li key={s.category.id} className="flex items-center gap-2 font-body-md text-body-md">
             <span className="size-2.5 rounded-full" style={{ background: CATEGORY_COLORS[s.category.slug] ?? "#888" }} aria-hidden />
-            <span className="flex-1 font-semibold">{s.category.name}</span>
-            <span className="num font-bold">{percent(s.ratio)}</span>
-            <span className="num w-20 text-right text-xs text-subtle">¥{yen(s.amount)}</span>
+            <span className="flex-1 font-semibold text-on-surface">{s.category.name}</span>
+            <span className="num font-bold text-on-surface">{percent(s.ratio)}</span>
+            <span className="num w-20 text-right font-label-sm text-label-sm font-normal text-on-surface-variant">¥{yen(s.amount)}</span>
           </li>
         ))}
       </ul>
