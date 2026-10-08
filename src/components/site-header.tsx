@@ -12,7 +12,7 @@ const nav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-surface/90 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-line bg-card/90 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-4 px-4">
         <Link href="/" className="flex shrink-0 items-center gap-1.5 font-extrabold whitespace-nowrap text-accent-strong">
           <span className="text-[15px] md:text-lg">{SITE_NAME}</span>

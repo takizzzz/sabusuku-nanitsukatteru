@@ -17,7 +17,7 @@ export function ServiceRequestForm({ categories, initialName }: { categories: Ca
 
   if (state.ok) {
     return (
-      <div className="space-y-4 rounded-2xl border border-line bg-surface p-6 text-center">
+      <div className="space-y-4 rounded-2xl border border-line bg-card p-6 text-center">
         <FormMessage state={state} />
         <div className="flex flex-wrap justify-center gap-3">
           <Link href="/me" className={primaryBtn}>
@@ -33,7 +33,7 @@ export function ServiceRequestForm({ categories, initialName }: { categories: Ca
 
   return (
     <form action={action} className="space-y-5">
-      <section className="space-y-5 rounded-2xl border border-line bg-surface p-5">
+      <section className="space-y-5 rounded-2xl border border-line bg-card p-5">
         <Field label="サービス名" htmlFor="name" required error={f.name} counter={{ value: name.length, max: 50 }} hint="正式名称か、一般的に通じる名前を入力してください">
           <input id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} maxLength={50} required className={inputCls} placeholder="例：Perplexity" aria-invalid={!!f.name} />
         </Field>
@@ -57,7 +57,7 @@ export function ServiceRequestForm({ categories, initialName }: { categories: Ca
         </Field>
       </section>
 
-      <section className="space-y-5 rounded-2xl border border-line bg-surface p-5">
+      <section className="space-y-5 rounded-2xl border border-line bg-card p-5">
         <h2 className="flex items-center gap-2 font-extrabold">
           <SlidersHorizontal className="size-4 text-accent" aria-hidden />
           料金・プラン（任意）

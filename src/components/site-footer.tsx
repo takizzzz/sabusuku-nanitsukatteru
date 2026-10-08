@@ -26,7 +26,7 @@ const groups = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 border-t border-line bg-surface pb-24 md:pb-0">
+    <footer className="mt-16 border-t border-line bg-card pb-24 md:pb-0">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-[2fr_1fr_1fr]">
         <div>
           <p className="font-extrabold text-accent-strong">{SITE_NAME}</p>

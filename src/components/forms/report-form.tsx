@@ -34,7 +34,7 @@ export function ReportForm({ type, targetId, backHref }: { type: "stack" | "comm
           <span className="rounded bg-danger-soft px-1.5 py-px text-[10px] font-bold text-danger">必須</span>
         </legend>
         {REPORT_REASONS.map((r) => (
-          <label key={r.id} className="flex cursor-pointer items-start gap-3 rounded-xl border border-line bg-surface p-4 has-checked:border-danger has-checked:bg-danger-soft/40">
+          <label key={r.id} className="flex cursor-pointer items-start gap-3 rounded-xl border border-line bg-card p-4 has-checked:border-danger has-checked:bg-danger-soft/40">
             <input type="radio" name="reason" value={r.id} required className="mt-1 size-4 accent-[var(--danger)]" />
             <span>
               <span className="block text-sm font-bold">{r.label}</span>

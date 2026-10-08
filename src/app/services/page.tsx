@@ -46,7 +46,7 @@ export default async function ServicesPage({ searchParams }: PageProps<"/service
 
       <form action="/services" role="search" className="mt-4">
         {category && <input type="hidden" name="category" value={category} />}
-        <label className="flex items-center gap-2 rounded-xl border border-line bg-surface px-4">
+        <label className="flex items-center gap-2 rounded-xl border border-line bg-card px-4">
           <Search className="size-4 text-subtle" aria-hidden />
           <span className="sr-only">サービスを検索</span>
           <input name="q" defaultValue={q} placeholder="サービス名・会社名・カテゴリ" className="min-h-12 w-full bg-transparent outline-none placeholder:text-subtle" />
@@ -59,7 +59,7 @@ export default async function ServicesPage({ searchParams }: PageProps<"/service
             key={c.slug ?? "all"}
             href={href(c.slug)}
             aria-current={category === c.slug ? "page" : undefined}
-            className={`flex min-h-10 items-center rounded-full border px-4 text-sm font-bold whitespace-nowrap ${category === c.slug ? "border-accent bg-accent text-on-accent" : "border-line bg-surface"}`}
+            className={`flex min-h-10 items-center rounded-full border px-4 text-sm font-bold whitespace-nowrap ${category === c.slug ? "border-accent bg-accent text-on-accent" : "border-line bg-card"}`}
           >
             {c.name}
           </Link>
@@ -67,7 +67,7 @@ export default async function ServicesPage({ searchParams }: PageProps<"/service
       </nav>
 
       {groups.length === 0 ? (
-        <div className="mt-8 rounded-2xl border border-dashed border-line bg-surface p-8 text-center">
+        <div className="mt-8 rounded-2xl border border-dashed border-line bg-card p-8 text-center">
           <p className="font-bold">見つかりませんでした</p>
           <p className="mt-2 text-sm text-muted">登録されていないサービスは、ログイン後に追加を申請できます。</p>
         </div>
@@ -75,7 +75,7 @@ export default async function ServicesPage({ searchParams }: PageProps<"/service
         groups.map((g) => (
           <section key={g.category.id} className="mt-8">
             <h2 className="mb-2 text-lg font-extrabold">{g.category.name}</h2>
-            <div className="rounded-2xl border border-line bg-surface p-2">
+            <div className="rounded-2xl border border-line bg-card p-2">
               {g.items.map((s) => (
                 <ServiceRow key={s.service.id} stat={s} />
               ))}

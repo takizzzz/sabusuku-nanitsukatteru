@@ -11,7 +11,7 @@ export function ShareButtons({ url, text, reportHref }: { url: string; text: str
   const x = `https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
   const line = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(url)}`;
   const base = "flex min-h-11 items-center gap-1.5 rounded-lg border px-3 text-sm font-bold";
-  const btn = `${base} border-line bg-surface hover:border-accent`;
+  const btn = `${base} border-line bg-card hover:border-accent`;
 
   return (
     <div className="flex flex-wrap items-center gap-2">
@@ -40,12 +40,12 @@ export function ShareButtons({ url, text, reportHref }: { url: string; text: str
           aria-label="その他の操作"
           aria-expanded={menu}
           onClick={() => setMenu((v) => !v)}
-          className="flex size-11 items-center justify-center rounded-lg border border-line bg-surface hover:border-accent"
+          className="flex size-11 items-center justify-center rounded-lg border border-line bg-card hover:border-accent"
         >
           <Ellipsis className="size-4" />
         </button>
         {menu && (
-          <div className="absolute right-0 z-20 mt-1 w-40 rounded-lg border border-line bg-surface p-1 shadow-lg">
+          <div className="absolute right-0 z-20 mt-1 w-40 rounded-lg border border-line bg-card p-1 shadow-lg">
             <Link href={reportHref} className="flex min-h-11 items-center gap-2 rounded-md px-3 text-sm hover:bg-surface-2">
               <Flag className="size-4" aria-hidden />
               通報する

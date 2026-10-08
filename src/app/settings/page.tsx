@@ -32,7 +32,7 @@ export default async function SettingsPage({ searchParams }: PageProps<"/setting
         <div className="min-w-0">
           <h1 className="truncate text-xl font-extrabold">{profile.displayName}</h1>
           <p className="truncate text-xs text-muted">{SITE_URL.replace(/^https?:\/\//, "")}/@{profile.handle}</p>
-          {profile.occupation && <p className="mt-1 inline-block rounded bg-surface px-2 py-0.5 text-xs font-bold">{profile.occupation}</p>}
+          {profile.occupation && <p className="mt-1 inline-block rounded bg-card px-2 py-0.5 text-xs font-bold">{profile.occupation}</p>}
         </div>
       </header>
       {viewer.demo && <DemoNotice />}
@@ -44,7 +44,7 @@ export default async function SettingsPage({ searchParams }: PageProps<"/setting
             href={`/settings?tab=${id}`}
             aria-current={tab === id ? "page" : undefined}
             replace
-            className={`flex min-h-11 items-center justify-center gap-1.5 rounded-lg text-sm font-bold ${tab === id ? "bg-surface text-accent-strong shadow-sm" : "text-muted"}`}
+            className={`flex min-h-11 items-center justify-center gap-1.5 rounded-lg text-sm font-bold ${tab === id ? "bg-card text-accent-strong shadow-sm" : "text-muted"}`}
           >
             <Icon className="size-4" aria-hidden />
             {label}
@@ -56,7 +56,7 @@ export default async function SettingsPage({ searchParams }: PageProps<"/setting
       {tab === "visibility" && <VisibilityForm value={profile.visibility} />}
       {tab === "account" && (
         <div className="space-y-5">
-          <section className="rounded-2xl border border-line bg-surface p-5">
+          <section className="rounded-2xl border border-line bg-card p-5">
             <h2 className="font-extrabold">ログイン情報</h2>
             <p className="mt-2 text-sm">
               メールアドレス：<span className="font-bold">{viewer.email ?? "（ソーシャルログイン）"}</span>

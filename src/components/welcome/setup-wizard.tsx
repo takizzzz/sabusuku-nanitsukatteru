@@ -145,7 +145,7 @@ export function SetupWizard({
 
   return (
     <div className="mx-auto max-w-6xl space-y-6 px-4 py-6 md:py-10">
-      <header className="space-y-4 rounded-2xl border border-line bg-surface p-5">
+      <header className="space-y-4 rounded-2xl border border-line bg-card p-5">
         <div>
           <p className="text-xs font-bold text-accent-strong">あと少しで、あなたのサブスク構成ページができます</p>
           <h1 className="mt-1 text-2xl font-extrabold md:text-3xl">構成のセットアップ</h1>
@@ -179,7 +179,7 @@ export function SetupWizard({
       </header>
 
       {d.step === 1 && (
-        <section className="mx-auto max-w-2xl space-y-6 rounded-2xl border border-line bg-surface p-5" aria-labelledby="s1">
+        <section className="mx-auto max-w-2xl space-y-6 rounded-2xl border border-line bg-card p-5" aria-labelledby="s1">
           <h2 id="s1" className="text-lg font-extrabold">あなたについて</h2>
           <Field label="表示名" htmlFor="displayName" required error={fields.displayName} counter={{ value: d.displayName.length, max: DISPLAY_NAME_MAX }}>
             <input id="displayName" value={d.displayName} onChange={(e) => set({ displayName: e.target.value })} className={inputCls} placeholder="例：けんじ" />
@@ -211,7 +211,7 @@ export function SetupWizard({
       )}
 
       {d.step === 2 && (
-        <section className="space-y-5 rounded-2xl border border-line bg-surface p-5" aria-labelledby="s2">
+        <section className="space-y-5 rounded-2xl border border-line bg-card p-5" aria-labelledby="s2">
           <div className="flex flex-wrap items-end justify-between gap-2">
             <h2 id="s2" className="text-lg font-extrabold">使っているサブスクをタップ</h2>
             <p className="text-sm font-bold text-accent-strong">
@@ -257,7 +257,7 @@ export function SetupWizard({
               const s = serviceById.get(item.serviceId)!;
               const plans = plansOf(s.id);
               return (
-                <article key={s.id} className="space-y-4 rounded-2xl border border-line bg-surface p-4 md:p-5">
+                <article key={s.id} className="space-y-4 rounded-2xl border border-line bg-card p-4 md:p-5">
                   <div className="flex items-center gap-3">
                     <ServiceLogo service={s} size="lg" />
                     <div className="min-w-0 flex-1">
@@ -331,7 +331,7 @@ export function SetupWizard({
           </section>
 
           <aside className="space-y-4 lg:sticky lg:top-20 lg:self-start">
-            <section className="rounded-2xl border border-line bg-surface p-5" aria-label="構成サマリー">
+            <section className="rounded-2xl border border-line bg-card p-5" aria-label="構成サマリー">
               <p className="text-xs font-bold text-subtle">月額合計</p>
               <Price value={total} size="lg" />
               <p className="mt-2 flex justify-between rounded-lg bg-surface-2 px-3 py-2 text-sm">
@@ -359,7 +359,7 @@ export function SetupWizard({
               <p className="mt-1 text-[11px] text-subtle">公開後、この内容でX・LINE用の共有画像ができます。</p>
             </section>
 
-            <fieldset className="space-y-2 rounded-2xl border border-line bg-surface p-5">
+            <fieldset className="space-y-2 rounded-2xl border border-line bg-card p-5">
               <legend className="px-1 text-sm font-extrabold">公開範囲</legend>
               {VISIBILITY_OPTIONS.map((v) => (
                 <label key={v.id} className={`flex cursor-pointer items-start gap-3 rounded-xl border p-3 ${d.visibility === v.id ? "border-accent bg-accent-soft/50" : "border-line"}`}>
@@ -417,7 +417,7 @@ function ChoiceChips({
             type="button"
             aria-pressed={value === o}
             onClick={() => onChange(value === o ? null : o)}
-            className={`min-h-10 rounded-full border px-3 text-sm font-semibold ${value === o ? "border-accent bg-accent text-on-accent" : "border-line bg-surface hover:border-accent"}`}
+            className={`min-h-10 rounded-full border px-3 text-sm font-semibold ${value === o ? "border-accent bg-accent text-on-accent" : "border-line bg-card hover:border-accent"}`}
           >
             {o}
           </button>

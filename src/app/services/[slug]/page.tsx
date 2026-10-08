@@ -43,7 +43,7 @@ export default async function ServicePage({ params, searchParams }: PageProps<"/
   return (
     <div className="mx-auto max-w-5xl space-y-8 px-4 py-8">
       {/* ヘッダー */}
-      <section className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-5 md:flex-row md:items-center">
+      <section className="flex flex-col gap-4 rounded-2xl border border-line bg-card p-5 md:flex-row md:items-center">
         <ServiceLogo service={service} size="lg" />
         <div className="min-w-0 flex-1">
           <h1 className="text-2xl font-extrabold md:text-3xl">{service.name}</h1>
@@ -295,7 +295,7 @@ export default async function ServicePage({ params, searchParams }: PageProps<"/
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-line bg-surface p-5">
+    <section className="rounded-2xl border border-line bg-card p-5">
       <h2 className="mb-4 text-lg font-extrabold">{title}</h2>
       {children}
     </section>
@@ -304,7 +304,7 @@ function Block({ title, children }: { title: string; children: React.ReactNode }
 
 function Num({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-line bg-surface p-4">
+    <div className="rounded-2xl border border-line bg-card p-4">
       <dt className="text-xs font-bold text-subtle">{label}</dt>
       <dd className="mt-1">{children}</dd>
     </div>

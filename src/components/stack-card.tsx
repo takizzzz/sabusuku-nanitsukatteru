@@ -20,7 +20,7 @@ export function StackCard({ stack, showComment = true }: { stack: Stack; showCom
   return (
     <Link
       href={`/@${profile.handle}`}
-      className="group flex min-w-0 flex-col gap-3 rounded-2xl border border-line bg-surface p-4 transition hover:border-accent hover:shadow-md"
+      className="group flex min-w-0 flex-col gap-3 rounded-2xl border border-line bg-card p-4 transition hover:border-accent hover:shadow-md"
     >
       <div className="flex items-start gap-3">
         <Avatar profile={profile} />

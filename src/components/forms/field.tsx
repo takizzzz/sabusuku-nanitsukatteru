@@ -8,7 +8,7 @@ export const primaryBtn =
   "inline-flex min-h-12 items-center justify-center gap-1.5 rounded-xl bg-accent px-5 font-bold text-on-accent shadow-sm hover:bg-accent-strong disabled:opacity-60";
 
 export const secondaryBtn =
-  "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-xl border border-line bg-surface px-4 font-bold hover:border-accent disabled:opacity-60";
+  "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-xl border border-line bg-card px-4 font-bold hover:border-accent disabled:opacity-60";
 
 export function Field({
   label,

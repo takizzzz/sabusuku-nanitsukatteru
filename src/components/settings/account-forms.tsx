@@ -15,7 +15,7 @@ export function VisibilityForm({ value }: { value: Visibility }) {
   const [state, setState] = useState<ActionState>({});
   const [pending, start] = useTransition();
   return (
-    <section className="space-y-3 rounded-2xl border border-line bg-surface p-5">
+    <section className="space-y-3 rounded-2xl border border-line bg-card p-5">
       <h2 className="font-extrabold">構成の公開範囲</h2>
       {VISIBILITY_OPTIONS.map(({ id, label, help, icon: Icon }) => (
         <label key={id} className={`flex cursor-pointer items-start gap-3 rounded-xl border p-4 ${current === id ? "border-accent bg-accent-soft/50" : "border-line"}`}>
@@ -50,7 +50,7 @@ export function PasswordForm({ reset }: { reset: boolean }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(updatePassword, {});
   const f = state.fields ?? {};
   return (
-    <form action={action} className="space-y-4 rounded-2xl border border-line bg-surface p-5">
+    <form action={action} className="space-y-4 rounded-2xl border border-line bg-card p-5">
       <h2 className="font-extrabold">{reset ? "新しいパスワードを設定" : "パスワードの変更"}</h2>
       <Field label="新しいパスワード" htmlFor="password" required hint="8文字以上" error={f.password}>
         <input id="password" name="password" type="password" minLength={8} required autoComplete="new-password" className={inputCls} />
@@ -80,7 +80,7 @@ export function SignOutButton() {
 export function DeleteAccountForm({ confirmText }: { confirmText: string }) {
   const [state, action, pending] = useActionState<ActionState, FormData>(deleteAccount, {});
   return (
-    <form action={action} className="space-y-4 rounded-2xl border border-danger/40 bg-surface p-5">
+    <form action={action} className="space-y-4 rounded-2xl border border-danger/40 bg-card p-5">
       <h2 className="font-extrabold text-danger">退会する</h2>
       <p className="text-sm text-muted">
         プロフィール・構成・いいねなど、登録したデータはすべて削除され、元に戻せません。集計済みの統計（個人を特定できない数値）は残ることがあります。

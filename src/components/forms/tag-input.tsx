@@ -48,7 +48,7 @@ export function TagInput({
             <button
               type="button"
               onClick={() => add(t)}
-              className="flex min-h-9 items-center gap-1 rounded-full border border-line bg-surface px-3 text-xs font-bold text-muted hover:border-accent"
+              className="flex min-h-9 items-center gap-1 rounded-full border border-line bg-card px-3 text-xs font-bold text-muted hover:border-accent"
             >
               <Plus className="size-3.5" aria-hidden />
               {t}

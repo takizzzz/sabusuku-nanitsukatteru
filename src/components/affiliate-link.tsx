@@ -21,7 +21,7 @@ export function AffiliateLink({
   const cls =
     variant === "primary"
       ? "bg-accent text-on-accent hover:bg-accent-strong"
-      : "border border-line bg-surface text-fg hover:border-accent";
+      : "border border-line bg-card text-fg hover:border-accent";
   return (
     <a
       href={`/go/${service.slug}?from=${encodeURIComponent(from)}`}

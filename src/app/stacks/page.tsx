@@ -177,12 +177,12 @@ export default async function StacksPage({ searchParams }: PageProps<"/stacks">)
       <div className="mt-6 grid gap-6 md:grid-cols-[260px_1fr]">
         {/* PC：サイドバー */}
         <aside className="hidden md:block">
-          <div className="sticky top-20 rounded-2xl border border-line bg-surface p-5">{filters}</div>
+          <div className="sticky top-20 rounded-2xl border border-line bg-card p-5">{filters}</div>
         </aside>
 
         <div className="min-w-0">
           {/* SP：折りたたみ */}
-          <details className="mb-4 rounded-2xl border border-line bg-surface md:hidden">
+          <details className="mb-4 rounded-2xl border border-line bg-card md:hidden">
             <summary className="flex min-h-12 cursor-pointer list-none items-center gap-2 px-4 font-bold">
               <SlidersHorizontal className="size-4" aria-hidden />
               絞り込み
@@ -213,7 +213,7 @@ export default async function StacksPage({ searchParams }: PageProps<"/stacks">)
                   key={s.id}
                   href={hrefWith(sp, { sort: s.id })}
                   aria-current={f.sort === s.id ? "true" : undefined}
-                  className={`rounded-md px-3 py-1.5 text-xs font-bold whitespace-nowrap ${f.sort === s.id ? "bg-surface shadow-sm" : "text-subtle"}`}
+                  className={`rounded-md px-3 py-1.5 text-xs font-bold whitespace-nowrap ${f.sort === s.id ? "bg-card shadow-sm" : "text-subtle"}`}
                 >
                   {s.label}
                 </Link>
@@ -228,7 +228,7 @@ export default async function StacksPage({ searchParams }: PageProps<"/stacks">)
               ))}
             </div>
           ) : (
-            <div className="mt-6 rounded-2xl border border-dashed border-line bg-surface p-8 text-center">
+            <div className="mt-6 rounded-2xl border border-dashed border-line bg-card p-8 text-center">
               <p className="font-bold">条件に合う構成が見つかりませんでした</p>
               <p className="mt-2 text-sm text-muted">条件を減らすと見つかるかもしれません。上の条件の × から外せます。</p>
             </div>

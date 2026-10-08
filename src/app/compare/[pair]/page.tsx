@@ -44,7 +44,7 @@ export default async function ComparePage({ params }: PageProps<"/compare/[pair]
   return (
     <div className="mx-auto max-w-5xl space-y-8 px-4 py-8">
       <section className="rounded-3xl bg-gradient-to-b from-accent-soft to-surface-2 p-5 md:p-8">
-        <p className="inline-flex items-center gap-1.5 rounded-full bg-surface px-3 py-1 text-xs font-bold text-accent-strong">
+        <p className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1 text-xs font-bold text-accent-strong">
           <ChartNoAxesColumn className="size-3.5" aria-hidden />
           使い分け・併用分析
         </p>
@@ -60,7 +60,7 @@ export default async function ComparePage({ params }: PageProps<"/compare/[pair]
         </h1>
       </section>
 
-      <section className="grid grid-cols-3 divide-x divide-line rounded-2xl border border-line bg-surface py-4 text-center" aria-label="数字">
+      <section className="grid grid-cols-3 divide-x divide-line rounded-2xl border border-line bg-card py-4 text-center" aria-label="数字">
         <Stat label="両方を契約している人" value={`${d.coUsers}人`} />
         <Stat label="2つの月額（平均）" value={d.avgPairMonthly !== null ? `¥${yen(Math.round(d.avgPairMonthly))}` : "データ不足"} />
         <Stat label="構成全体の月額（平均）" value={d.avgStackMonthly !== null ? `¥${yen(Math.round(d.avgStackMonthly))}` : "データ不足"} />
@@ -75,7 +75,7 @@ export default async function ComparePage({ params }: PageProps<"/compare/[pair]
           {[a, b].map((s, i) => {
             const other = i === 0 ? b : a;
             return (
-              <div key={s.service.id} className="rounded-2xl border border-line bg-surface p-5">
+              <div key={s.service.id} className="rounded-2xl border border-line bg-card p-5">
                 <div className="flex items-center gap-2">
                   <ServiceLogo service={s.service} size="sm" />
                   <Link href={`/services/${s.service.slug}`} className="font-bold hover:underline">
@@ -112,7 +112,7 @@ export default async function ComparePage({ params }: PageProps<"/compare/[pair]
         <h2 id="usage" className="mb-3 text-xl font-extrabold">それぞれ何に使ってる？</h2>
         <div className="grid gap-3 md:grid-cols-2">
           {[a, b].map((s) => (
-            <div key={s.service.id} className="rounded-2xl border border-line bg-surface p-5">
+            <div key={s.service.id} className="rounded-2xl border border-line bg-card p-5">
               <p className="mb-3 flex items-center gap-2 font-bold">
                 <ServiceLogo service={s.service} size="sm" />
                 {s.service.name}に任せていること
@@ -154,7 +154,7 @@ export default async function ComparePage({ params }: PageProps<"/compare/[pair]
           </h2>
           <ul className="grid gap-3 md:grid-cols-2">
             {d.comments.slice(0, 6).map((c) => (
-              <li key={c.profile.id} className="rounded-2xl border border-line bg-surface p-5">
+              <li key={c.profile.id} className="rounded-2xl border border-line bg-card p-5">
                 <Link href={`/@${c.profile.handle}`} className="flex items-center gap-2 hover:opacity-80">
                   <Avatar profile={c.profile} size="sm" />
                   <span className="min-w-0">
@@ -196,7 +196,7 @@ export default async function ComparePage({ params }: PageProps<"/compare/[pair]
           あなたはどう使い分けてる？
         </p>
         <p className="mt-2 text-xl font-extrabold">自分のサブスク構成を登録して、使い分けを共有しよう</p>
-        <Link href="/welcome" className="mt-4 inline-flex min-h-12 items-center gap-1.5 rounded-xl bg-surface px-5 font-bold text-accent-strong">
+        <Link href="/welcome" className="mt-4 inline-flex min-h-12 items-center gap-1.5 rounded-xl bg-card px-5 font-bold text-accent-strong">
           構成を登録する
           <ArrowRight className="size-4" aria-hidden />
         </Link>
@@ -214,7 +214,7 @@ export default async function ComparePage({ params }: PageProps<"/compare/[pair]
 
 function ServiceHead({ service, plan }: { service: Service; plan?: Plan }) {
   return (
-    <Link href={`/services/${service.slug}`} className="flex min-w-0 flex-col items-center gap-2 rounded-2xl bg-surface p-4 text-center shadow-sm hover:opacity-90">
+    <Link href={`/services/${service.slug}`} className="flex min-w-0 flex-col items-center gap-2 rounded-2xl bg-card p-4 text-center shadow-sm hover:opacity-90">
       <ServiceLogo service={service} size="lg" />
       <span className="w-full truncate font-extrabold">{service.name}</span>
       {plan && (

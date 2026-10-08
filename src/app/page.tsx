@@ -28,7 +28,7 @@ export default async function TopPage() {
       {/* ヒーロー */}
       <section className="bg-gradient-to-b from-accent-soft/60 to-bg">
         <div className="mx-auto max-w-6xl px-4 pt-10 pb-8 md:pt-16">
-          <p className="inline-block rounded-full bg-surface px-3 py-1 text-xs font-bold text-accent-strong">
+          <p className="inline-block rounded-full bg-card px-3 py-1 text-xs font-bold text-accent-strong">
             リアルな月額と使い分けをオープンに
           </p>
           <h1 className="mt-4 text-4xl leading-tight font-extrabold tracking-tight md:text-6xl">
@@ -49,7 +49,7 @@ export default async function TopPage() {
             </Link>
             <Link
               href="#popular"
-              className="flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-surface px-6 font-bold hover:border-accent"
+              className="flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-card px-6 font-bold hover:border-accent"
             >
               みんなの構成を見る
               <ArrowDown className="size-4" aria-hidden />
@@ -88,7 +88,7 @@ export default async function TopPage() {
             <li key={c.id}>
               <Link
                 href={`/ranking?category=${c.slug}`}
-                className="flex min-h-11 items-center rounded-full border border-line bg-surface px-4 text-sm font-bold whitespace-nowrap hover:border-accent"
+                className="flex min-h-11 items-center rounded-full border border-line bg-card px-4 text-sm font-bold whitespace-nowrap hover:border-accent"
               >
                 {c.name}
               </Link>
@@ -106,7 +106,7 @@ export default async function TopPage() {
       </Section>
 
       <Section title="生成AIのランキング" more={{ href: "/ranking?category=ai", label: "ランキングを見る" }}>
-        <div className="rounded-2xl border border-line bg-surface p-2">
+        <div className="rounded-2xl border border-line bg-card p-2">
           {aiRanking.map((s, i) => (
             <ServiceRow key={s.service.id} stat={s} rank={i + 1} />
           ))}
@@ -134,7 +134,7 @@ export default async function TopPage() {
           </p>
           <Link
             href="/welcome"
-            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-xl bg-surface px-6 font-bold text-accent-strong"
+            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-xl bg-card px-6 font-bold text-accent-strong"
           >
             今すぐ自分の構成をつくる
           </Link>
@@ -146,7 +146,7 @@ export default async function TopPage() {
 
 function Stat({ label, note, children }: { label: string; note?: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-line bg-surface p-4">
+    <div className="rounded-2xl border border-line bg-card p-4">
       <dt className="text-xs font-bold text-subtle">{label}</dt>
       <dd className="mt-1">{children}</dd>
       {note && <dd className="mt-0.5 text-xs text-subtle">{note}</dd>}

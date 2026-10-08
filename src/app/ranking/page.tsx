@@ -44,7 +44,7 @@ export default async function RankingPage({ searchParams }: PageProps<"/ranking"
             key={k.id}
             href={href(k.id, category)}
             aria-current={kind === k.id ? "page" : undefined}
-            className={`flex min-h-10 flex-1 items-center justify-center rounded-md text-sm font-bold ${kind === k.id ? "bg-surface shadow-sm" : "text-subtle"}`}
+            className={`flex min-h-10 flex-1 items-center justify-center rounded-md text-sm font-bold ${kind === k.id ? "bg-card shadow-sm" : "text-subtle"}`}
           >
             {k.label}
           </Link>
@@ -57,14 +57,14 @@ export default async function RankingPage({ searchParams }: PageProps<"/ranking"
             key={c.slug ?? "all"}
             href={href(kind, c.slug)}
             aria-current={category === c.slug ? "page" : undefined}
-            className={`flex min-h-10 items-center rounded-full border px-4 text-sm font-bold whitespace-nowrap ${category === c.slug ? "border-accent bg-accent text-on-accent" : "border-line bg-surface"}`}
+            className={`flex min-h-10 items-center rounded-full border px-4 text-sm font-bold whitespace-nowrap ${category === c.slug ? "border-accent bg-accent text-on-accent" : "border-line bg-card"}`}
           >
             {c.name}
           </Link>
         ))}
       </nav>
 
-      <div className="mt-6 rounded-2xl border border-line bg-surface p-2">
+      <div className="mt-6 rounded-2xl border border-line bg-card p-2">
         {rows.length > 0 ? (
           rows.map((s, i) => <ServiceRow key={s.service.id} stat={s} rank={i + 1} />)
         ) : (

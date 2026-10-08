@@ -72,7 +72,7 @@ export function MyStackEditor({ stack, catalog, addServiceId }: { stack: Stack; 
 
   return (
     <div className="mx-auto max-w-6xl space-y-6 px-4 py-6 md:py-10">
-      <header className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-5 lg:flex-row lg:items-center">
+      <header className="flex flex-col gap-4 rounded-2xl border border-line bg-card p-5 lg:flex-row lg:items-center">
         <div className="flex min-w-0 flex-1 items-center gap-3">
           <Avatar profile={profile} size="md" />
           <div className="min-w-0">
@@ -96,7 +96,7 @@ export function MyStackEditor({ stack, catalog, addServiceId }: { stack: Stack; 
                 aria-checked={profile.visibility === id}
                 title={VISIBILITY_OPTIONS.find((v) => v.id === id)?.help}
                 onClick={() => profile.visibility !== id && run(() => setVisibility(id))}
-                className={`flex min-h-10 items-center justify-center gap-1 rounded-lg px-2 text-xs font-bold ${profile.visibility === id ? "bg-surface text-accent-strong shadow-sm" : "text-muted"}`}
+                className={`flex min-h-10 items-center justify-center gap-1 rounded-lg px-2 text-xs font-bold ${profile.visibility === id ? "bg-card text-accent-strong shadow-sm" : "text-muted"}`}
               >
                 <Icon className="size-3.5" aria-hidden />
                 {label.replace("（自分のみ）", "")}
@@ -127,7 +127,7 @@ export function MyStackEditor({ stack, catalog, addServiceId }: { stack: Stack; 
       </header>
 
       <section className="grid gap-4 md:grid-cols-3" aria-label="サマリー">
-        <div className="rounded-2xl border border-line bg-surface p-5">
+        <div className="rounded-2xl border border-line bg-card p-5">
           <p className="text-xs font-bold text-subtle">月額合計</p>
           <Price value={stack.monthlyTotal} size="lg" />
           <p className="mt-2 flex justify-between rounded-lg bg-surface-2 px-3 py-2 text-sm">
@@ -135,7 +135,7 @@ export function MyStackEditor({ stack, catalog, addServiceId }: { stack: Stack; 
             <Price value={stack.monthlyTotal * 12} size="sm" unit="/年" />
           </p>
         </div>
-        <div className="rounded-2xl border border-line bg-surface p-5">
+        <div className="rounded-2xl border border-line bg-card p-5">
           <p className="text-xs font-bold text-subtle">契約数</p>
           <p className="mt-1 font-bold">
             <span className="num text-3xl font-extrabold">{stack.active.length}</span> 件契約中
@@ -144,7 +144,7 @@ export function MyStackEditor({ stack, catalog, addServiceId }: { stack: Stack; 
             </span>
           </p>
         </div>
-        <div className="rounded-2xl border border-line bg-surface p-5">
+        <div className="rounded-2xl border border-line bg-card p-5">
           <p className="mb-3 text-xs font-bold text-subtle">カテゴリ別の内訳</p>
           {stack.categoryShares.length ? <CategoryBar shares={stack.categoryShares} /> : <p className="text-sm text-muted">まだありません。</p>}
         </div>
@@ -171,7 +171,7 @@ export function MyStackEditor({ stack, catalog, addServiceId }: { stack: Stack; 
                 ids.splice(ids.indexOf(e.sub.id) + (order.indexOf(dragId) < i ? 1 : 0), 0, dragId);
                 move(ids);
               }}
-              className={`rounded-2xl border bg-surface p-4 ${dragId === e.sub.id ? "border-accent opacity-60" : "border-line"} ${e.sub.isHidden ? "opacity-70" : ""}`}
+              className={`rounded-2xl border bg-card p-4 ${dragId === e.sub.id ? "border-accent opacity-60" : "border-line"} ${e.sub.isHidden ? "opacity-70" : ""}`}
             >
               <div className="flex items-start gap-2">
                 <div className="flex flex-col items-center text-subtle">
@@ -238,7 +238,7 @@ export function MyStackEditor({ stack, catalog, addServiceId }: { stack: Stack; 
       </section>
 
       {stack.cancelled.length > 0 && (
-        <details open className="rounded-2xl border border-line bg-surface p-5">
+        <details open className="rounded-2xl border border-line bg-card p-5">
           <summary className="flex cursor-pointer items-center gap-2 font-extrabold">
             <History className="size-5 text-subtle" aria-hidden />
             解約・見直し履歴 <span className="num text-sm text-subtle">{stack.cancelled.length}件</span>
@@ -257,13 +257,13 @@ export function MyStackEditor({ stack, catalog, addServiceId }: { stack: Stack; 
                   {e.switchedTo && <p className="mt-1 text-xs font-bold text-accent-strong">→ 乗り換え先：{e.switchedTo.name}</p>}
                 </div>
                 <div className="flex items-center gap-1 text-xs">
-                  <button type="button" onClick={() => setDialog({ kind: "edit", sub: e.sub })} className="min-h-9 rounded-lg px-2 font-bold text-muted hover:bg-surface">
+                  <button type="button" onClick={() => setDialog({ kind: "edit", sub: e.sub })} className="min-h-9 rounded-lg px-2 font-bold text-muted hover:bg-card">
                     編集
                   </button>
                   <button
                     type="button"
                     onClick={() => confirm(`${e.service.name} を履歴から削除しますか？`) && run(() => deleteSubscription(e.sub.id))}
-                    className="flex min-h-9 items-center gap-1 rounded-lg px-2 font-bold text-muted hover:bg-surface"
+                    className="flex min-h-9 items-center gap-1 rounded-lg px-2 font-bold text-muted hover:bg-card"
                   >
                     <Trash2 className="size-3.5" aria-hidden />
                     履歴から削除

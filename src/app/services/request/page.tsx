@@ -43,7 +43,7 @@ export default async function ServiceRequestPage({ searchParams }: PageProps<"/s
       {viewer.demo && <DemoNotice>デモ表示中です。申請は送信されません。</DemoNotice>}
       <ServiceRequestForm categories={categories} initialName={typeof sp.name === "string" ? sp.name.slice(0, 50) : ""} />
       {mine.length > 0 && (
-        <section className="rounded-2xl border border-line bg-surface p-5">
+        <section className="rounded-2xl border border-line bg-card p-5">
           <h2 className="mb-3 font-extrabold">あなたの申請</h2>
           <ul className="divide-y divide-line text-sm">
             {mine.map((r) => (

@@ -25,7 +25,7 @@ export function ProfileForm({ profile, suggestions }: { profile: Profile; sugges
 
   return (
     <form action={action} className="space-y-5">
-      <section className="space-y-5 rounded-2xl border border-line bg-surface p-5">
+      <section className="space-y-5 rounded-2xl border border-line bg-card p-5">
         <div className="flex items-center gap-4">
           <label className="relative cursor-pointer" aria-label="アイコン画像を変更">
             {preview ? (
@@ -81,7 +81,7 @@ export function ProfileForm({ profile, suggestions }: { profile: Profile; sugges
                 setCopied(true);
                 setTimeout(() => setCopied(false), 2000);
               }}
-              className="flex min-h-8 items-center gap-1 rounded-md bg-surface px-2 font-bold"
+              className="flex min-h-8 items-center gap-1 rounded-md bg-card px-2 font-bold"
             >
               {copied ? <Check className="size-3.5" aria-hidden /> : <Copy className="size-3.5" aria-hidden />}
               {copied ? "コピー済み" : "コピー"}

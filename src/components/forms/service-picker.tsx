@@ -76,7 +76,7 @@ export function ServicePicker({
                   type="button"
                   aria-pressed={on}
                   onClick={() => onToggle(s)}
-                  className={`relative flex w-full items-center gap-2 rounded-xl border p-2 text-left hover:border-accent ${multiple ? "min-h-24 flex-col justify-center text-center" : "min-h-12"} ${on ? "border-accent bg-accent-soft" : "border-line bg-surface"}`}
+                  className={`relative flex w-full items-center gap-2 rounded-xl border p-2 text-left hover:border-accent ${multiple ? "min-h-24 flex-col justify-center text-center" : "min-h-12"} ${on ? "border-accent bg-accent-soft" : "border-line bg-card"}`}
                 >
                   <ServiceLogo service={s} size={multiple ? "lg" : "sm"} />
                   <span className="min-w-0 text-xs leading-tight font-bold">{s.name}</span>

@@ -51,7 +51,7 @@ export function AuthForm({ mode, next, notice }: { mode: Mode; next: string; not
             role="tab"
             aria-selected={mode === m}
             replace
-            className={`flex min-h-11 items-center justify-center rounded-lg text-sm font-bold ${mode === m ? "bg-surface text-accent-strong shadow-sm" : "text-muted"}`}
+            className={`flex min-h-11 items-center justify-center rounded-lg text-sm font-bold ${mode === m ? "bg-card text-accent-strong shadow-sm" : "text-muted"}`}
           >
             {m === "signup" ? "新規登録" : "ログイン"}
           </Link>
@@ -70,7 +70,7 @@ export function AuthForm({ mode, next, notice }: { mode: Mode; next: string; not
             formAction={oauthAction}
             formNoValidate
             disabled={pending}
-            className="flex min-h-12 w-full items-center justify-center gap-3 rounded-xl border border-line bg-surface font-bold shadow-sm hover:border-accent"
+            className="flex min-h-12 w-full items-center justify-center gap-3 rounded-xl border border-line bg-card font-bold shadow-sm hover:border-accent"
           >
             <GoogleMark />
             Google で続ける

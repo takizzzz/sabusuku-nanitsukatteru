@@ -69,7 +69,7 @@ export function SubscriptionDialog({
       ref={ref}
       onClose={onClose}
       aria-labelledby="sub-dialog-title"
-      className="mx-auto mt-auto mb-0 max-h-[92dvh] w-full max-w-none overflow-y-auto rounded-t-2xl bg-surface p-0 text-fg backdrop:bg-black/50 md:my-auto md:max-w-xl md:rounded-2xl"
+      className="mx-auto mt-auto mb-0 max-h-[92dvh] w-full max-w-none overflow-y-auto rounded-t-2xl bg-card p-0 text-fg backdrop:bg-black/50 md:my-auto md:max-w-xl md:rounded-2xl"
     >
       <form action={action} className="space-y-5 p-5">
         <div className="flex items-center justify-between">
@@ -184,7 +184,7 @@ export function SubscriptionDialog({
                     type="button"
                     aria-pressed={status === s}
                     onClick={() => setStatus(s)}
-                    className={`min-h-10 rounded-lg text-sm font-bold ${status === s ? "bg-surface text-accent-strong shadow-sm" : "text-muted"}`}
+                    className={`min-h-10 rounded-lg text-sm font-bold ${status === s ? "bg-card text-accent-strong shadow-sm" : "text-muted"}`}
                   >
                     {s === "active" ? "契約中" : "解約済み"}
                   </button>
@@ -236,7 +236,7 @@ export function SubscriptionDialog({
 
         <FormMessage state={state.ok ? undefined : state} />
 
-        <div className="sticky bottom-0 -mx-5 flex items-center gap-2 border-t border-line bg-surface px-5 pt-3 pb-[max(env(safe-area-inset-bottom),12px)]">
+        <div className="sticky bottom-0 -mx-5 flex items-center gap-2 border-t border-line bg-card px-5 pt-3 pb-[max(env(safe-area-inset-bottom),12px)]">
           {sub && (
             <button
               type="button"

@@ -36,7 +36,7 @@ export function LegalPage({
           </Link>
         ))}
       </nav>
-      <header className="rounded-2xl border border-line bg-surface p-5">
+      <header className="rounded-2xl border border-line bg-card p-5">
         <p className="flex flex-wrap items-center gap-2 text-xs text-subtle">
           {LEGAL_VERSION.draft && <span className="rounded bg-pr-soft px-2 py-0.5 font-bold text-pr">草案（公開前に確定）</span>}
           <span>制定：{LEGAL_VERSION.date}</span>
@@ -55,7 +55,7 @@ export function LegalPage({
 /** 番号付きの条文カード */
 export function Article({ n, title, children }: { n?: number; title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-line bg-surface p-5">
+    <section className="rounded-2xl border border-line bg-card p-5">
       <h2 className="flex items-start gap-3 font-extrabold">
         {n !== undefined && (
           <span className="num flex size-7 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-sm text-accent-strong">{n}</span>

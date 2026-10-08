@@ -50,7 +50,7 @@ export async function AuthPage({
           <h2 id="benefits" className="mb-3 text-base font-extrabold">登録するとできること</h2>
           <ul className="grid grid-cols-2 gap-3">
             {benefits.map(({ icon: Icon, title, body }) => (
-              <li key={title} className="rounded-xl bg-surface p-3">
+              <li key={title} className="rounded-xl bg-card p-3">
                 <Icon className="size-5 text-accent" aria-hidden />
                 <p className="mt-1 text-sm font-bold">{title}</p>
                 <p className="text-xs text-muted">{body}</p>

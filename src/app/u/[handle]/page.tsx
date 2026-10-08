@@ -52,7 +52,7 @@ export default async function StackPage({ params }: PageProps<"/u/[handle]">) {
   return (
     <div className="mx-auto max-w-5xl space-y-8 px-4 py-8">
       {/* プロフィール */}
-      <section className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-5 md:flex-row md:items-start">
+      <section className="flex flex-col gap-4 rounded-2xl border border-line bg-card p-5 md:flex-row md:items-start">
         <Avatar profile={profile} size="lg" />
         <div className="min-w-0 flex-1">
           <h1 className="text-2xl font-extrabold">
@@ -83,7 +83,7 @@ export default async function StackPage({ params }: PageProps<"/u/[handle]">) {
 
       {/* サマリー */}
       <section className="grid gap-4 md:grid-cols-[3fr_2fr]" aria-label="サマリー">
-        <div className="rounded-2xl border border-line bg-surface p-5">
+        <div className="rounded-2xl border border-line bg-card p-5">
           <p className="text-xs font-bold text-subtle">月額合計</p>
           <Price value={stack.monthlyTotal} size="xl" className="mt-1" />
           <dl className="mt-5 grid grid-cols-2 gap-3 rounded-xl bg-surface-2 p-4">
@@ -102,7 +102,7 @@ export default async function StackPage({ params }: PageProps<"/u/[handle]">) {
             </div>
           </dl>
         </div>
-        <div className="rounded-2xl border border-line bg-surface p-5">
+        <div className="rounded-2xl border border-line bg-card p-5">
           <p className="mb-4 text-sm font-bold">カテゴリ別の内訳</p>
           <CategoryBar shares={stack.categoryShares} />
         </div>
@@ -115,7 +115,7 @@ export default async function StackPage({ params }: PageProps<"/u/[handle]">) {
         </h2>
         <ul className="space-y-3">
           {stack.active.map((e) => (
-            <li key={e.sub.id} className="rounded-2xl border border-line bg-surface p-4">
+            <li key={e.sub.id} className="rounded-2xl border border-line bg-card p-4">
               <div className="flex flex-wrap items-start gap-3">
                 <ServiceLogo service={e.service} size="lg" />
                 <div className="min-w-0 flex-1">
@@ -184,7 +184,7 @@ export default async function StackPage({ params }: PageProps<"/u/[handle]">) {
                   {e.switchedTo && (
                     <Link
                       href={`/services/${e.switchedTo.slug}`}
-                      className="flex items-center gap-1 rounded-full bg-surface px-3 py-1 text-xs font-bold"
+                      className="flex items-center gap-1 rounded-full bg-card px-3 py-1 text-xs font-bold"
                     >
                       {e.service.name}
                       <ArrowRight className="size-3" aria-label="から" />
@@ -193,7 +193,7 @@ export default async function StackPage({ params }: PageProps<"/u/[handle]">) {
                   )}
                 </div>
                 {(e.sub.cancelReason || e.sub.cancelReasonDetail) && (
-                  <p className="mt-3 rounded-xl bg-surface px-4 py-3 text-sm">
+                  <p className="mt-3 rounded-xl bg-card px-4 py-3 text-sm">
                     {e.sub.cancelReason && <span className="mr-2 font-bold">{e.sub.cancelReason}</span>}
                     {e.sub.cancelReasonDetail}
                   </p>
@@ -233,7 +233,7 @@ export default async function StackPage({ params }: PageProps<"/u/[handle]">) {
 
 function OgpPreview({ stack }: { stack: Stack }) {
   return (
-    <div className="aspect-[1200/630] rounded-2xl bg-surface p-5 shadow-md">
+    <div className="aspect-[1200/630] rounded-2xl bg-card p-5 shadow-md">
       <p className="text-xs font-extrabold text-accent-strong">{SITE_NAME}</p>
       <p className="mt-3 font-bold">{stack.profile.displayName} さんのサブスク</p>
       <Price value={stack.monthlyTotal} size="lg" className="mt-1" />
