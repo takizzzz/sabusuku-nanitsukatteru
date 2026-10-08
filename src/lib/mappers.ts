@@ -59,6 +59,7 @@ export const toProfile = (p: Row, tags: string[]): Profile => ({
   ageRange: p.age_range,
   bio: p.bio,
   visibility: p.visibility,
+  isSample: p.is_sample ?? false,
   tags,
   createdAt: p.created_at,
   updatedAt: p.updated_at,

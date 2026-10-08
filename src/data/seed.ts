@@ -359,6 +359,7 @@ export const profiles: Profile[] = stackSeeds.map((s, i) => ({
   ageRange: s.age,
   bio: s.bio,
   visibility: s.visibility ?? "public",
+  isSample: false,
   tags: s.tags,
   createdAt: `2026-0${(i % 9) + 1}-10T00:00:00Z`,
   updatedAt: `${s.updated}T12:00:00Z`,
