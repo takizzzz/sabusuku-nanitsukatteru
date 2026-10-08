@@ -44,7 +44,7 @@ export default function TermsPage() {
       <Article n={5} title="広告・アフィリエイト">
         <p>
           本サービスにはアフィリエイトリンクと広告が含まれ、「PR」または「広告」と表示します。ランキングや統計の順位は、アフィリエイトの有無で変えません。詳しくは
-          <Link href="/ads" className="font-bold text-accent-strong underline">広告・アフィリエイトについて</Link>
+          <Link href="/ads">広告・アフィリエイトについて</Link>
           をご覧ください。
         </p>
       </Article>
