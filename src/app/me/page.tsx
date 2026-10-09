@@ -21,7 +21,7 @@ export default async function MePage({ searchParams }: PageProps<"/me">) {
   return (
     <>
       {viewer.demo && (
-        <div className="mx-auto max-w-6xl px-4 pt-6">
+        <div className="mx-auto max-w-7xl px-margin-mobile pt-space-md sm:px-margin sm:pt-space-lg">
           <DemoNotice />
         </div>
       )}

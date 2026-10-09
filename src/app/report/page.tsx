@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CircleAlert } from "lucide-react";
 import { DemoNotice } from "@/components/demo-notice";
 import { ReportForm } from "@/components/forms/report-form";
 import { requireViewer } from "@/lib/auth";
@@ -40,22 +39,38 @@ export default async function ReportPage({ searchParams }: PageProps<"/report">)
   if (!target) notFound();
 
   return (
-    <div className="mx-auto max-w-xl space-y-6 px-4 py-8">
-      <header className="space-y-2 text-center">
-        <h1 className="flex items-center justify-center gap-2 text-xl font-extrabold text-danger">
-          <CircleAlert className="size-6" aria-hidden />
-          コンテンツの通報
+    <div className="mx-auto w-full max-w-xl px-margin-mobile py-space-md md:py-space-xl space-y-space-md">
+      <div className="flex flex-col items-center justify-center pt-space-xs pb-space-xs">
+        <div className="w-10 h-1 rounded-full bg-outline-variant/60 mb-space-sm md:hidden" aria-hidden />
+        <h1 className="flex items-center gap-space-xs text-error font-headline-sm text-headline-sm md:font-headline-md md:text-headline-md">
+          <span className="material-symbols-outlined fill text-[22px]" aria-hidden>
+            report
+          </span>
+          <span>コンテンツの通報</span>
         </h1>
-        <p className="text-sm text-muted">問題のある内容を運営に知らせてください。</p>
-      </header>
+        <p className="font-body-sm text-body-sm text-on-surface-variant text-center mt-space-xs max-w-[280px] md:max-w-none">問題のある内容を運営に知らせてください。</p>
+      </div>
       {viewer.demo && <DemoNotice>デモ表示中です。通報は送信されません。</DemoNotice>}
-      <section className="rounded-2xl border-l-4 border-danger bg-surface-2 p-4" aria-label="通報の対象">
-        <p className="text-xs font-bold text-subtle">通報の対象</p>
-        <p className="mt-1 text-sm">
-          <span className="font-bold text-accent-strong">@{target.owner}</span> さんの投稿
-        </p>
-        <p className="mt-1 font-extrabold">{target.title}</p>
-        {target.quote && <blockquote className="mt-2 border-l-2 border-line pl-3 text-sm text-muted">{target.quote}</blockquote>}
+      <section className="bg-surface-container-low rounded-xl p-space-md shadow-sm relative overflow-hidden" aria-label="通報の対象">
+        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-error" aria-hidden />
+        <div className="flex items-center gap-space-xs mb-space-xs min-w-0">
+          <div className="w-6 h-6 rounded-full bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0">
+            <span className="material-symbols-outlined text-[14px]" aria-hidden>
+              warning
+            </span>
+          </div>
+          <span className="font-label-sm text-label-sm text-on-surface-variant font-bold tracking-wider">通報の対象</span>
+        </div>
+        <div className="mt-space-xs pl-space-xs">
+          <div className="flex items-center gap-space-xs mb-1 min-w-0">
+            <span className="font-label-md text-label-md text-primary font-bold truncate">@{target.owner}</span>
+            <span className="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">さんの投稿</span>
+          </div>
+          <p className="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug line-clamp-2">{target.title}</p>
+          {target.quote && (
+            <blockquote className="mt-space-sm border-l-2 border-outline-variant pl-3 font-body-sm text-body-sm text-on-surface-variant line-clamp-3">{target.quote}</blockquote>
+          )}
+        </div>
       </section>
       <ReportForm type={type} targetId={id} backHref={target.back} />
     </div>

@@ -20,11 +20,11 @@ export function ActionForm({
     <form action={formAction} className={className}>
       {children}
       <div className="flex items-center gap-3">
-        <button disabled={pending} className="min-h-9 rounded-md bg-accent px-3 text-xs font-bold text-on-accent disabled:opacity-60">
+        <button disabled={pending} className="min-h-9 rounded-lg bg-primary-container px-4 font-label-md text-label-md font-bold text-white shadow-sm transition-colors hover:bg-primary disabled:opacity-60">
           {pending ? "処理中…" : submitLabel}
         </button>
         {(state.error || state.message) && (
-          <span role="status" className={`text-xs font-bold ${state.error ? "text-danger" : "text-ok"}`}>
+          <span role="status" className={`font-label-sm text-label-sm font-bold ${state.error ? "text-error" : "text-secondary"}`}>
             {state.error ?? state.message}
           </span>
         )}
@@ -55,11 +55,15 @@ export function ActionButton({
           if (confirmText && !confirm(confirmText)) return;
           start(async () => setState(await action()));
         }}
-        className={`min-h-8 rounded-md border px-2 text-xs font-bold disabled:opacity-60 ${tone === "danger" ? "border-danger text-danger" : "border-line hover:border-accent"}`}
+        className={`min-h-8 rounded-lg px-3 font-label-sm text-label-sm font-bold transition-colors disabled:opacity-60 ${
+          tone === "danger"
+            ? "bg-error-container text-on-error-container hover:opacity-90"
+            : "bg-surface-container-high text-on-surface hover:bg-surface-container-highest"
+        }`}
       >
         {label}
       </button>
-      {state.error && <span className="text-xs text-danger">{state.error}</span>}
+      {state.error && <span className="font-label-sm text-label-sm text-error">{state.error}</span>}
     </span>
   );
 }

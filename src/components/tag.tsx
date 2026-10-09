@@ -1,7 +1,8 @@
 import Link from "next/link";
 
-export function Tag({ name, href }: { name: string; href?: string }) {
-  const cls = "text-xs font-semibold text-accent-strong";
+/** 用途タグ（#つき）。tone="muted" は控えめな灰色 */
+export function Tag({ name, href, tone = "primary" }: { name: string; href?: string; tone?: "primary" | "muted" }) {
+  const cls = `font-label-sm text-label-sm ${tone === "muted" ? "text-outline" : "text-primary"}`;
   return href ? (
     <Link href={href} className={`${cls} hover:underline`}>
       #{name}

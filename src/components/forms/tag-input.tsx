@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, X } from "lucide-react";
 import { TAG_MAX } from "@/lib/options";
 
 /** 用途タグ：候補から選ぶ＋自由入力（F-06） */
@@ -11,70 +10,101 @@ export function TagInput({
   suggestions,
   name,
   id,
+  boxed,
 }: {
   value: string[];
   onChange: (tags: string[]) => void;
   suggestions: string[];
   name?: string;
   id?: string;
+  /** タグ全体を入力欄と同じ面で囲む（S-11） */
+  boxed?: boolean;
 }) {
   const [draft, setDraft] = useState("");
+  const [adding, setAdding] = useState(false);
+  const full = value.length >= 10;
   const add = (t: string) => {
     const tag = t.replace(/^#/, "").trim().slice(0, TAG_MAX);
-    if (tag && !value.includes(tag) && value.length < 10) onChange([...value, tag]);
+    if (tag && !value.includes(tag) && !full) onChange([...value, tag]);
     setDraft("");
   };
-  const rest = [...new Set(suggestions)].filter((s) => !value.includes(s)).slice(0, 8);
+  const rest = [...new Set(suggestions)].filter((s) => !value.includes(s)).slice(0, boxed ? 4 : 6);
+  const chip = "inline-flex min-h-8 items-center gap-1 rounded-full px-3 font-label-sm text-label-sm transition-colors";
 
   return (
-    <div className="space-y-2">
+    <div className={boxed ? "rounded-xl bg-surface-container-low p-2" : ""}>
       {name && value.map((t) => <input key={t} type="hidden" name={name} value={t} />)}
-      <ul className="flex flex-wrap gap-1.5" aria-label="選んだタグ">
+      <ul className="flex flex-wrap items-center gap-1.5" aria-label="用途タグ">
         {value.map((t) => (
           <li key={t}>
             <button
               type="button"
               onClick={() => onChange(value.filter((x) => x !== t))}
-              className="flex min-h-9 items-center gap-1 rounded-full bg-accent px-3 text-xs font-bold text-on-accent"
+              className={`${chip} bg-primary-container font-bold text-on-primary shadow-sm hover:opacity-90 dark:text-on-primary-container`}
               aria-label={`${t} を外す`}
             >
               #{t}
-              <X className="size-3.5" aria-hidden />
+              <span className="material-symbols-outlined text-[14px]" aria-hidden>
+                close
+              </span>
             </button>
           </li>
         ))}
-        {rest.map((t) => (
-          <li key={t}>
-            <button
-              type="button"
-              onClick={() => add(t)}
-              className="flex min-h-9 items-center gap-1 rounded-full border border-line bg-surface px-3 text-xs font-bold text-muted hover:border-accent"
-            >
-              <Plus className="size-3.5" aria-hidden />
-              {t}
-            </button>
+        {!full &&
+          rest.map((t) => (
+            <li key={t}>
+              <button
+                type="button"
+                onClick={() => add(t)}
+                className={`${chip} ${boxed ? "bg-surface-container hover:bg-surface-container-high" : "bg-surface-container-low hover:bg-surface-container"} text-on-surface-variant`}
+                aria-label={`${t} を追加`}
+              >
+                + #{t}
+              </button>
+            </li>
+          ))}
+        {!full && (
+          <li>
+            {adding ? (
+              <input
+                id={id}
+                autoFocus
+                value={draft}
+                maxLength={TAG_MAX}
+                aria-label="タグを入力して Enter"
+                onChange={(e) => setDraft(e.target.value)}
+                onBlur={() => {
+                  if (draft.trim()) add(draft);
+                  setAdding(false);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.nativeEvent.isComposing) {
+                    e.preventDefault();
+                    add(draft);
+                  } else if (e.key === "Escape") {
+                    e.preventDefault();
+                    setDraft("");
+                    setAdding(false);
+                  }
+                }}
+                placeholder="例：資料作成"
+                className="h-8 w-36 rounded-full bg-surface-container-lowest px-3 font-label-md text-base text-on-surface ring-2 ring-primary/30 outline-none md:text-label-md"
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={() => setAdding(true)}
+                className={`${chip} bg-surface-container px-2.5 text-primary hover:bg-surface-container-high`}
+              >
+                <span className="material-symbols-outlined text-[14px]" aria-hidden>
+                  add
+                </span>
+                タグ追加
+              </button>
+            )}
           </li>
-        ))}
+        )}
       </ul>
-      <div className="flex gap-2">
-        <input
-          id={id}
-          value={draft}
-          maxLength={TAG_MAX}
-          onChange={(e) => setDraft(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && !e.nativeEvent.isComposing) {
-              e.preventDefault();
-              add(draft);
-            }
-          }}
-          placeholder="タグを追加（例：資料作成）"
-          className="min-h-10 flex-1 rounded-lg border border-line bg-surface-2 px-3 text-base outline-none focus:border-accent md:text-sm"
-        />
-        <button type="button" onClick={() => add(draft)} className="min-h-10 rounded-lg border border-line px-3 text-sm font-bold hover:border-accent">
-          追加
-        </button>
-      </div>
     </div>
   );
 }

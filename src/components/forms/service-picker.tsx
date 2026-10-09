@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Check, Search } from "lucide-react";
 import { ServiceLogo } from "@/components/service-logo";
 import { normalize, type Catalog, type CatalogService } from "@/lib/catalog";
 
@@ -14,6 +13,7 @@ export function ServicePicker({
   multiple,
   exclude = [],
   limit = 24,
+  inputId,
 }: {
   catalog: Catalog;
   selected: string[];
@@ -21,6 +21,7 @@ export function ServicePicker({
   multiple?: boolean;
   exclude?: string[];
   limit?: number;
+  inputId?: string;
 }) {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<number | null>(null);
@@ -35,39 +36,46 @@ export function ServicePicker({
   }, [catalog.services, q, cat, exclude]);
 
   return (
-    <div className="space-y-3">
-      <label className="flex min-h-11 items-center gap-2 rounded-lg border border-line bg-surface-2 px-3 focus-within:border-accent">
-        <Search className="size-4 text-subtle" aria-hidden />
+    <div className="flex flex-col gap-space-sm">
+      <label className="relative block">
+        <span className="material-symbols-outlined pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-[20px] text-outline" aria-hidden>
+          search
+        </span>
         <span className="sr-only">サービスを検索</span>
         <input
+          id={inputId}
+          type="search"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="サービス名で検索（例：ChatGPT）"
-          className="min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-subtle md:text-sm"
+          placeholder="例：ChatGPT, Netflix, Notion…"
+          className="h-11 w-full rounded-xl bg-surface-container-low pr-24 pl-10 font-body-md text-base text-on-surface transition-all outline-none placeholder:text-outline focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 md:text-body-md"
         />
+        <span className="pointer-events-none absolute top-1/2 right-2.5 -translate-y-1/2 rounded bg-surface-container-high px-2 py-0.5 font-label-sm text-label-sm text-on-surface-variant">
+          {hits.length}件
+        </span>
       </label>
-      <div className="no-scrollbar -mx-1 flex gap-1.5 overflow-x-auto px-1">
+      <div className="scrollbar-none -mx-1 flex gap-1.5 overflow-x-auto px-1 py-0.5">
         {[{ id: null, name: "すべて" }, ...catalog.categories].map((c) => (
           <button
             key={c.id ?? "all"}
             type="button"
             onClick={() => setCat(c.id)}
             aria-pressed={cat === c.id}
-            className={`min-h-9 shrink-0 rounded-full px-3 text-xs font-bold ${cat === c.id ? "bg-fg text-bg" : "bg-surface-3 text-muted"}`}
+            className={`min-h-8 shrink-0 rounded-full px-3 font-label-md text-label-md transition-colors ${cat === c.id ? "bg-on-surface font-bold text-surface-container-lowest" : "bg-surface-container text-on-surface-variant hover:bg-surface-container-high"}`}
           >
             {c.name}
           </button>
         ))}
       </div>
       {hits.length === 0 ? (
-        <p className="rounded-xl bg-surface-2 p-4 text-sm text-muted">
+        <p className="rounded-xl bg-surface-container-low p-space-md font-body-md text-body-md text-on-surface-variant">
           「{q}」は見つかりませんでした。
-          <Link href={`/services/request?name=${encodeURIComponent(q)}`} className="ml-1 font-bold text-accent-strong underline">
+          <Link href={`/services/request?name=${encodeURIComponent(q)}`} className="ml-1 font-bold text-primary hover:underline">
             サービスの追加を申請する
           </Link>
         </p>
       ) : (
-        <ul className={`grid gap-2 ${multiple ? "grid-cols-3 sm:grid-cols-4 lg:grid-cols-6" : "grid-cols-1 sm:grid-cols-2"}`}>
+        <ul className={`grid gap-space-sm ${multiple ? "grid-cols-3 sm:grid-cols-4 lg:grid-cols-6" : "grid-cols-1 sm:grid-cols-2"}`}>
           {hits.slice(0, limit).map((s) => {
             const on = selected.includes(s.id);
             return (
@@ -76,12 +84,17 @@ export function ServicePicker({
                   type="button"
                   aria-pressed={on}
                   onClick={() => onToggle(s)}
-                  className={`relative flex w-full items-center gap-2 rounded-xl border p-2 text-left hover:border-accent ${multiple ? "min-h-24 flex-col justify-center text-center" : "min-h-12"} ${on ? "border-accent bg-accent-soft" : "border-line bg-surface"}`}
+                  className={`relative flex w-full items-center gap-2 rounded-xl p-2 text-left transition-all ${multiple ? "min-h-24 flex-col justify-center text-center" : "min-h-12"} ${on ? "bg-primary-fixed/50 shadow-sm ring-2 ring-primary-container" : "bg-surface-container-low hover:bg-surface-container"}`}
                 >
                   <ServiceLogo service={s} size={multiple ? "lg" : "sm"} />
-                  <span className="min-w-0 text-xs leading-tight font-bold">{s.name}</span>
+                  <span className="min-w-0 font-label-md text-label-md leading-tight font-bold text-on-surface">{s.name}</span>
                   {on && (
-                    <Check className={`size-4 text-accent-strong ${multiple ? "absolute top-1.5 right-1.5" : "ml-auto"}`} aria-label="選択中" />
+                    <span
+                      className={`material-symbols-outlined fill text-[20px] text-primary ${multiple ? "absolute top-1 right-1" : "ml-auto"}`}
+                      aria-label="選択中"
+                    >
+                      check_circle
+                    </span>
                   )}
                 </button>
               </li>
@@ -89,11 +102,14 @@ export function ServicePicker({
           })}
         </ul>
       )}
-      {hits.length > limit && <p className="text-xs text-subtle">ほか{hits.length - limit}件。名前で絞り込めます。</p>}
-      <p className="text-xs text-subtle">
+      {hits.length > limit && <p className="font-body-sm text-body-sm text-on-surface-variant">ほか{hits.length - limit}件。名前で絞り込めます。</p>}
+      <p className="font-body-sm text-body-sm text-on-surface-variant">
         見つからないサービスは
-        <Link href="/services/request" className="mx-1 font-bold text-accent-strong underline">
+        <Link href="/services/request" className="mx-1 inline-flex items-center gap-0.5 font-bold text-primary hover:underline">
           追加を申請
+          <span className="material-symbols-outlined text-[13px]" aria-hidden>
+            open_in_new
+          </span>
         </Link>
         できます。
       </p>

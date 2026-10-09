@@ -1,45 +1,57 @@
 import Link from "next/link";
-import { Plus, Search } from "lucide-react";
 import { HeaderAccount } from "./header-account";
+import { HeaderNav } from "./header-nav";
+import { LogoMark } from "./logo-mark";
 import { SITE_NAME } from "@/lib/format";
 
-const nav = [
-  { href: "/stacks", label: "構成を探す" },
-  { href: "/services", label: "サービス" },
-  { href: "/ranking", label: "ランキング" },
-  { href: "/compare", label: "比較" },
-];
-
+/** サイト共通のヘッダー（SP は s01、PC は s02-explore-pc のデザイン） */
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-surface/90 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-6xl items-center gap-4 px-4">
-        <Link href="/" className="flex shrink-0 items-center gap-1.5 font-extrabold whitespace-nowrap text-accent-strong">
-          <span className="text-[15px] md:text-lg">{SITE_NAME}</span>
-          <span className="rounded bg-accent-soft px-1.5 py-px text-[10px] font-bold">Beta</span>
-        </Link>
-        <nav className="ml-4 hidden gap-1 md:flex" aria-label="メイン">
-          {nav.map((n) => (
-            <Link key={n.href} href={n.href} className="rounded-lg px-3 py-2 text-sm font-semibold whitespace-nowrap text-muted hover:bg-surface-2 hover:text-fg">
-              {n.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="ml-auto flex items-center gap-2">
-          <form action="/stacks" className="hidden xl:block" role="search">
-            <label className="flex items-center gap-2 rounded-lg bg-surface-2 px-3 py-2 text-sm">
-              <Search className="size-4 text-subtle" aria-hidden />
-              <span className="sr-only">構成を検索</span>
-              <input name="q" placeholder="サービス名・職種で検索" className="w-44 bg-transparent outline-none placeholder:text-subtle" />
-            </label>
-          </form>
-          <Link href="/stacks" className="flex size-11 items-center justify-center rounded-full text-muted hover:bg-surface-2 xl:hidden" aria-label="検索">
-            <Search className="size-5" />
+    <header className="pt-safe sticky top-0 z-50 bg-surface/85 shadow-[0_1px_8px_rgba(15,23,42,0.04)] backdrop-blur-xl md:bg-surface-container-lowest/90">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-space-sm px-gutter-mobile md:gap-space-md md:px-margin">
+        <div className="flex min-w-0 flex-1 items-center gap-space-lg md:flex-none">
+          <Link href="/" className="flex min-w-0 items-center gap-space-xs">
+            <LogoMark className="size-8 md:hidden" />
+            <span className="truncate font-headline-sm text-headline-sm tracking-tight text-on-surface md:font-headline-md md:text-headline-md md:text-primary">
+              {SITE_NAME}
+            </span>
+            <span className="shrink-0 rounded-full bg-primary-container px-1.5 py-0.5 font-label-sm text-label-sm leading-none text-white md:bg-primary-fixed md:px-space-xs md:leading-[14px] md:text-on-primary-fixed-variant">
+              Beta
+            </span>
+          </Link>
+          <HeaderNav />
+        </div>
+
+        <form action="/stacks" role="search" className="hidden min-w-0 flex-1 md:block md:max-w-md">
+          <label className="relative flex items-center">
+            <span className="material-symbols-outlined pointer-events-none absolute left-space-sm text-[20px] text-on-surface-variant" aria-hidden>
+              search
+            </span>
+            <span className="sr-only">構成を検索</span>
+            <input
+              name="q"
+              placeholder="サービス名・職種・用途で検索..."
+              className="h-10 w-full rounded-lg bg-surface-container-low pr-3 pl-10 font-body-sm text-body-sm text-on-surface transition-all placeholder:text-outline focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 focus:outline-none"
+            />
+          </label>
+        </form>
+
+        <div className="flex shrink-0 items-center gap-space-xs md:gap-space-sm">
+          <Link
+            href="/stacks"
+            aria-label="構成を探す"
+            className="flex size-11 items-center justify-center rounded-full text-on-surface-variant transition-colors hover:text-primary md:hidden"
+          >
+            <span className="material-symbols-outlined text-[22px]" aria-hidden>
+              search
+            </span>
           </Link>
           <HeaderAccount />
-          <Link href="/welcome" className="hidden items-center gap-1 rounded-lg bg-accent px-4 py-2 text-sm font-bold whitespace-nowrap text-on-accent hover:bg-accent-strong md:flex">
-            <Plus className="size-4" aria-hidden />
-            構成を登録する
+          <Link
+            href="/welcome"
+            className="hidden items-center justify-center rounded-lg bg-primary-container px-space-md py-2 font-headline-sm text-headline-sm whitespace-nowrap text-white shadow-[0_1px_3px_0_rgba(15,23,42,0.08)] transition-colors hover:bg-primary hover:text-on-primary md:inline-flex"
+          >
+            + 構成を登録する
           </Link>
         </div>
       </div>
