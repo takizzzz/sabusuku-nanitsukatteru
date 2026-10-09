@@ -331,7 +331,7 @@
    "official_url": "https://coefont.cloud/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式料金ページ取得エラー"
+   "notes": "料金未確認: 公式料金ページ（coefont.cloud）取得エラー（第3パスでも同様）"
   },
   {
    "slug": "cursor",
@@ -451,11 +451,19 @@
     },
     {
      "name": "Creator",
-     "price_jpy": 3300,
+     "price_jpy": 3500,
      "billing_cycle": "monthly",
-     "original_price": 22,
-     "original_currency": "USD",
-     "source_url": "https://elevenlabs.io/pricing"
+     "original_price": 3500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/elevenlabs-ai-voice-generator/id6743162587"
+    },
+    {
+     "name": "Creator",
+     "price_jpy": 35000,
+     "billing_cycle": "yearly",
+     "original_price": 35000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/elevenlabs-ai-voice-generator/id6743162587"
     },
     {
      "name": "Pro",
@@ -475,7 +483,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。税抜。Starter/Creatorは初月割引あり（$1/$11）"
+   "notes": "Creatorは日本のApp Store公式アプリ（販売元 Eleven Labs Inc.）のApp内課金「Creator Monthly ¥3,500」「Creator Annual ¥35,000」で確認。Starter/Pro/ScaleはWeb料金ページのUSD建て（1ドル=150円で換算、税抜）。Web購入のCreatorは$22/月（税抜）。Starter/Creatorは初月割引あり"
   },
   {
    "slug": "fathom",
@@ -559,7 +567,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。年払いの月額換算（Pro $10、Business $19/席）×12で算出。月払い価格は明示なし（併記の$18/$29が月払いと思われる）"
+   "notes": "USD建て（1ドル=150円で換算）。年払いの月額換算（Pro $10、Business $19/席）×12で算出。月払い価格は明示なし（併記の$18/$29が月払いと思われる）。日本のApp Store（FIREFLIES.AI CORP.）にApp内課金の表示なし"
   },
   {
    "slug": "gamma",
@@ -570,7 +578,7 @@
    "official_url": "https://gamma.app/ja",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式料金ページがJS描画で価格を取得できず（第2パスでは予算の都合で再試行せず）"
+   "notes": "料金未確認: 公式料金ページがJS描画で価格を取得できず。公式ヘルプ（help.gamma.app/ja/articles/8077107）はPlus/Pro/Ultra（1ユーザーあたり、年払いは28%割引、Ultraは月払いのみ）と説明するが金額の記載なし"
   },
   {
    "slug": "gemini",
@@ -725,7 +733,7 @@
    "official_url": "https://hailuoai.video/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式料金ページ（hailuoai.video/subscribe）が価格をJS描画しており取得できず"
+   "notes": "料金未確認: 公式料金ページ（hailuoai.video/subscribe）がJS描画、日本のApp Storeページも取得エラー"
   },
   {
    "slug": "heygen",
@@ -761,7 +769,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。Creator年払いは月$24×12で算出。Proの年払い価格は記載なし"
+   "notes": "USD建て（1ドル=150円で換算）。Creator年払いは月$24×12で算出。Proの年払い価格は記載なし。日本のApp Store公式アプリ（販売元 HeyGen Technology Inc.）には「Creator Monthly ¥4,000」「HeyGen Creator Credit Monthly ¥4,500」「Starter Monthly ¥1,500」などWebと異なる構成の項目があり、Webプランとの対応が不明のため未反映"
   },
   {
    "slug": "higgsfield",
@@ -783,40 +791,48 @@
    "official_url": "https://ideogram.ai/",
    "plans": [
     {
-     "name": "Plus",
-     "price_jpy": 3000,
+     "name": "Basic",
+     "price_jpy": 1800,
      "billing_cycle": "monthly",
-     "original_price": 20,
-     "original_currency": "USD",
-     "source_url": "https://ideogram.ai/pricing"
+     "original_price": 1800,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/ideogram-ai-image-generator/id6476790495"
+    },
+    {
+     "name": "Basic",
+     "price_jpy": 18000,
+     "billing_cycle": "yearly",
+     "original_price": 18000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/ideogram-ai-image-generator/id6476790495"
+    },
+    {
+     "name": "Plus",
+     "price_jpy": 4000,
+     "billing_cycle": "monthly",
+     "original_price": 4000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/ideogram-ai-image-generator/id6476790495"
+    },
+    {
+     "name": "Plus",
+     "price_jpy": 40000,
+     "billing_cycle": "yearly",
+     "original_price": 40000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/ideogram-ai-image-generator/id6476790495"
     },
     {
      "name": "Pro",
-     "price_jpy": 9000,
+     "price_jpy": 13000,
      "billing_cycle": "monthly",
-     "original_price": 60,
-     "original_currency": "USD",
-     "source_url": "https://ideogram.ai/pricing"
-    },
-    {
-     "name": "Plus",
-     "price_jpy": 27000,
-     "billing_cycle": "yearly",
-     "original_price": 180,
-     "original_currency": "USD",
-     "source_url": "https://ideogram.ai/pricing"
-    },
-    {
-     "name": "Pro",
-     "price_jpy": 75600,
-     "billing_cycle": "yearly",
-     "original_price": 504,
-     "original_currency": "USD",
-     "source_url": "https://ideogram.ai/pricing"
+     "original_price": 13000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/ideogram-ai-image-generator/id6476790495"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）"
+   "notes": "公式App Store（販売元 Ideogram AI Inc）のApp内課金（Monthly/Annual表記あり）。iOS経由の円価格。Web版はUSD建て"
   },
   {
    "slug": "invideo-ai",
@@ -852,7 +868,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。1シートあたり、年払い（$10/$30/$75 per月×12で算出）。月払いは取り消し線価格$20/$60/$150と表示"
+   "notes": "USD建て（1ドル=150円で換算）。1シートあたり、年払い（$10/$30/$75 per月×12で算出）。月払いは取り消し線価格$20/$60/$150と表示。日本のApp Store公式アプリ（販売元 Invideo Inc）のApp内課金は「Plus Monthly 1x」が¥3,000と¥10,000で重複するなど対応が判別できず円価格は未採用"
   },
   {
    "slug": "jasper",
@@ -946,7 +962,7 @@
    "official_url": "https://klingai.com/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式プランページ（kling.ai）がJS描画で価格を取得できず"
+   "notes": "料金未確認: 公式サイト（kling.ai）はJS描画で価格なし。日本のApp Storeの「Kling AI: AI Image&Video Maker」（販売元 LOHAS GAMES PTE. LTD.）にStandard月額¥1,500、Pro月額¥6,000、Premier月額¥15,000の記載があるが、販売元と公式（kling.ai）の関係を公式サイトで確認できず未登録"
   },
   {
    "slug": "krea",
@@ -957,40 +973,48 @@
    "official_url": "https://www.krea.ai/",
    "plans": [
     {
-     "name": "Pro",
-     "price_jpy": 5250,
+     "name": "Basic",
+     "price_jpy": 1500,
      "billing_cycle": "monthly",
-     "original_price": 35,
-     "original_currency": "USD",
-     "source_url": "https://www.krea.ai/pricing"
+     "original_price": 1500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/krea/id6742134132"
+    },
+    {
+     "name": "Basic",
+     "price_jpy": 18000,
+     "billing_cycle": "yearly",
+     "original_price": 18000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/krea/id6742134132"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 6000,
+     "billing_cycle": "monthly",
+     "original_price": 6000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/krea/id6742134132"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 70000,
+     "billing_cycle": "yearly",
+     "original_price": 70000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/krea/id6742134132"
     },
     {
      "name": "Max",
-     "price_jpy": 15750,
+     "price_jpy": 11000,
      "billing_cycle": "monthly",
-     "original_price": 105,
-     "original_currency": "USD",
-     "source_url": "https://www.krea.ai/pricing"
-    },
-    {
-     "name": "Pro",
-     "price_jpy": 37800,
-     "billing_cycle": "yearly",
-     "original_price": 252,
-     "original_currency": "USD",
-     "source_url": "https://www.krea.ai/pricing"
-    },
-    {
-     "name": "Max",
-     "price_jpy": 113400,
-     "billing_cycle": "yearly",
-     "original_price": 756,
-     "original_currency": "USD",
-     "source_url": "https://www.krea.ai/pricing"
+     "original_price": 11000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/krea/id6742134132"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。年払いは月額換算Pro $21・Max $63の表示（年額は×12で算出）。第2パスは予算の都合で未再調査"
+   "notes": "日本のApp Store公式アプリ（販売元 KREA.AI, INC.）のApp内課金「Individual Basic/Pro/Max Monthly」「Individual Basic/Pro Yearly」で確認。Max年額はApp Store上に表示なし。Web料金ページのUSD表示（第1パス: Pro $35/月・Max $105/月）とはApp Store価格の水準が大きく異なる（特にMax）ので要注意"
   },
   {
    "slug": "krisp",
@@ -1046,11 +1070,19 @@
    "plans": [
     {
      "name": "Pro",
-     "price_jpy": 2248,
+     "price_jpy": 2500,
      "billing_cycle": "monthly",
-     "original_price": 14.99,
-     "original_currency": "USD",
-     "source_url": "https://mistral.ai/pricing"
+     "original_price": 2500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id6740410176"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 25000,
+     "billing_cycle": "yearly",
+     "original_price": 25000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id6740410176"
     },
     {
      "name": "Team（1ユーザー）",
@@ -1062,7 +1094,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。税抜"
+   "notes": "Proは公式App Store（販売元 MISTRAL AI）のApp内課金「Vibe Pro」¥2,500／¥25,000（期間表示なし、金額から月額・年額と判断）。アプリ名は「Vibe by Mistral (ex-Le Chat)」に改称されている。TeamはUSD建て（1ドル=150円で換算、税抜）"
   },
   {
    "slug": "leonardo-ai",
@@ -1074,31 +1106,47 @@
    "plans": [
     {
      "name": "Essential",
-     "price_jpy": 1800,
+     "price_jpy": 2200,
      "billing_cycle": "monthly",
-     "original_price": 12,
-     "original_currency": "USD",
-     "source_url": "https://leonardo.ai/pricing/"
+     "original_price": 2200,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/leonardo-ai-image-generator/id1662773014"
+    },
+    {
+     "name": "Essential",
+     "price_jpy": 22000,
+     "billing_cycle": "yearly",
+     "original_price": 22000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/leonardo-ai-image-generator/id1662773014"
     },
     {
      "name": "Premium",
-     "price_jpy": 4500,
+     "price_jpy": 6000,
      "billing_cycle": "monthly",
-     "original_price": 30,
-     "original_currency": "USD",
-     "source_url": "https://leonardo.ai/pricing/"
+     "original_price": 6000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/leonardo-ai-image-generator/id1662773014"
+    },
+    {
+     "name": "Premium",
+     "price_jpy": 60000,
+     "billing_cycle": "yearly",
+     "original_price": 60000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/leonardo-ai-image-generator/id1662773014"
     },
     {
      "name": "Ultimate",
-     "price_jpy": 9000,
+     "price_jpy": 12000,
      "billing_cycle": "monthly",
-     "original_price": 60,
-     "original_currency": "USD",
-     "source_url": "https://leonardo.ai/pricing/"
+     "original_price": 12000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/leonardo-ai-image-generator/id1662773014"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。税抜。年払いは最大20%オフ（年額はページに表示なし）"
+   "notes": "日本のApp Store公式アプリ（販売元 Leonardo Interactive Pty Ltd）のApp内課金で確認（「(yearly)」表記のものを年額、それ以外を月額と判断）。Ultimate (yearly) ¥110,000もあり（5件上限のため未掲載）。Web購入はUSD建て（Essential $12、Premium $30、Ultimate $60/月、税抜）"
   },
   {
    "slug": "lovable",
@@ -1107,9 +1155,42 @@
    "category": "ai",
    "brand_color": null,
    "official_url": "https://lovable.dev/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Pro",
+     "price_jpy": 3750,
+     "billing_cycle": "monthly",
+     "original_price": 25,
+     "original_currency": "USD",
+     "source_url": "https://docs.lovable.dev/introduction/subscription-plans"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 37500,
+     "billing_cycle": "yearly",
+     "original_price": 250,
+     "original_currency": "USD",
+     "source_url": "https://docs.lovable.dev/introduction/subscription-plans"
+    },
+    {
+     "name": "Business",
+     "price_jpy": 7500,
+     "billing_cycle": "monthly",
+     "original_price": 50,
+     "original_currency": "USD",
+     "source_url": "https://docs.lovable.dev/introduction/subscription-plans"
+    },
+    {
+     "name": "Business",
+     "price_jpy": 75000,
+     "billing_cycle": "yearly",
+     "original_price": 500,
+     "original_currency": "USD",
+     "source_url": "https://docs.lovable.dev/introduction/subscription-plans"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式料金ページはプラン欄が空（JS描画）、公式ドキュメントもプラン名（Pro/Business）とクレジット追加料金（Pro $15/50クレジット）のみで月額は未記載"
+   "notes": "USD建て（1ドル=150円で換算）。公式ドキュメントの最小ティア（月100クレジット）の価格。クレジット量に応じて最大Pro $2,250/月まで。税の記載なし"
   },
   {
    "slug": "luma-dream-machine",
@@ -1120,48 +1201,48 @@
    "official_url": "https://lumalabs.ai/dream-machine",
    "plans": [
     {
+     "name": "Lite",
+     "price_jpy": 1500,
+     "billing_cycle": "monthly",
+     "original_price": 1500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id6478852867"
+    },
+    {
+     "name": "Lite",
+     "price_jpy": 14000,
+     "billing_cycle": "yearly",
+     "original_price": 14000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id6478852867"
+    },
+    {
      "name": "Plus",
      "price_jpy": 4500,
      "billing_cycle": "monthly",
-     "original_price": 30,
-     "original_currency": "USD",
-     "source_url": "https://lumalabs.ai/pricing"
+     "original_price": 4500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id6478852867"
     },
     {
      "name": "Plus",
-     "price_jpy": 45000,
+     "price_jpy": 40000,
      "billing_cycle": "yearly",
-     "original_price": 300,
-     "original_currency": "USD",
-     "source_url": "https://lumalabs.ai/pricing"
+     "original_price": 40000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id6478852867"
     },
     {
-     "name": "Pro",
-     "price_jpy": 13500,
+     "name": "Unlimited",
+     "price_jpy": 14000,
      "billing_cycle": "monthly",
-     "original_price": 90,
-     "original_currency": "USD",
-     "source_url": "https://lumalabs.ai/pricing"
-    },
-    {
-     "name": "Pro",
-     "price_jpy": 135000,
-     "billing_cycle": "yearly",
-     "original_price": 900,
-     "original_currency": "USD",
-     "source_url": "https://lumalabs.ai/pricing"
-    },
-    {
-     "name": "Ultra",
-     "price_jpy": 45000,
-     "billing_cycle": "monthly",
-     "original_price": 300,
-     "original_currency": "USD",
-     "source_url": "https://lumalabs.ai/pricing"
+     "original_price": 14000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id6478852867"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。Ultraは年払い$3,000もあり"
+   "notes": "日本のApp Store公式アプリ（販売元 Luma AI, Inc.）のApp内課金で確認。期間表示がないため金額から月額/年額と推定（Lite ¥1,500/¥14,000、Plus ¥4,500/¥40,000、Unlimited ¥14,000/¥130,000）。Unlimited年額¥130,000は5件上限のため省略。Web（lumalabs.ai）はPlus/Pro/UltraのUSD建てでアプリと構成が異なる（Plus $30/月、Pro $90/月、Ultra $300/月）"
   },
   {
    "slug": "manus",
@@ -1640,15 +1721,23 @@
    "plans": [
     {
      "name": "Premium",
-     "price_jpy": 14994,
+     "price_jpy": 3090,
+     "billing_cycle": "monthly",
+     "original_price": 3090,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id6463116243"
+    },
+    {
+     "name": "Premium",
+     "price_jpy": 15400,
      "billing_cycle": "yearly",
-     "original_price": 99.96,
-     "original_currency": "USD",
-     "source_url": "https://quillbot.com/premium"
+     "original_price": 15400,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id6463116243"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。ページ表示は年払いで月額換算$8.33（年額は$8.33×12で算出）。月払い・半年払いの価格はページで確認できず"
+   "notes": "公式App Store（販売元 QuillBot, a Learneo Inc. business）のApp内課金「Monthly Plan ¥3,090」「Annual Plan ¥15,400」（Premium相当と判断）。半年プラン ¥12,400もあり。iOS経由の円価格で、Web版はUSD建て"
   },
   {
    "slug": "recraft",
@@ -1673,17 +1762,17 @@
      "name": "Core",
      "price_jpy": 3000,
      "billing_cycle": "monthly",
-     "original_price": 20,
-     "original_currency": "USD",
-     "source_url": "https://replit.com/pricing"
+     "original_price": 3000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/replit/id1614022293"
     },
     {
      "name": "Core",
-     "price_jpy": 32400,
+     "price_jpy": 35000,
      "billing_cycle": "yearly",
-     "original_price": 216,
-     "original_currency": "USD",
-     "source_url": "https://replit.com/pricing"
+     "original_price": 35000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/replit/id1614022293"
     },
     {
      "name": "Pro",
@@ -1703,7 +1792,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。年払いは月額換算Core $18、Pro $90（×12で年額を算出）。月払い額は取り消し線表示の価格から判断"
+   "notes": "Coreは日本のApp Store公式アプリ（販売元 Replit, Inc）のApp内課金「Replit Core ¥3,000／¥35,000」で確認（期間表示なし、金額から月額/年額と判断）。ProはWeb料金ページのUSD建て（1ドル=150円で換算、年払いは月額換算0×12で算出）。Web購入のCoreは月0・年払い月8（USD）"
   },
   {
    "slug": "rimo-voice",
@@ -1720,10 +1809,18 @@
      "original_price": 9,
      "original_currency": "USD",
      "source_url": "https://rimo.app/pricing"
+    },
+    {
+     "name": "Business",
+     "price_jpy": 2250,
+     "billing_cycle": "monthly",
+     "original_price": 15,
+     "original_currency": "USD",
+     "source_url": "https://rimo.app/ja/pricing"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。日本のサービスだが国外からのアクセスではUSD表示（「月払い（税込）」）。リリース限定50%オフ価格で通常$18。年払い価格は未表示。日本からは円表示の可能性あり"
+   "notes": "USD建て（1ドル=150円で換算）。日本のサービスだが国外からのアクセスでは日本語ページ（/ja/pricing）でもUSD表示（「月払い（税込）」）。リリース限定50%オフ価格（通常Solo $18、Business $30）。年払い価格は未表示。日本からは円表示の可能性あり"
   },
   {
    "slug": "runway",
@@ -1735,47 +1832,39 @@
    "plans": [
     {
      "name": "Standard",
-     "price_jpy": 2250,
+     "price_jpy": 2500,
      "billing_cycle": "monthly",
-     "original_price": 15,
-     "original_currency": "USD",
-     "source_url": "https://runway.com/pricing"
+     "original_price": 2500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1665024375"
     },
     {
      "name": "Standard",
-     "price_jpy": 21600,
+     "price_jpy": 22000,
      "billing_cycle": "yearly",
-     "original_price": 144,
-     "original_currency": "USD",
-     "source_url": "https://runway.com/pricing"
+     "original_price": 22000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1665024375"
     },
     {
      "name": "Pro",
-     "price_jpy": 5250,
+     "price_jpy": 5000,
      "billing_cycle": "monthly",
-     "original_price": 35,
-     "original_currency": "USD",
-     "source_url": "https://runway.com/pricing"
-    },
-    {
-     "name": "Pro",
-     "price_jpy": 50400,
-     "billing_cycle": "yearly",
-     "original_price": 336,
-     "original_currency": "USD",
-     "source_url": "https://runway.com/pricing"
+     "original_price": 5000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1665024375"
     },
     {
      "name": "Max",
-     "price_jpy": 14250,
+     "price_jpy": 15000,
      "billing_cycle": "monthly",
-     "original_price": 95,
-     "original_currency": "USD",
-     "source_url": "https://runway.com/pricing"
+     "original_price": 15000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1665024375"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。年払いは月額換算（Standard $12、Pro $28、Max $76）×12で算出。公式サイトは runway.com に移転"
+   "notes": "公式App Store（販売元 Runway AI, Inc.）のApp内課金（Monthly/Yearly表記あり）。iOS経由の円価格で、Web版はUSD建て（Standard $15/月など）。Unlimited - Monthly ¥14,000もあり。公式サイトは runway.com に移転"
   },
   {
    "slug": "soundraw",
@@ -1831,15 +1920,15 @@
    "plans": [
     {
      "name": "Premium",
-     "price_jpy": 4350,
+     "price_jpy": 2000,
      "billing_cycle": "monthly",
-     "original_price": 29,
-     "original_currency": "USD",
-     "source_url": "https://speechify.com/pricing/"
+     "original_price": 2000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1209815023"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。年払い（60%オフ表示）の価格はページから取得できず"
+   "notes": "日本のApp Store公式アプリ（販売元 Speechify Inc.）のApp内課金「Premium Monthly ¥2,000」で確認。「Premium」は¥9,000/¥14,800/¥20,000/¥22,000など期間表示のない複数価格があり年額は未登録。Webの月額は$29"
   },
   {
    "slug": "suno",
@@ -1922,7 +2011,7 @@
    "official_url": "https://www.tabnine.com/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式料金ページに価格の記載が取得できず"
+   "notes": "料金未確認: 公式料金ページ（/pricing/）に価格の記載なし（第3パスでも同様、AIエージェントの説明のみ）"
   },
   {
    "slug": "tldv",
@@ -1933,7 +2022,7 @@
    "official_url": "https://tldv.io/ja/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式料金ページ（日本語・英語とも）取得エラー"
+   "notes": "料金未確認: 公式料金ページ（日本語・英語とも）取得エラー（第3パスでも同様）"
   },
   {
    "slug": "udio",
@@ -1981,9 +2070,34 @@
    "category": "ai",
    "brand_color": null,
    "official_url": "https://www.vidu.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Standard",
+     "price_jpy": 1500,
+     "billing_cycle": "monthly",
+     "original_price": 1500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/vidu-%E6%96%87%E5%AD%97-%E7%94%BB%E5%83%8F%E3%82%92%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%81%AB%E5%8B%95%E7%94%BB%E3%82%92%E7%9E%AC%E6%99%82%E7%94%9F%E6%88%90/id6742448149"
+    },
+    {
+     "name": "Premium",
+     "price_jpy": 6000,
+     "billing_cycle": "monthly",
+     "original_price": 6000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/vidu-%E6%96%87%E5%AD%97-%E7%94%BB%E5%83%8F%E3%82%92%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%81%AB%E5%8B%95%E7%94%BB%E3%82%92%E7%9E%AC%E6%99%82%E7%94%9F%E6%88%90/id6742448149"
+    },
+    {
+     "name": "Ultimate",
+     "price_jpy": 15000,
+     "billing_cycle": "monthly",
+     "original_price": 15000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/vidu-%E6%96%87%E5%AD%97-%E7%94%BB%E5%83%8F%E3%82%92%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%81%AB%E5%8B%95%E7%94%BB%E3%82%92%E7%9E%AC%E6%99%82%E7%94%9F%E6%88%90/id6742448149"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式料金ページがJS描画で価格を取得できず"
+   "notes": "公式App Store（開発元 ShengShu AI HK Limited、販売元 SILICONWORLD PTE. LTD.）のApp内課金「Standard/Premium/Ultimate Subscription」。期間表示なし、金額から月額と判断。iOS経由の価格で、Web版の料金はJS描画のため未確認。クレジット単品購入（¥300〜¥18,000）もあり"
   },
   {
    "slug": "vrew",
@@ -2027,14 +2141,6 @@
      "original_price": 200,
      "original_currency": "USD",
      "source_url": "https://www.warp.dev/pricing"
-    },
-    {
-     "name": "Max",
-     "price_jpy": 324000,
-     "billing_cycle": "yearly",
-     "original_price": 2160,
-     "original_currency": "USD",
-     "source_url": "https://www.warp.dev/pricing"
     }
    ],
    "checked_on": "2026-10-08",
@@ -2060,6 +2166,22 @@
    "official_url": "https://www.wordtune.com/",
    "plans": [
     {
+     "name": "Premium",
+     "price_jpy": 3500,
+     "billing_cycle": "monthly",
+     "original_price": 3500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1628773284"
+    },
+    {
+     "name": "Premium",
+     "price_jpy": 18000,
+     "billing_cycle": "yearly",
+     "original_price": 18000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1628773284"
+    },
+    {
      "name": "Advanced",
      "price_jpy": 8802,
      "billing_cycle": "yearly",
@@ -2077,7 +2199,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。年払いの月額換算（Advanced $4.89、Unlimited $6.99）×12で算出。月払い価格は明示なし（併記の$6.99/$9.99が月払いと思われる）"
+   "notes": "Premiumは公式App Store（販売元 AI21 Labs, Inc.）のApp内課金（Premium Monthly ¥3,500／Premium Yearly ¥18,000）。Advanced/UnlimitedはWeb版のUSD建て（1ドル=150円で換算）、年払いの月額換算（$4.89、$6.99）×12で算出"
   },
   {
    "slug": "abema",
@@ -2116,7 +2238,7 @@
    "official_url": "https://www.amazon.co.jp/amazonprime",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: amazon.co.jp が robots.txt で取得不可"
+   "notes": "料金未確認: amazon.co.jp が robots.txt で取得不可。公式Prime VideoアプリのApp Store（AMZN Mobile LLC）にも会費の記載なし、公式プレスリリースも見つからず"
   },
   {
    "slug": "apple-tv-plus",
@@ -2345,9 +2467,34 @@
    "category": "video",
    "brand_color": null,
    "official_url": "https://fod.fujitv.co.jp/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "ライトコース",
+     "price_jpy": 980,
+     "billing_cycle": "monthly",
+     "original_price": 980,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/fod/id945241274"
+    },
+    {
+     "name": "プレミアム",
+     "price_jpy": 1320,
+     "billing_cycle": "monthly",
+     "original_price": 1320,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/fod/id945241274"
+    },
+    {
+     "name": "ポイントMAXコース",
+     "price_jpy": 2090,
+     "billing_cycle": "monthly",
+     "original_price": 2090,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/fod/id945241274"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトへのアクセスがブロックされ取得不可（2回目もWebFetch共有予算切れで未取得）"
+   "notes": "日本のApp Store公式アプリ（販売元 Fuji Television）のApp内課金「FODプレミアム ¥1,320」「FODプレミアムライトコース ¥980」「FODプレミアムポイントMAXコース ¥2,090」で確認。期間表示なし、金額から月額と判断。公式サイトはアクセスブロックで未確認、Web・他決済の価格は異なる可能性"
   },
   {
    "slug": "golf-network-plus",
@@ -2546,7 +2693,7 @@
    "official_url": "https://www.nhk-ondemand.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトへのアクセスがブロックされ取得不可"
+   "notes": "料金未確認: 公式サイトへのアクセスがブロック。日本のApp Store公式アプリ（販売元 NHK）はApp内課金なし（アプリ内で購入不可）で価格記載なし"
   },
   {
    "slug": "niconico-premium",
@@ -2651,9 +2798,26 @@
    "category": "video",
    "brand_color": null,
    "official_url": "https://www.spotvnow.jp/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "ベーシック",
+     "price_jpy": 2000,
+     "billing_cycle": "monthly",
+     "original_price": 2000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1494645317"
+    },
+    {
+     "name": "プレミアム",
+     "price_jpy": 3000,
+     "billing_cycle": "monthly",
+     "original_price": 3000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1494645317"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトがJavaScript必須で料金を取得できず（2回目も同様）"
+   "notes": "日本のApp Store公式アプリ（販売元 SPOTV JAPAN, K.K.）のApp内課金「ベーシック月間プラン（自動更新）¥2,000」「プレミアム月間プラン（自動更新）¥3,000」で確認（税込）。ほかに「一ヶ月購読（自動更新）¥2,000」あり。Web購入の価格は未確認"
   },
   {
    "slug": "telasa",
@@ -2740,7 +2904,7 @@
    "official_url": "https://www.twitch.tv/turbo",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 国別価格のヘルプページがJS描画で取得不可"
+   "notes": "料金未確認: ヘルプページ取得エラー、日本のApp Store公式アプリ（販売元 Twitch Interactive, Inc.）のApp内課金にTurboの項目なし（Bits・サブスクトークンのみ）"
   },
   {
    "slug": "u-next",
@@ -3031,7 +3195,7 @@
    "official_url": "https://www.clubdam.com/member/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 料金ページがサーバーエラーで取得不可。公式FAQでプレミアム会員は1000/800/500/300コースの4種と確認（コース名の数字が金額かは未確認）"
+   "notes": "料金未確認: clubdam.com の会員・アプリページが第3パスでもサーバー/取得エラー。公式FAQでプレミアム会員は1000/800/500/300コースの4種と確認（コース名の数字が金額かは未確認）"
   },
   {
    "slug": "digital-concert-hall",
@@ -3106,7 +3270,7 @@
    "official_url": "https://www.flowkey.com/ja",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 料金ページの取得に失敗"
+   "notes": "料金未確認: 料金ページ（/ja/pricing）取得エラー。日本のApp Store公式アプリ（販売元 flowkey GmbH）のApp内課金は「flowkeyクラシック」¥1,720〜¥13,800、「flowkeyプレミアム」¥2,580〜¥20,800など同名・別価格が多数で期間表示もなく、現行プランを特定できず"
   },
   {
    "slug": "joysound-utasuki-premium",
@@ -3117,7 +3281,7 @@
    "official_url": "https://www.joysound.com/utasuki/premium/index.htm",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 料金ページがrobots.txtで取得不可。毎月継続・6か月・12か月の3コースあり（公式ヘルプ）"
+   "notes": "料金未確認: 料金ページがrobots.txtで取得不可。毎月継続・6か月・12か月の3コースあり（公式ヘルプ）。App Storeの「分析採点JOYSOUND」（XING）はスタンダードプラン¥580/月など別サービスの課金で、うたスキの価格は記載なし"
   },
   {
    "slug": "kkbox",
@@ -3210,9 +3374,18 @@
    "category": "music",
    "brand_color": null,
    "official_url": "https://musescore.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Learn",
+     "price_jpy": 18400,
+     "billing_cycle": "yearly",
+     "original_price": 18400,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id835731296"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 取得したページに料金記載なし"
+   "notes": "日本のApp Store公式アプリ（販売元 MuseScore Limited）のApp内課金で確認。期間表示がないため金額から年額と推定。Pro（¥480/¥720/¥3,500/¥5,200）とPro+（¥100/¥9,800）は同名項目が複数価格のため未登録。公式料金ページはJS描画で価格取得不可"
   },
   {
    "slug": "nana",
@@ -3243,7 +3416,7 @@
    "official_url": "https://ml.naxos.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトが403で取得不可。クラシック音楽の聴き放題"
+   "notes": "料金未確認: 公式サイト（ml.naxos.jp）が403で取得不可（第3パスでも同様）。クラシック音楽の聴き放題"
   },
   {
    "slug": "qobuz",
@@ -3471,7 +3644,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。初月4.99ドル。Soundsプランは月12.99ドル相当（年払い）。音楽制作向けサンプル素材"
+   "notes": "USD建て（1ドル=150円で換算）。初月4.99ドル。Soundsプランは月12.99ドル相当（年払い）。音楽制作向けサンプル素材。日本のApp Store公式アプリ（販売元 Distributed Creation Inc）にApp内課金の価格表示なし"
   },
   {
    "slug": "spotify",
@@ -3524,9 +3697,26 @@
    "category": "music",
    "brand_color": null,
    "official_url": "https://www.stage-plus.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "会員",
+     "price_jpy": 2000,
+     "billing_cycle": "monthly",
+     "original_price": 2000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1556819721"
+    },
+    {
+     "name": "会員",
+     "price_jpy": 20000,
+     "billing_cycle": "yearly",
+     "original_price": 20000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1556819721"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式ページの取得に失敗。クラシックの映像・音源配信"
+   "notes": "日本のApp Store公式アプリ（販売元 Deutsche Grammophon GmbH）のApp内課金「月間プラン ¥2,000」「年間プラン ¥20,000」で確認（プラン名はApp Storeで「月間プラン」「年間プラン」）。Web購入の価格は未確認。クラシックの映像・音源配信"
   },
   {
    "slug": "tunecore-japan",
@@ -3587,9 +3777,26 @@
    "category": "music",
    "brand_color": null,
    "official_url": "https://www.ultimate-guitar.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Pro+",
+     "price_jpy": 2800,
+     "billing_cycle": "yearly",
+     "original_price": 2800,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id357828853"
+    },
+    {
+     "name": "Pro + Courses + Sing",
+     "price_jpy": 7000,
+     "billing_cycle": "yearly",
+     "original_price": 7000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id357828853"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式ページがJS描画で料金を取得できず"
+   "notes": "日本のApp Store公式アプリ（販売元 Ultimate Guitar）のApp内課金で確認。項目名に「(1 Year)」とある2件のみ登録。「Ultimate Guitar Pro」は¥1,150/¥2,800など複数価格（セール表示含む）のため未登録。公式サイトはJS描画で価格取得不可"
   },
   {
    "slug": "yousician",
@@ -3709,10 +3916,27 @@
    "company": "KDDI",
    "category": "books",
    "brand_color": "#eb5505",
-   "official_url": "https://www.bookpass.auone.jp/",
-   "plans": [],
+   "official_url": "https://www.au.com/entertainment/bookpass/",
+   "plans": [
+    {
+     "name": "マガジンコース",
+     "price_jpy": 418,
+     "billing_cycle": "monthly",
+     "original_price": 418,
+     "original_currency": "JPY",
+     "source_url": "https://www.au.com/entertainment/bookpass/"
+    },
+    {
+     "name": "総合コース",
+     "price_jpy": 618,
+     "billing_cycle": "monthly",
+     "original_price": 618,
+     "original_currency": "JPY",
+     "source_url": "https://www.au.com/entertainment/bookpass/"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式ページ取得エラー。Pontaパス（月額548円）との関係も未確認"
+   "notes": "読み放題プラン（税込）。au公式ページで確認。Pontaパスとの関係はページに記載なし"
   },
   {
    "slug": "bookwalker-yomihodai",
@@ -3815,17 +4039,6 @@
    "notes": ""
   },
   {
-   "slug": "hikari-tv-book",
-   "name": "ひかりTVブック",
-   "company": "NTTドコモ",
-   "category": "books",
-   "brand_color": null,
-   "official_url": "https://www.hikaritv.net/book/",
-   "plans": [],
-   "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式ページ取得エラー（2回目も取得失敗）"
-  },
-  {
    "slug": "kindle-unlimited",
    "name": "Kindle Unlimited",
    "company": "Amazon",
@@ -3908,7 +4121,7 @@
    "official_url": "https://piccoma.com/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式App Storeページ取得エラー、第2パスはWebFetch予算切れで中断"
+   "notes": "料金未確認: 公式App Store（販売元 Kakao piccoma Corp.）はコイン購入（¥50〜¥2,900）と「月間プラン」（毎月コインチャージ、自動更新）のみで、月額の金額は記載なし。定額の読み放題サブスクは確認できず"
   },
   {
    "slug": "shonen-jump-plus",
@@ -4195,7 +4408,7 @@
    "official_url": "https://www.japantimes.co.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 購読ページ（japantimes.co.jp/sub）はプラン名（Digital Lite / Digital）と税込表記のみで価格を取得できず。App StoreアプリはApp内課金なし"
+   "notes": "料金未確認: 購読ページ（japantimes.co.jp/sub）はプラン名と税込表記のみで価格を取得できず（/subscribe/は取得エラー）。公式ヘルプ（support.japantimes.co.jp）ではプランがSTANDARD／PREMIUM（月額・年額、PREMIUMは2年もあり）と案内されるが金額の記載なし。App StoreアプリはApp内課金なし"
   },
   {
    "slug": "jbpress-premium",
@@ -4412,7 +4625,7 @@
    "official_url": "https://xtech.nikkei.com/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: xtech.nikkei.com が robots.txt で取得不可"
+   "notes": "料金未確認: xtech.nikkei.com が robots.txt で取得不可。日経クロステック単体のApp Storeアプリ・別ドメインの公式料金ページも見つからず"
   },
   {
    "slug": "note-premium",
@@ -4622,7 +4835,7 @@
    "official_url": "https://www.tokyo-np.co.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトがrobots.txtでクロール禁止"
+   "notes": "料金未確認: 公式サイトがrobots.txtでクロール禁止。公式App Store（東京新聞デジタル、中日新聞社）にもApp内課金・料金の記載なし（Webで申し込み）"
   },
   {
    "slug": "toyokeizai-online",
@@ -4631,9 +4844,26 @@
    "category": "news",
    "brand_color": "#c8102e",
    "official_url": "https://toyokeizai.net/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "有料会員",
+     "price_jpy": 1980,
+     "billing_cycle": "monthly",
+     "original_price": 1980,
+     "original_currency": "JPY",
+     "source_url": "https://toyokeizai.net/list/terms"
+    },
+    {
+     "name": "有料会員",
+     "price_jpy": 19800,
+     "billing_cycle": "yearly",
+     "original_price": 19800,
+     "original_currency": "JPY",
+     "source_url": "https://toyokeizai.net/list/terms"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 有料会員登録ページ（str.toyokeizai.net）がリダイレクトループ、記事ページも取得エラー"
+   "notes": "公式の利用規約（第3条 利用料金）で確認（税込）。キャンペーンで一時的に変わる場合あり。週刊東洋経済電子版も閲覧可"
   },
   {
    "slug": "wired-sz",
@@ -4655,7 +4885,7 @@
    "official_url": "https://jp.wsj.com/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトがアクセスブロック（2回目も同様）"
+   "notes": "料金未確認: 公式サイトがアクセスブロック。日本のApp Store公式アプリ（販売元 Dow Jones & Company, Inc.）のApp内課金は「The Wall Street Journal 日本」¥2,800/¥4,000など同名・別価格で期間表示もなく特定できず"
   },
   {
    "slug": "apple-arcade",
@@ -4694,7 +4924,7 @@
    "official_url": "https://www.dqx.jp/online/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイト（dqx.jp）の料金ページ・トップとも取得エラー（利用券制）"
+   "notes": "料金未確認: 公式サイト（dqx.jp、hiroba.dqx.jp）とも取得エラー（第3パスでも同様）。利用券制。公式App Store等に利用券の価格掲載なし"
   },
   {
    "slug": "ea-play",
@@ -4808,7 +5038,7 @@
    "official_url": "https://www.nvidia.com/ja-jp/geforce-now/memberships/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式メンバーシップページはJS描画、公式FAQにも円価格の記載なし（アプリで確認と案内）"
+   "notes": "料金未確認: 公式メンバーシップページはJS描画で現行価格を取得できず（現行の有料プランはPerformance／Ultimate）。参考: NVIDIA公式プレスリリース（2024年4月4日、日本提供開始時）ではUltimate 月3,580円／6か月17,900円、Priority 月1,790円／6か月8,950円（税込か明記なし）。プラン名が変わっているため現行価格としては未採用"
   },
   {
    "slug": "google-play-pass",
@@ -4819,7 +5049,7 @@
    "official_url": "https://play.google.com/intl/ja/about/play-pass/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式ページがrobots.txtで取得不可"
+   "notes": "料金未確認: 公式ページがrobots.txtで取得不可、公式ヘルプ（support.google.com）も取得エラー"
   },
   {
    "slug": "humble-choice",
@@ -4830,7 +5060,7 @@
    "official_url": "https://www.humblebundle.com/membership",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトへのアクセスがブロックされた（2回目は未試行）"
+   "notes": "料金未確認: 公式サイト・公式サポートサイト（support.humblebundle.com）ともアクセスブロック"
   },
   {
    "slug": "meta-horizon-plus",
@@ -4877,7 +5107,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "統合版は日本のApp Store公式アプリ（販売元 Mojang AB）のApp内課金で確認（Realms Monthly Subscription: You + 2 Friends 480円、Realms Plus 960円、月額と判断）。Java版は円価格未確認のためUSD建て（1ドル=150円で換算）"
+   "notes": "統合版は日本のApp Store公式アプリ（販売元 Mojang AB）のApp内課金で確認（Realms Monthly Subscription: You + 2 Friends 480円、Realms Plus 960円、月額と判断）。Java版は円価格未確認のためUSD建て（1ドル=150円で換算）。公式日本語ページ（minecraft.net/ja-jp/realms）でもUSD表示（Java版 $7.99 USD/月）"
   },
   {
    "slug": "nintendo-switch-online",
@@ -4938,9 +5168,50 @@
    "category": "game",
    "brand_color": "#0070d1",
    "official_url": "https://www.playstation.com/ja-jp/ps-plus/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "エッセンシャル",
+     "price_jpy": 850,
+     "billing_cycle": "monthly",
+     "original_price": 850,
+     "original_currency": "JPY",
+     "source_url": "https://blog.ja.playstation.com/2022/08/02/20220802-psplus/"
+    },
+    {
+     "name": "エッセンシャル",
+     "price_jpy": 6800,
+     "billing_cycle": "yearly",
+     "original_price": 6800,
+     "original_currency": "JPY",
+     "source_url": "https://blog.ja.playstation.com/2022/08/02/20220802-psplus/"
+    },
+    {
+     "name": "エクストラ",
+     "price_jpy": 1300,
+     "billing_cycle": "monthly",
+     "original_price": 1300,
+     "original_currency": "JPY",
+     "source_url": "https://blog.ja.playstation.com/2022/08/02/20220802-psplus/"
+    },
+    {
+     "name": "エクストラ",
+     "price_jpy": 11700,
+     "billing_cycle": "yearly",
+     "original_price": 11700,
+     "original_currency": "JPY",
+     "source_url": "https://blog.ja.playstation.com/2022/08/02/20220802-psplus/"
+    },
+    {
+     "name": "プレミアム",
+     "price_jpy": 1550,
+     "billing_cycle": "monthly",
+     "original_price": 1550,
+     "original_currency": "JPY",
+     "source_url": "https://blog.ja.playstation.com/2022/08/02/20220802-psplus/"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式ページは価格を動的表示しており取得できず"
+   "notes": "公式PlayStation.Blog（blog.ja.playstation.com、2026年4月23日更新・同日時点の情報）の価格表（税込）。プラン数上限のためプレミアム12ヶ月利用権 13,900円は省略。3ヶ月利用権（2,150円/3,600円/4,300円）もあり。公式PS Plusページは価格を動的表示。2026年5月に海外で値上げ報道あり、日本向け価格の最新状況は要再確認"
   },
   {
    "slug": "pokemon-home",
@@ -5019,7 +5290,7 @@
    "official_url": "https://pso2.jp/players/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトで料金ページを特定できず（プレミアムセットはSG等で購入）"
+   "notes": "料金未確認: 公式サイトで料金ページを特定できず（プレミアムセットはSG等で購入、第3パスでも公式の円価格ページは見つからず）"
   },
   {
    "slug": "roblox-premium",
@@ -5077,7 +5348,7 @@
    "official_url": "https://www.viveport.com/plan/infinity",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式ページが価格をJS描画しており取得できず（第2パスでは未再試行）"
+   "notes": "料金未確認: 公式ページが価格をJS描画しており取得できず。第3パスでも公式ヘルプ等の価格掲載ページは見つからず"
   },
   {
    "slug": "world-of-warcraft",
@@ -5088,7 +5359,7 @@
    "official_url": "https://worldofwarcraft.blizzard.com/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 日本向けの円価格表示が見つからず（第2パスでは予算節約のため未取得）。日本語版なし・月額課金制"
+   "notes": "料金未確認: 日本向けの円価格表示が見つからず。公式ショップ（us.shop.battle.net/ja-jp）の購読ページは取得エラー。日本語版なし・月額課金制"
   },
   {
    "slug": "xbox-game-pass",
@@ -5099,7 +5370,7 @@
    "official_url": "https://www.xbox.com/ja-JP/xbox-game-pass",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式ページの価格がJS描画、公式ニュース（news.xbox.com/ja-jp 2026/04/22 価格改定）も取得エラー"
+   "notes": "料金未確認: 公式ページ（xbox.com/ja-JP/xbox-game-pass）は価格欄がプレースホルダー（X,XXX 円）のみでJS描画、公式ニュースも取得エラー"
   },
   {
    "slug": "adobe-acrobat",
@@ -5288,9 +5559,18 @@
    "category": "work",
    "brand_color": "#e60012",
    "official_url": "https://www.justsystems.com/jp/products/atokp/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "プレミアム",
+     "price_jpy": 950,
+     "billing_cycle": "monthly",
+     "original_price": 950,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1568070609"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイト（justsystems.com）がrobots.txtで取得を拒否"
+   "notes": "公式App Store（ATOK [Professional]、販売元 JustSystems Corporation）のApp内課金「ATOK Passport [プレミアム] ¥950」、説明文に「950円/月」。公式サイト（justsystems.com）はrobots.txtで取得不可のため、ベーシックなどWeb契約の価格は未確認"
   },
   {
    "slug": "backlog",
@@ -5449,11 +5729,19 @@
    "plans": [
     {
      "name": "Standard",
-     "price_jpy": 18000,
+     "price_jpy": 1800,
+     "billing_cycle": "monthly",
+     "original_price": 1800,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1451094657"
+    },
+    {
+     "name": "Standard",
+     "price_jpy": 16800,
      "billing_cycle": "yearly",
-     "original_price": 120,
-     "original_currency": "USD",
-     "source_url": "https://calendly.com/pricing"
+     "original_price": 16800,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1451094657"
     },
     {
      "name": "Teams",
@@ -5465,7 +5753,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。1シートあたり。ページ表示の$10/$16（年払い時の月額換算と判断）×12。月払い価格は未確認。"
+   "notes": "Standardは公式App Store（販売元 Calendly, LLC）のApp内課金「Standard Plan」¥1,800／¥16,800（期間表示なし、金額から月額・年額と判断）。TeamsはWeb版のUSD建て（1ドル=150円で換算）、1シートあたり、年払い時の月額換算\\$16×12"
   },
   {
    "slug": "camscanner",
@@ -5684,7 +5972,7 @@
    "official_url": "https://www.atlassian.com/ja/software/confluence",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず。"
+   "notes": "料金未確認: 公式料金ページ（atlassian.com/ja/software/confluence/pricing）が価格をJS描画しており取得できず"
   },
   {
    "slug": "cosense",
@@ -5716,39 +6004,39 @@
    "plans": [
     {
      "name": "Plus",
-     "price_jpy": 1200,
+     "price_jpy": 1580,
      "billing_cycle": "monthly",
-     "original_price": 8,
-     "original_currency": "USD",
-     "source_url": "https://www.craft.do/pricing"
+     "original_price": 1580,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1487937127"
     },
     {
      "name": "Plus",
-     "price_jpy": 11520,
+     "price_jpy": 14800,
      "billing_cycle": "yearly",
-     "original_price": 76.8,
-     "original_currency": "USD",
-     "source_url": "https://www.craft.do/pricing"
+     "original_price": 14800,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1487937127"
     },
     {
      "name": "Family",
-     "price_jpy": 2250,
+     "price_jpy": 2500,
      "billing_cycle": "monthly",
-     "original_price": 15,
-     "original_currency": "USD",
-     "source_url": "https://www.craft.do/pricing"
+     "original_price": 2500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1487937127"
     },
     {
      "name": "Family",
-     "price_jpy": 21600,
+     "price_jpy": 25000,
      "billing_cycle": "yearly",
-     "original_price": 144,
-     "original_currency": "USD",
-     "source_url": "https://www.craft.do/pricing"
+     "original_price": 25000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1487937127"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。年払いは月額換算（Plus $6.4、Family $12）×12で算出（月/年の対応はページ上の明示なし）。国により価格が異なる旨の記載あり"
+   "notes": "日本のApp Store公式アプリ（販売元 Craft Docs Limited）のApp内課金（Monthly/Annual Subscriptionの表記あり）で確認。Web（craft.do）はUSD表示で国により価格が異なる旨の記載あり"
   },
   {
    "slug": "deepl",
@@ -5787,7 +6075,7 @@
    "official_url": "https://doodle.com/ja/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式料金ページ取得エラー"
+   "notes": "料金未確認: 公式料金ページ（doodle.com）取得エラー（第3パスでも同様）"
   },
   {
    "slug": "dropbox",
@@ -5848,9 +6136,26 @@
    "category": "work",
    "brand_color": "#0b2a4a",
    "official_url": "https://8card.net/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "プレミアム",
+     "price_jpy": 600,
+     "billing_cycle": "monthly",
+     "original_price": 600,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/eight/id444423637"
+    },
+    {
+     "name": "プレミアム",
+     "price_jpy": 6000,
+     "billing_cycle": "yearly",
+     "original_price": 6000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/eight/id444423637"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式プレミアムページがログイン画面、App Storeページ取得エラー"
+   "notes": "日本のApp Store公式アプリ（販売元 Sansan, Inc.）のApp内課金「Eightプレミアム（月額）¥600」「（年額）¥6,000」と説明文「￥600/月または￥6,000/年の自動更新」で確認。Web購入の価格は未確認"
   },
   {
    "slug": "esa",
@@ -5986,7 +6291,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。1シートあたり。Businessは年払いのみ（$55/月×12）。税の記載なし。"
+   "notes": "USD建て（1ドル=150円で換算）。1シートあたり。Businessは年払いのみ（$55/月×12）。税の記載なし。第3パスで公式日本語料金ページ（/ja-jp/pricing/）を再確認したがUSD表示のみ"
   },
   {
    "slug": "foxit-pdf",
@@ -6148,15 +6453,15 @@
     },
     {
      "name": "Premium",
-     "price_jpy": 9000,
+     "price_jpy": 5000,
      "billing_cycle": "yearly",
-     "original_price": 60,
-     "original_currency": "USD",
-     "source_url": "https://www.ilovepdf.com/ja/pricing"
+     "original_price": 5000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1207332399"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。日本語ページでもUS$表示。年払いは$60（月額換算$5）"
+   "notes": "年額は日本のApp Store公式アプリ（販売元 ILOVEPDF S.L.）のApp内課金「iLovePDF Premium Yearly ¥5,000」で確認。月額は同アプリに「Premium Monthly」が¥580と¥600の2件あり特定できないため、Web（日本語ページでもUS$表示）のUSD建て（1ドル=150円で換算）。Webの年払いは$60"
   },
   {
    "slug": "jooto",
@@ -6375,7 +6680,7 @@
    "official_url": "https://www.lucidchart.com/pages/ja",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式料金ページ取得エラー"
+   "notes": "料金未確認: 公式料金ページ（lucid.co）取得エラー、日本のApp Store（Lucid Software Inc）にApp内課金の価格表示なし"
   },
   {
    "slug": "microsoft-365",
@@ -6475,7 +6780,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。1メンバーあたり、年払い（$8/$20 ×12）。月払い価格はページで確認できず。"
+   "notes": "USD建て（1ドル=150円で換算）。1メンバーあたり、年払い（$8/$20 ×12）。月払い価格はページで確認できず。 日本のApp Store公式アプリ（販売元 Realtimeboard Inc.）にApp内課金の記載なし"
   },
   {
    "slug": "misoca",
@@ -6520,9 +6825,34 @@
    "category": "work",
    "brand_color": "#ff3d57",
    "official_url": "https://monday.com/ja/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Basic",
+     "price_jpy": 16200,
+     "billing_cycle": "yearly",
+     "original_price": 108,
+     "original_currency": "USD",
+     "source_url": "https://monday.com/pricing"
+    },
+    {
+     "name": "Standard",
+     "price_jpy": 21600,
+     "billing_cycle": "yearly",
+     "original_price": 144,
+     "original_currency": "USD",
+     "source_url": "https://monday.com/pricing"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 34200,
+     "billing_cycle": "yearly",
+     "original_price": 228,
+     "original_currency": "USD",
+     "source_url": "https://monday.com/pricing"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 料金ページ（/ja/pricing）の取得に失敗（第2パスでも取得エラー）"
+   "notes": "USD建て（1ドル=150円で換算）。税抜。1シートあたり、年払いの月額表示（Basic $9、Standard $12、Pro $19）×12で算出。月払い価格はページで確認できず。「価格は請求先の国により決定」との記載あり（円価格は未確認）。/ja/pricingは取得エラー"
   },
   {
    "slug": "moneyforward",
@@ -6709,7 +7039,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。アプリ本体は無料、有料はアドオン。年払いは月額換算 $4/$8 ×12。"
+   "notes": "USD建て（1ドル=150円で換算）。アプリ本体は無料、有料はアドオン。年払いは月額換算 $4/$8 ×12。日本のApp Store（Dynalist Inc.）にApp内課金の価格表示なし"
   },
   {
    "slug": "pdfelement",
@@ -6892,7 +7222,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。1ユーザーあたり。年払いは月額換算 $7.25/$15 ×12。"
+   "notes": "USD建て（1ドル=150円で換算）。1ユーザーあたり。年払いは月額換算 $7.25/$15 ×12。第3パスで公式日本語ページ（/intl/ja-jp/pricing/pro）を再確認したがUS$表示（Pro 月払い$8.75、年払い$7.25/月）。日本のApp StoreにApp内課金の表示なし"
   },
   {
    "slug": "smallpdf",
@@ -6903,7 +7233,7 @@
    "official_url": "https://smallpdf.com/ja",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 料金ページ（/ja/pricing）が取得エラー"
+   "notes": "料金未確認: 料金ページ（/ja/pricing）が取得エラー。日本のApp Store公式アプリ（販売元 Smallpdf GmbH）のApp内課金は「Monthly Plan」¥1,200〜¥2,500、「Yearly Plan」¥7,000〜¥20,000が複数並びプランとの対応が判別できず"
   },
   {
    "slug": "smartsheet",
@@ -7143,7 +7473,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。1ユーザーあたり。年払いは月額換算（Starter $9、Premium $16）×12で算出（月/年の対応はページ上の明示なし、年払い33.3%割引の記載から判断）。無料プランあり"
+   "notes": "USD建て（1ドル=150円で換算）。1ユーザーあたり。年払いは月額換算（Starter $9、Premium $16）×12で算出（月/年の対応はページ上の明示なし、年払い33.3%割引の記載から判断）。無料プランあり。日本のApp Store公式アプリ（販売元 Toggl OU）にApp内課金の記載なし"
   },
   {
    "slug": "trello",
@@ -7255,9 +7585,26 @@
    "category": "work",
    "brand_color": "#409fff",
    "official_url": "https://wetransfer.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Ultimate",
+     "price_jpy": 2100,
+     "billing_cycle": "monthly",
+     "original_price": 2100,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/wetransfer-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E8%BB%A2%E9%80%81/id1569379048"
+    },
+    {
+     "name": "Transfer plan",
+     "price_jpy": 3000,
+     "billing_cycle": "monthly",
+     "original_price": 3000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/wetransfer-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E8%BB%A2%E9%80%81/id1569379048"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 料金ページがJS描画で価格を取得できず"
+   "notes": "公式App Store（販売元 Wetransfer B.V.）のApp内課金「Ultimate - Monthly ¥2,100」「Transfer plan - Monthly ¥3,000」。iOSアプリ経由のプランで、Web版の料金ページ（Starter/Proなど）はJS描画で未確認。ほかにWeeklyプラン（¥400〜¥1,500、複数価格）あり"
   },
   {
    "slug": "whimsical",
@@ -7386,9 +7733,42 @@
    "category": "dev",
    "brand_color": "#00a95c",
    "official_url": "https://www.linode.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Nanode 1 GB",
+     "price_jpy": 750,
+     "billing_cycle": "monthly",
+     "original_price": 5,
+     "original_currency": "USD",
+     "source_url": "https://www.akamai.com/cloud/pricing/cpu"
+    },
+    {
+     "name": "Linode 2 GB",
+     "price_jpy": 1800,
+     "billing_cycle": "monthly",
+     "original_price": 12,
+     "original_currency": "USD",
+     "source_url": "https://www.akamai.com/cloud/pricing/cpu"
+    },
+    {
+     "name": "Linode 4 GB",
+     "price_jpy": 3600,
+     "billing_cycle": "monthly",
+     "original_price": 24,
+     "original_currency": "USD",
+     "source_url": "https://www.akamai.com/cloud/pricing/cpu"
+    },
+    {
+     "name": "Linode 8 GB",
+     "price_jpy": 7200,
+     "billing_cycle": "monthly",
+     "original_price": 48,
+     "original_currency": "USD",
+     "source_url": "https://www.akamai.com/cloud/pricing/cpu"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: linode.com/pricing は akamai.com/cloud/pricing にリダイレクトされ、地域別ページに価格があり未取得"
+   "notes": "USD建て（1ドル=150円で換算）。Shared CPUプランのGlobal表示の月額上限（時間課金）。一部プランは地域により価格が異なる（日本リージョンの個別表示なし）"
   },
   {
    "slug": "algolia",
@@ -7399,7 +7779,7 @@
    "official_url": "https://www.algolia.com/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "料金未確認: 公式料金ページ（algolia.com/pricing）の有料プランは従量課金（Grow/Grow Plus「Starting at $0 / month」）と要問い合わせ（Elevate）のみで定額プランなし"
   },
   {
    "slug": "amazon-lightsail",
@@ -7408,9 +7788,50 @@
    "category": "dev",
    "brand_color": "#ff9900",
    "official_url": "https://aws.amazon.com/jp/lightsail/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "0.5GB",
+     "price_jpy": 750,
+     "billing_cycle": "monthly",
+     "original_price": 5,
+     "original_currency": "USD",
+     "source_url": "https://aws.amazon.com/jp/lightsail/pricing/"
+    },
+    {
+     "name": "1GB",
+     "price_jpy": 1050,
+     "billing_cycle": "monthly",
+     "original_price": 7,
+     "original_currency": "USD",
+     "source_url": "https://aws.amazon.com/jp/lightsail/pricing/"
+    },
+    {
+     "name": "2GB",
+     "price_jpy": 1800,
+     "billing_cycle": "monthly",
+     "original_price": 12,
+     "original_currency": "USD",
+     "source_url": "https://aws.amazon.com/jp/lightsail/pricing/"
+    },
+    {
+     "name": "4GB",
+     "price_jpy": 3600,
+     "billing_cycle": "monthly",
+     "original_price": 24,
+     "original_currency": "USD",
+     "source_url": "https://aws.amazon.com/jp/lightsail/pricing/"
+    },
+    {
+     "name": "8GB",
+     "price_jpy": 6600,
+     "billing_cycle": "monthly",
+     "original_price": 44,
+     "original_currency": "USD",
+     "source_url": "https://aws.amazon.com/jp/lightsail/pricing/"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "USD建て（1ドル=150円で換算）。Linux/Unix汎用バンドル（パブリックIPv4付き）のメモリ別月額上限。IPv6のみのバンドルは$3.50〜。税の記載なし（日本の請求先は消費税が別途かかる場合あり）"
   },
   {
    "slug": "apple-developer-program",
@@ -7421,16 +7842,16 @@
    "official_url": "https://developer.apple.com/jp/programs/",
    "plans": [
     {
-     "name": "年間メンバーシップ",
-     "price_jpy": 14850,
+     "name": "個人",
+     "price_jpy": 12800,
      "billing_cycle": "yearly",
-     "original_price": 99,
-     "original_currency": "USD",
-     "source_url": "https://developer.apple.com/jp/support/compare-memberships/"
+     "original_price": 12800,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/apple-developer/id640199958"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。公式ヘルプも「年間登録料は99米ドル（または現地通貨の同等額）…登録手続きの際は現地通貨で表示」とあり、円建て金額はページに記載なし"
+   "notes": "公式App Store（Apple Developerアプリ、販売元 iTunes K.K.）のApp内課金「Apple Developer Program ¥12,800」（年間メンバーシップ）。公式ヘルプでは年間登録料99米ドル相当を現地通貨で表示とある"
   },
   {
    "slug": "appwrite",
@@ -7545,9 +7966,34 @@
    "category": "dev",
    "brand_color": "#760fc3",
    "official_url": "https://bitrise.io/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Starter",
+     "price_jpy": 14850,
+     "billing_cycle": "monthly",
+     "original_price": 99,
+     "original_currency": "USD",
+     "source_url": "https://bitrise.io/pricing"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 32700,
+     "billing_cycle": "monthly",
+     "original_price": 218,
+     "original_currency": "USD",
+     "source_url": "https://bitrise.io/pricing"
+    },
+    {
+     "name": "Build Hub Basic",
+     "price_jpy": 2250,
+     "billing_cycle": "monthly",
+     "original_price": 15,
+     "original_currency": "USD",
+     "source_url": "https://bitrise.io/pricing"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "USD建て（1ドル=150円で換算）。月払い価格。Mobile DevOps PlatformのStarter/Pro（年払いは月9〜/00〜）。Build Hub Basicは月5（年払いは月3.50〜）。税の記載なし"
   },
   {
    "slug": "browserstack",
@@ -7595,9 +8041,26 @@
    "category": "dev",
    "brand_color": "#fc521f",
    "official_url": "https://www.chromatic.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Starter",
+     "price_jpy": 26850,
+     "billing_cycle": "monthly",
+     "original_price": 179,
+     "original_currency": "USD",
+     "source_url": "https://www.chromatic.com/pricing"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 59850,
+     "billing_cycle": "monthly",
+     "original_price": 399,
+     "original_currency": "USD",
+     "source_url": "https://www.chromatic.com/pricing"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "USD建て（1ドル=150円で換算）。Starterは月35,000スナップショット、Proは月85,000スナップショット込み。年払い価格の記載なし。無料プランあり"
   },
   {
    "slug": "circleci",
@@ -7617,7 +8080,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。開始価格。クレジット追加で変動"
+   "notes": "USD建て（1ドル=150円で換算）。開始価格。クレジット追加で変動。公式日本語料金ページでもUSD表示、「価格は税別です」と記載"
   },
   {
    "slug": "clerk",
@@ -7686,14 +8149,6 @@
      "original_price": 250,
      "original_currency": "USD",
      "source_url": "https://www.cloudflare.com/plans/"
-    },
-    {
-     "name": "Business",
-     "price_jpy": 360000,
-     "billing_cycle": "yearly",
-     "original_price": 2400,
-     "original_currency": "USD",
-     "source_url": "https://www.cloudflare.com/plans/"
     }
    ],
    "checked_on": "2026-10-08",
@@ -7708,7 +8163,7 @@
    "official_url": "https://codemagic.io/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "USD建て（1ドル=150円で換算）。個人向け（Individuals）は無料＋従量課金（Mac mini M2 $0.095/分など）。定額はFixed price（3並列・時間無制限、年払い）。税の記載なし"
   },
   {
    "slug": "codesandbox",
@@ -7845,9 +8300,18 @@
    "category": "dev",
    "brand_color": "#69d3a7",
    "official_url": "https://www.cypress.io/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Team",
+     "price_jpy": 119850,
+     "billing_cycle": "yearly",
+     "original_price": 799,
+     "original_currency": "USD",
+     "source_url": "https://www.cypress.io/pricing"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "USD建て（1ドル=150円で換算）。年払い（Team $799/年、Business $3,199/年）。ページ上の月額表示 $67/$267 は年払いの月額換算とみられ、月払い価格は判別できず未掲載（年払いで11%割引の表示）。テスト記録数の上限あり"
   },
   {
    "slug": "datadog",
@@ -8114,7 +8578,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。料金ページは「最初の12か月」の価格として表示。個人向けGitHub Proは料金ページで未確認"
+   "notes": "USD建て（1ドル=150円で換算）。料金ページは「最初の12か月」の価格として表示。個人向けGitHub Proは料金ページで未確認。第3パスでも料金ページはUSDのみ、日本語ドキュメントにも価格記載なし"
   },
   {
    "slug": "gitkraken",
@@ -8125,7 +8589,7 @@
    "official_url": "https://www.gitkraken.com/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 料金ページの金額がJavaScript描画で取得できず（年払いのみの表記は確認）"
+   "notes": "料金未確認: 料金ページの金額がJavaScript描画で取得できず（第3パスでも同様）。Pro/Advancedは年払いのみ、価格は税別との表記"
   },
   {
    "slug": "gitlab",
@@ -8223,7 +8687,7 @@
    "official_url": "https://www.hetzner.com/cloud/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "料金未確認: 公式ページ（hetzner.com/cloud/）の価格欄が空（JS描画）で取得できず"
   },
   {
    "slug": "insomnia",
@@ -8262,7 +8726,7 @@
    "official_url": "https://www.jetbrains.com/ja-jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: ストアページ（ja-jp）の価格がJavaScript描画で取得できず（2回目も同様）"
+   "notes": "料金未確認: ストアページの価格がJavaScript描画で取得できず（第3パスでも同様）。公式ブログに日本円価格改定のお知らせ（2025年1月）はあるが、2025年10月のグローバル値上げ後の最新円価格は未確認"
   },
   {
    "slug": "koyeb",
@@ -8329,7 +8793,7 @@
    "official_url": "https://logrocket.com/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "料金未確認: 公式料金ページ（logrocket.com/pricing）はセッション数に応じた従量の見積もり表示（「Starting at $176/mo」等）のみで、Core/Proの定額価格の記載なし"
   },
   {
    "slug": "lolipop",
@@ -8477,9 +8941,34 @@
    "category": "dev",
    "brand_color": "#de3723",
    "official_url": "https://www.namecheap.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Stellar",
+     "price_jpy": 882,
+     "billing_cycle": "monthly",
+     "original_price": 5.88,
+     "original_currency": "USD",
+     "source_url": "https://www.namecheap.com/hosting/shared/"
+    },
+    {
+     "name": "Stellar Plus",
+     "price_jpy": 1182,
+     "billing_cycle": "monthly",
+     "original_price": 7.88,
+     "original_currency": "USD",
+     "source_url": "https://www.namecheap.com/hosting/shared/"
+    },
+    {
+     "name": "Stellar Business",
+     "price_jpy": 1782,
+     "billing_cycle": "monthly",
+     "original_price": 11.88,
+     "original_currency": "USD",
+     "source_url": "https://www.namecheap.com/hosting/shared/"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "USD建て（1ドル=150円で換算）。共有ホスティング（Stellar系）の1か月契約価格。1年契約は$55.88/$85.44/$128.88と表示されるが割引・更新価格の区別が不明確なため除外。ドメイン登録料は別"
   },
   {
    "slug": "navicat",
@@ -8490,7 +8979,7 @@
    "official_url": "https://www.navicat.com/ja/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式ストアページ取得エラー"
+   "notes": "料金未確認: 公式ストアページ（/ja/store 等）が「Page Not Found」で価格を取得できず"
   },
   {
    "slug": "neon",
@@ -8557,7 +9046,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。2人目以降のフルプラットフォームユーザーは$99/月。データ量は従量課金"
+   "notes": "USD建て（1ドル=150円で換算）。2人目以降のフルプラットフォームユーザーは$99/月。データ量は従量課金。第3パスで公式日本語料金ページ（newrelic.com/jp/pricing）を再確認したところUSD表示のままで、Standardの記載はなくPro（コアユーザー$49、フルプラットフォームユーザー年契約$349/月・従量$418.80/月）とEnterpriseのみ表示。プラン構成が変わった可能性あり"
   },
   {
    "slug": "ngrok",
@@ -8706,9 +9195,34 @@
    "category": "dev",
    "brand_color": "#2d3748",
    "official_url": "https://www.prisma.io/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Starter",
+     "price_jpy": 1500,
+     "billing_cycle": "monthly",
+     "original_price": 10,
+     "original_currency": "USD",
+     "source_url": "https://www.prisma.io/pricing"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 7350,
+     "billing_cycle": "monthly",
+     "original_price": 49,
+     "original_currency": "USD",
+     "source_url": "https://www.prisma.io/pricing"
+    },
+    {
+     "name": "Business",
+     "price_jpy": 19350,
+     "billing_cycle": "monthly",
+     "original_price": 129,
+     "original_currency": "USD",
+     "source_url": "https://www.prisma.io/pricing"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "USD建て（1ドル=150円で換算、$表記で通貨コード明記なし）。Prisma Postgres等の基本月額で、利用量に応じた従量課金が加算。税の記載なし"
   },
   {
    "slug": "railway",
@@ -8931,9 +9445,18 @@
    "category": "dev",
    "brand_color": "#4c4a73",
    "official_url": "https://snyk.io/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Team",
+     "price_jpy": 3750,
+     "billing_cycle": "monthly",
+     "original_price": 25,
+     "original_currency": "USD",
+     "source_url": "https://snyk.io/plans/"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "USD建て（1ドル=150円で換算）。Teamプランは「Starting at $25 / month」（最大10開発者、月払い）の最低価格。開発者数による加算の詳細は未確認。Enterpriseは要問い合わせ"
   },
   {
    "slug": "studio",
@@ -9053,14 +9576,22 @@
    "plans": [
     {
      "name": "Pro",
-     "price_jpy": 18000,
-     "billing_cycle": "yearly",
-     "original_price": 120,
-     "original_currency": "USD",
-     "source_url": "https://termius.com/pricing"
+     "price_jpy": 1600,
+     "billing_cycle": "monthly",
+     "original_price": 1600,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/termius-modern-ssh-client/id549039908"
     },
     {
-     "name": "Team（1ユーザー、年払い）",
+     "name": "Pro",
+     "price_jpy": 13000,
+     "billing_cycle": "yearly",
+     "original_price": 13000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/termius-modern-ssh-client/id549039908"
+    },
+    {
+     "name": "Team",
      "price_jpy": 36000,
      "billing_cycle": "yearly",
      "original_price": 240,
@@ -9069,7 +9600,7 @@
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。年払い時の月額（$10/$20）×12で算出。月払い価格は未確認"
+   "notes": "Proは日本のApp Store公式アプリ（販売元 Termius Corporation）のApp内課金「Termius Pro Monthly ¥1,600」「Termius Pro Annual ¥13,000」で確認。TeamはWeb料金ページのUSD建て（1ユーザー、年払い0/月×12、1ドル=150円で換算）。Web購入のProは年払い0/月×12（USD）"
   },
   {
    "slug": "tower",
@@ -9270,9 +9801,26 @@
    "category": "dev",
    "brand_color": "#007bfc",
    "official_url": "https://www.vultr.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Cloud Compute 1 GB",
+     "price_jpy": 750,
+     "billing_cycle": "monthly",
+     "original_price": 5,
+     "original_currency": "USD",
+     "source_url": "https://www.vultr.com/pricing/"
+    },
+    {
+     "name": "Cloud Compute 2 GB",
+     "price_jpy": 1500,
+     "billing_cycle": "monthly",
+     "original_price": 10,
+     "original_currency": "USD",
+     "source_url": "https://www.vultr.com/pricing/"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "USD建て（1ドル=150円で換算）。Cloud Compute（Regular Performance、1 vCPU）の月額上限（時間課金）。0.5GBの$2.50/$3.50プランもあり（IPv6のみ等の条件付き）"
   },
   {
    "slug": "webflow",
@@ -9353,9 +9901,34 @@
    "category": "dev",
    "brand_color": "#0060aa",
    "official_url": "https://vps.xserver.ne.jp/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "2GB",
+     "price_jpy": 1265,
+     "billing_cycle": "monthly",
+     "original_price": 1265,
+     "original_currency": "JPY",
+     "source_url": "https://vps.xserver.ne.jp/"
+    },
+    {
+     "name": "4GB",
+     "price_jpy": 2035,
+     "billing_cycle": "monthly",
+     "original_price": 2035,
+     "original_currency": "JPY",
+     "source_url": "https://vps.xserver.ne.jp/"
+    },
+    {
+     "name": "8GB",
+     "price_jpy": 3850,
+     "billing_cycle": "monthly",
+     "original_price": 3850,
+     "original_currency": "JPY",
+     "source_url": "https://vps.xserver.ne.jp/"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 調査セッションのWebFetch上限に達したため公式ページを確認できず"
+   "notes": "公式トップページの「月額料金（税込）〜」の最安表示。契約期間により異なり、表示価格の契約期間はページに明記なし"
   },
   {
    "slug": "abceed",
@@ -9475,7 +10048,7 @@
    "brand_color": "#1f1f1f",
    "official_url": "https://brilliant.org/",
    "plans": [],
-   "notes": "料金未確認: Web購読ページはIndividual $22.50/月・Family $45/月（月払い/年払いの別不明）。日本のApp StoreにはBrilliant Premiumが¥2,000〜¥19,400で10件並ぶが期間表示がなく特定できず",
+   "notes": "料金未確認: 公式購読ページ（/subscribe/）は第3パスでは価格表示なし（年1回払い・自動更新の記載のみ）。日本のApp StoreにはBrilliant Premiumが¥2,000〜¥19,400で10件並ぶが期間表示がなく特定できず",
    "checked_on": "2026-10-08",
    "category": "learning"
   },
@@ -9497,7 +10070,7 @@
    "brand_color": "#ffd200",
    "official_url": "https://www.cambly.com/english?lang=ja",
    "plans": [],
-   "notes": "料金未確認: 公式ページには割引中の「最低料金」（USD、例: Private+ $28/月〜）のみ表示され、プラン別の通常料金が確定できないため。第2パスで日本のApp Storeページを特定できず",
+   "notes": "料金未確認: 公式ページには割引中の「最低料金」（USD）のみ表示。日本のApp Store公式アプリ（販売元 Cambly, Inc.）にApp内課金の記載なし",
    "checked_on": "2026-10-08",
    "category": "learning"
   },
@@ -9510,38 +10083,38 @@
    "plans": [
     {
      "name": "Plus",
-     "price_jpy": 4499,
+     "price_jpy": 5000,
      "billing_cycle": "monthly",
-     "original_price": 29.99,
-     "original_currency": "USD",
-     "source_url": "https://www.codecademy.com/pricing"
+     "original_price": 5000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/codecademy-go/id1376029326"
     },
     {
      "name": "Plus",
-     "price_jpy": 26982,
+     "price_jpy": 30000,
      "billing_cycle": "yearly",
-     "original_price": 179.88,
-     "original_currency": "USD",
-     "source_url": "https://www.codecademy.com/pricing"
+     "original_price": 30000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/codecademy-go/id1376029326"
     },
     {
      "name": "Pro",
-     "price_jpy": 5999,
+     "price_jpy": 6000,
      "billing_cycle": "monthly",
-     "original_price": 39.99,
-     "original_currency": "USD",
-     "source_url": "https://www.codecademy.com/pricing"
+     "original_price": 6000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/codecademy-go/id1376029326"
     },
     {
      "name": "Pro",
-     "price_jpy": 35982,
+     "price_jpy": 40000,
      "billing_cycle": "yearly",
-     "original_price": 239.88,
-     "original_currency": "USD",
-     "source_url": "https://www.codecademy.com/pricing"
+     "original_price": 40000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/codecademy-go/id1376029326"
     }
    ],
-   "notes": "USD建て（1ドル=150円で換算）。年額は「月$14.99/$19.99・年払い」表記から×12で算出。英語のみ。第2パスは予算の都合で未再調査",
+   "notes": "日本のApp Store公式アプリ「Codecademy Go」（販売元 Codecademy, LLC）のApp内課金（Plus/Pro Monthly・Annual Subscription）で確認。Web購入はUSD建て（Plus $29.99/月・年払い月$14.99、Pro $39.99/月・年払い月$19.99）。英語のみ",
    "checked_on": "2026-10-08",
    "category": "learning"
   },
@@ -9554,11 +10127,11 @@
    "plans": [
     {
      "name": "月額",
-     "price_jpy": 8850,
+     "price_jpy": 6700,
      "billing_cycle": "monthly",
-     "original_price": 59,
-     "original_currency": "USD",
-     "source_url": "https://www.coursera.org/courseraplus"
+     "original_price": 6700,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id736535961"
     },
     {
      "name": "年額",
@@ -9569,7 +10142,7 @@
      "source_url": "https://www.coursera.org/courseraplus"
     }
    ],
-   "notes": "USD建て（1ドル=150円で換算）",
+   "notes": "月額は日本のApp Store公式アプリ（販売元 Coursera, Inc.）のApp内課金「Coursera Plus ¥6,700」で確認（期間表示なし、金額から月額と推定）。年額はWebのUSD建て（1ドル=150円で換算）。Webの月額は$59",
    "checked_on": "2026-10-08",
    "category": "learning"
   },
@@ -9589,7 +10162,7 @@
      "source_url": "https://www.datacamp.com/pricing"
     }
    ],
-   "notes": "USD建て（1ドル=150円で換算）。「$14/月・年払い」表記から×12で算出。月払い価格は未確認。セール価格が表示されることあり",
+   "notes": "USD建て（1ドル=150円で換算）。「$14/月・年払い」表記から×12で算出。月払い価格は未確認。セール価格が表示されることあり。日本のApp Store（Datacamp inc.）には「Standard Monthly Subscription ¥6,300」のほか同名のYearly/Mobile項目が¥5,580〜¥50,000で複数並び、Web版プランとの対応が不明なため未採用",
    "checked_on": "2026-10-08",
    "category": "learning"
   },
@@ -9722,9 +10295,26 @@
    "category": "learning",
    "brand_color": null,
    "official_url": "https://ja.englishcentral.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "プレミアム",
+     "price_jpy": 4600,
+     "billing_cycle": "monthly",
+     "original_price": 4600,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/englishcentral/id927987414"
+    },
+    {
+     "name": "プレミアム",
+     "price_jpy": 34800,
+     "billing_cycle": "yearly",
+     "original_price": 34800,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/englishcentral/id927987414"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式日本語トップがメタ情報のみで料金・料金ページリンクを取得できず"
+   "notes": "日本のApp Store公式アプリ（販売元 EnglishCentral Inc.）の説明文に記載のプレミアムプラン「4,600円／月（税込）」「34,800円／年（税込）」で確認。App内課金にはスタンダード／プレミアム／リッチの同名・別価格項目が多数あり対応不明。Web購入の価格は未確認"
   },
   {
    "slug": "flier",
@@ -9955,8 +10545,17 @@
    "company": "LinkedIn Corporation",
    "brand_color": "#0a66c2",
    "official_url": "https://www.linkedin.com/learning/",
-   "plans": [],
-   "notes": "料金未確認: linkedin.comはrobots.txtで取得が拒否されたため",
+   "plans": [
+    {
+     "name": "個人",
+     "price_jpy": 3600,
+     "billing_cycle": "monthly",
+     "original_price": 3600,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/linkedin-learning/id1084807225"
+    }
+   ],
+   "notes": "日本のApp Store公式アプリ（販売元 LinkedIn Corporation）のApp内課金「Learning Monthly Subscription ¥3,600」「LinkedIn Learning Subscription ¥3,600」で確認。ほかに「Learning Premium Subscription ¥2,900」「Premium Career ¥3,990」あり。linkedin.comはrobots.txtで取得不可のためWeb価格は未確認",
    "checked_on": "2026-10-08",
    "category": "learning"
   },
@@ -10123,9 +10722,18 @@
    "category": "learning",
    "brand_color": null,
    "official_url": "https://www.onsuku.jp/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "ウケホーダイ スタンダード",
+     "price_jpy": 2200,
+     "billing_cycle": "monthly",
+     "original_price": 2200,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id6503328462"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトがrobots.txtで取得を拒否したため（第2パスでは再試行せず）"
+   "notes": "日本のApp Store公式アプリ（販売元 ONLINE SCHOOL Co.,Ltd）で確認。App内課金「アプリ版 ウケホーダイ-スタンダード 月額課金 ¥2,200」、説明文に「全講座パック 月額2,200円（税込）」。公式サイトはrobots.txtで取得不可"
   },
   {
    "slug": "paiza-learning",
@@ -10385,9 +10993,18 @@
    "category": "learning",
    "brand_color": null,
    "official_url": "https://www.rosettastone.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "言語の制限無し",
+     "price_jpy": 11800,
+     "billing_cycle": "yearly",
+     "original_price": 11800,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/rosetta-stone-learn-languages/id435588892"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 2回目はWebFetch予算配分のため未取得"
+   "notes": "公式App Store（販売元 Rosetta Stone Ltd.）のApp内課金「言語の制限無し - 12か月のサービス利用権 ¥11,800」。ほかに3か月利用権（¥4,800〜¥6,200）、無期限利用権 ¥30,000あり。英語12か月は¥11,600と¥13,600の2件があり除外。Web版の価格は未確認"
   },
   {
    "slug": "schoo",
@@ -10426,7 +11043,7 @@
    "official_url": "https://sho.benesse.co.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式受講費ページ取得エラー（学年・支払方法で異なる）"
+   "notes": "料金未確認: 公式受講費ページ取得エラー（第3パスでも同様。学年・支払方法で異なる）"
   },
   {
    "slug": "skillshare",
@@ -10678,9 +11295,26 @@
    "category": "learning",
    "brand_color": null,
    "official_url": "https://think.hanamaru-lab.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "スタンダード",
+     "price_jpy": 450,
+     "billing_cycle": "monthly",
+     "original_price": 450,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/thinkthink/id1082259392"
+    },
+    {
+     "name": "プレミアム",
+     "price_jpy": 980,
+     "billing_cycle": "monthly",
+     "original_price": 980,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/thinkthink/id1082259392"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトがrobots.txtで取得を拒否、家庭向けアプリのApp Storeページを特定できず"
+   "notes": "日本のApp Store公式アプリ（販売元 Wonderfy Inc.）のApp内課金「スタンダードコース ¥450」「プレミアムコース ¥980」で確認（説明文で両コースとも月額制と記載）。公式サイトはrobots.txtで取得不可"
   },
   {
    "slug": "todo-math",
@@ -10881,9 +11515,42 @@
    "category": "life",
    "brand_color": null,
    "official_url": "https://www.awarefy.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "ベーシック",
+     "price_jpy": 1600,
+     "billing_cycle": "monthly",
+     "original_price": 1600,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/awarefy/id1513802951"
+    },
+    {
+     "name": "ベーシック",
+     "price_jpy": 9600,
+     "billing_cycle": "yearly",
+     "original_price": 9600,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/awarefy/id1513802951"
+    },
+    {
+     "name": "AIパートナー",
+     "price_jpy": 4480,
+     "billing_cycle": "monthly",
+     "original_price": 4480,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/awarefy/id1513802951"
+    },
+    {
+     "name": "AIパートナー",
+     "price_jpy": 19000,
+     "billing_cycle": "yearly",
+     "original_price": 19000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/awarefy/id1513802951"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトはメタ情報のみで料金記載なし、日本のApp Store（id1513802951）は取得エラー"
+   "notes": "日本のApp Store公式アプリ（販売元 Awarefy, K.K）のApp内課金「ベーシックプラン（月間）¥1,600／（年間）¥9,600」「AIパートナープラン（月間）¥4,480／（年間）¥19,000」で確認。AIパートナープラン（3ヶ月）¥7,980もあり。Web購入の価格は未確認"
   },
   {
    "slug": "blue-bottle-subscription",
@@ -11010,9 +11677,18 @@
    "category": "life",
    "brand_color": "#ff9933",
    "official_url": "https://cookpad.com/jp",
-   "plans": [],
+   "plans": [
+    {
+     "name": "プレミアムサービス",
+     "price_jpy": 400,
+     "billing_cycle": "monthly",
+     "original_price": 400,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/cookpad/id340368403"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式プレミアムページ・App Storeとも取得エラー（第2パスでも再取得失敗）"
+   "notes": "日本のApp Store公式アプリ（販売元 Cookpad Inc.）の説明文に「プレミアムサービスは月額400円（税込）です。」と記載。App内課金には¥100〜¥480の同名項目もあるが、説明文の記載を採用"
   },
   {
    "slug": "costco",
@@ -11073,7 +11749,7 @@
    "official_url": "https://demae-can.com/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトが403、App Store（JP）も取得エラー"
+   "notes": "料金未確認: 公式サイトが403。日本のApp Store公式アプリ（id405489166、販売元 DEMAE-CAN CO.,LTD）にはApp内課金・DEMAE-CAN PASSの価格記載なし"
   },
   {
    "slug": "docomo-bike-share",
@@ -11082,9 +11758,18 @@
    "category": "life",
    "brand_color": "#e60012",
    "official_url": "https://docomo-cycle.jp/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "月額（東京エリア）",
+     "price_jpy": 3300,
+     "billing_cycle": "monthly",
+     "original_price": 3300,
+     "original_currency": "JPY",
+     "source_url": "https://docomo-cycle.jp/tokyo/price"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: エリアごとに料金が異なり、2回目は予算配分のため未取得"
+   "notes": "東京エリア（千代田・中央・港など15区）の月額利用料金（税込）。1回30分以内は基本料金内、延長30分ごとに165円。月額プランはエリアごとの登録でエリア間共通利用不可。他エリアは料金が異なる"
   },
   {
    "slug": "edist-closet",
@@ -11095,7 +11780,7 @@
    "official_url": "https://edist.ne.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式トップに料金表示なし、料金ページを特定できず"
+   "notes": "料金未確認: 公式トップに料金表示なし、/closet/ ページは取得エラー（第3パス）。公式App Storeも見つからず"
   },
   {
    "slug": "finc-premium",
@@ -11104,9 +11789,18 @@
    "category": "life",
    "brand_color": null,
    "official_url": "https://finc.com/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "プラス",
+     "price_jpy": 480,
+     "billing_cycle": "monthly",
+     "original_price": 480,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/finc/id965626396"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 第2パスでは予算の都合で未取得"
+   "notes": "日本のApp Store公式アプリ（販売元 FINC TECHNOLOGIES INC.）の説明文にFiNCプラス 1か月¥480・6か月¥1,950の記載あり（6か月プランは期間が月額/年額でないため未掲載）。App内課金の「FiNCプレミアム」は¥960／¥2,500／¥8,700と期間表示なしで並ぶため未記載"
   },
   {
    "slug": "fitbit-premium",
@@ -11145,7 +11839,7 @@
    "official_url": "https://www.garmin.co.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 日本のApp Storeに課金項目の記載なし、garmin.co.jp の該当ページも取得エラー"
+   "notes": "料金未確認: 日本のApp Storeに課金項目の記載なし、garmin.co.jp・support.garmin.com（ja-JP）とも取得エラー"
   },
   {
    "slug": "green-spoon",
@@ -11156,7 +11850,7 @@
    "official_url": "https://greenspoon.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイトがクローラ拒否（robots）で取得不可"
+   "notes": "料金未確認: 公式サイトがクローラ拒否（robots）で取得不可。公式App Store・公式ヘルプの価格掲載ページも見つからず（第3パス）"
   },
   {
    "slug": "hafh",
@@ -11167,7 +11861,7 @@
    "official_url": "https://www.hafh.com/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式トップはコイン数のスライダーのみで円価格を取得できず、プランページも取得エラー"
+   "notes": "料金未確認: 公式トップはコイン数のスライダーのみで円価格を取得できず、プランページも取得エラー。第3パスで公式App Store・ヘルプも見つからず"
   },
   {
    "slug": "headspace",
@@ -11178,7 +11872,7 @@
    "official_url": "https://www.headspace.com/ja",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: App Store日本ページに円建て価格の記載なし（英ポンド表記のみ）、公式サイト取得不可"
+   "notes": "料金未確認: App Store日本ページに円建て価格の記載なし（英ポンド表記のみ、第3パスでは取得エラー）、公式サイト取得不可"
   },
   {
    "slug": "jaf",
@@ -11189,7 +11883,7 @@
    "official_url": "https://jaf.or.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式サイト（jaf.or.jp）の入会ページが取得エラー"
+   "notes": "料金未確認: 公式サイト（jaf.or.jp）の入会ページが取得エラー（第3パスでも同様）"
   },
   {
    "slug": "kinto",
@@ -11211,7 +11905,7 @@
    "official_url": "https://hometap.kirin.co.jp/price/index.html",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 料金ページで月額が取得できず（JS描画の可能性）。月4L/月8Lコース、最低契約12か月、期間内解約は16,500円（税込）"
+   "notes": "料金未確認: 料金ページで月額が取得できず（JS描画の可能性）、特定商取引法表記（/transactions/）は404。月4L/月8Lコース、最低契約12か月、期間内解約は16,500円（税込）"
   },
   {
    "slug": "kurashiru-premium",
@@ -11322,17 +12016,6 @@
    "plans": [],
    "checked_on": "2026-10-08",
    "notes": "料金未確認: トップページの表記が「月額5,980円から」と「月額3,160円〜」で食い違い、プランページ取得不可（第2パスでも見つからず）"
-  },
-  {
-   "slug": "menu-pass",
-   "name": "menu pass",
-   "company": "menu",
-   "category": "life",
-   "brand_color": null,
-   "official_url": "https://menu.inc/",
-   "plans": [],
-   "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式ページがrobots.txtで取得不可、その後WebFetch予算切れ"
   },
   {
    "slug": "mitene-premium",
@@ -11517,9 +12200,26 @@
    "category": "life",
    "brand_color": null,
    "official_url": "https://www.jorudan.co.jp/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Plus",
+     "price_jpy": 360,
+     "billing_cycle": "monthly",
+     "original_price": 360,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/norikae/id299490481"
+    },
+    {
+     "name": "Plus",
+     "price_jpy": 3780,
+     "billing_cycle": "yearly",
+     "original_price": 3780,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/norikae/id299490481"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式トップは自動転送ページのみで有料プラン（乗換案内Plus等）の料金を取得できず"
+   "notes": "日本のApp Store公式アプリ「乗換案内」（販売元 Jorudan Co.,Ltd.）の説明文・App内課金で確認（税込）: Plusモード 1ヶ月継続利用360円、365日プラン3,780円（年額として記載）。ほかに90日プラン1,000円あり"
   },
   {
    "slug": "nosh",
@@ -11712,9 +12412,18 @@
    "category": "life",
    "brand_color": "#f7931e",
    "official_url": "https://tabelog.com/premium/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "プレミアム",
+     "price_jpy": 400,
+     "billing_cycle": "monthly",
+     "original_price": 400,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id763377066"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式案内ページに月額の金額記載なし（月額課金・初月無料の記載のみ）"
+   "notes": "公式App Store（販売元 Kakaku.com, Inc.）の説明文「月額400円（税込）」。iOSアプリ経由の価格で、Web・Android経由の価格は未確認"
   },
   {
    "slug": "times-car",
@@ -11873,7 +12582,7 @@
    "official_url": "https://wolt.com/ja/jpn",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式ページ（/ja/jpn/wolt-plus）が取得エラー、App Storeの説明にも料金記載なし"
+   "notes": "料金未確認: 公式ページ（/ja/jpn/wolt-plus、/en/jpn/wolt-plus）が取得エラー、App Storeの説明にも料金記載なし"
   },
   {
    "slug": "zaim-premium",
@@ -12033,9 +12742,18 @@
    "category": "other",
    "brand_color": "#eb5505",
    "official_url": "https://www.au.com/mobile/charge/smartphone/plan/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "使い放題MAX＋ 5G ALL STARパック",
+     "price_jpy": 11836,
+     "billing_cycle": "monthly",
+     "original_price": 11836,
+     "original_currency": "JPY",
+     "source_url": "https://www.au.com/mobile/charge/smartphone/plan/data-unlimited-plus-allstar/"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: プラン一覧ページに基本料の記載なし（auバリューリンクプラン、使い放題MAX＋ 5G、スマホミニプラン＋など）、詳細ページは取得エラー"
+   "notes": "公式プランページの割引前月額（税込、税抜10,760円）。家族割プラス・auスマートバリュー・au PAYカードお支払い割の適用で9,306円/月。他プラン（auバリューリンクプラン、スマホミニプラン＋など）の基本料は未確認"
   },
   {
    "slug": "avast-one",
@@ -12090,7 +12808,7 @@
    "official_url": "https://www.bitdefender.co.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: bitdefender.co.jp が robots.txt で取得不可"
+   "notes": "料金未確認: bitdefender.co.jp が robots.txt で取得不可、bitdefender.com/ja-jp も取得エラー"
   },
   {
    "slug": "bitwarden",
@@ -12147,9 +12865,26 @@
    "category": "other",
    "brand_color": "#0e353d",
    "official_url": "https://www.dashlane.com/pricing-personal",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Premium",
+     "price_jpy": 9900,
+     "billing_cycle": "yearly",
+     "original_price": 9900,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/dashlane/id517914548"
+    },
+    {
+     "name": "Friends & Family",
+     "price_jpy": 14900,
+     "billing_cycle": "yearly",
+     "original_price": 14900,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/dashlane/id517914548"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 個人向け価格がJS描画で取得できず（第2パスでは未再試行）"
+   "notes": "日本のApp Store公式アプリ（販売元 Dashlane）のApp内課金「Dashlane Premium - 1 Year ¥9,900」「Dashlane Premium Family ¥14,900」で確認（Familyは期間表示なし、Webの年払いのみの案内と金額から年額と判断）。ほかに「(Legacy)」の旧プラン項目多数。Web料金ページは価格がJS描画で未確認（Premium・Friends & Familyとも年払い）"
   },
   {
    "slug": "discord-nitro",
@@ -12230,9 +12965,18 @@
    "category": "other",
    "brand_color": "#0096a1",
    "official_url": "https://personal.canon.jp/product/app/eset/lineup",
-   "plans": [],
+   "plans": [
+    {
+     "name": "モバイル セキュリティ",
+     "price_jpy": 3300,
+     "billing_cycle": "yearly",
+     "original_price": 3300,
+     "original_currency": "JPY",
+     "source_url": "https://eset-onlineshop.canon-its.co.jp/"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: ラインアップページ（エッセンシャル/プレミアム/アルティメット、月額・1年・3年）に価格なし。オンラインショップ（eset-onlineshop.canon-its.co.jp）ではエッセンシャル5台3年12,500円（税込）のみ確認でき、月額・年額の価格表は取得できず"
+   "notes": "公式オンラインショップ（キヤノンITソリューションズ）でAndroid向けESET モバイル セキュリティ1年1台3,300円（税込）を確認。ESET HOME セキュリティ（エッセンシャル/プレミアム/アルティメット、月額・1年・3年）の価格表は取得できず（エッセンシャル5台3年12,500円から算出した1台月70円の表示のみ）"
   },
   {
    "slug": "expressvpn",
@@ -12391,7 +13135,7 @@
    "official_url": "https://www.iijmio.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: WebFetch予算切れ"
+   "notes": "料金未確認: ギガプランのページ（/gigaplan/）がサーバーエラーで取得不可。トップは「2GBから自由に選べる」のみで金額記載なし"
   },
   {
    "slug": "kaspersky",
@@ -12548,9 +13292,50 @@
    "category": "other",
    "brand_color": "#c01818",
    "official_url": "https://www.mcafee.com/ja-jp/",
-   "plans": [],
+   "plans": [
+    {
+     "name": "ベーシック",
+     "price_jpy": 350,
+     "billing_cycle": "monthly",
+     "original_price": 350,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/mcafee/id724596345"
+    },
+    {
+     "name": "Total Protection",
+     "price_jpy": 1260,
+     "billing_cycle": "monthly",
+     "original_price": 1260,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/mcafee/id724596345"
+    },
+    {
+     "name": "Total Protection",
+     "price_jpy": 12600,
+     "billing_cycle": "yearly",
+     "original_price": 12600,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/mcafee/id724596345"
+    },
+    {
+     "name": "McAfee+ アドバンス",
+     "price_jpy": 1500,
+     "billing_cycle": "monthly",
+     "original_price": 1500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/mcafee/id724596345"
+    },
+    {
+     "name": "McAfee+ アドバンス",
+     "price_jpy": 15980,
+     "billing_cycle": "yearly",
+     "original_price": 15980,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/mcafee/id724596345"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式日本語ページの価格欄がJavaScriptのプレースホルダで取得できず"
+   "notes": "日本のApp Store公式アプリ「マカフィー セキュリティ」（販売元 McAfee, LLC.）のApp内課金で確認（月額版/年額版の表記あり）。ほかにマカフィー ベーシック 年額版¥3,300、月間契約 (Advanced) ¥800／年間契約 (Advanced) ¥8,000 など。Web直販の価格（初年度割引等）は公式ページがJS描画で未確認"
   },
   {
    "slug": "mega",
@@ -12559,9 +13344,50 @@
    "category": "other",
    "brand_color": "#d9272e",
    "official_url": "https://mega.io/ja/pricing",
-   "plans": [],
+   "plans": [
+    {
+     "name": "Pro Lite",
+     "price_jpy": 900,
+     "billing_cycle": "monthly",
+     "original_price": 900,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/mega/id706857885"
+    },
+    {
+     "name": "Pro Lite",
+     "price_jpy": 12700,
+     "billing_cycle": "yearly",
+     "original_price": 12700,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/mega/id706857885"
+    },
+    {
+     "name": "Pro I",
+     "price_jpy": 1800,
+     "billing_cycle": "monthly",
+     "original_price": 1800,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/mega/id706857885"
+    },
+    {
+     "name": "Pro I",
+     "price_jpy": 18000,
+     "billing_cycle": "yearly",
+     "original_price": 18000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/mega/id706857885"
+    },
+    {
+     "name": "Pro II",
+     "price_jpy": 3600,
+     "billing_cycle": "monthly",
+     "original_price": 3600,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/mega/id706857885"
+    }
+   ],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: mega.io がアクセスブロック"
+   "notes": "公式App Store（MEGA公式アプリ、販売元表示 Mega Networks LLC）のApp内課金（Monthly/Yearly表記あり）。iOS経由の価格でWeb版（mega.io、アクセスブロック）の価格は未確認。PRO LITE年額¥12,700は月額×12より高いがページ表示のまま"
   },
   {
    "slug": "millenvpn",
@@ -12672,7 +13498,7 @@
    "official_url": "https://nordpass.com/ja/pricing/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: 公式価格ページ（/ja/pricing/）の価格欄が「Loading」のままで取得できず。個人向けはPremium/Familyの1年・2年プラン"
+   "notes": "料金未確認: 公式価格ページ（/ja/pricing/）の価格欄が「Loading」のままで取得できず。日本のApp Store公式アプリ（販売元 Nordvpn S.A.）のApp内課金は「1-Month Plan ¥550/¥620/¥650」「12-Month Plan ¥3,900/¥4,900」など同名・別価格で、Premium/Familyの区別も不明のため未登録"
   },
   {
    "slug": "nordvpn",
@@ -12904,23 +13730,39 @@
    "plans": [
     {
      "name": "VPN Plus",
-     "price_jpy": 12582,
+     "price_jpy": 1250,
+     "billing_cycle": "monthly",
+     "original_price": 1250,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1437005085"
+    },
+    {
+     "name": "VPN Plus",
+     "price_jpy": 10500,
      "billing_cycle": "yearly",
-     "original_price": 83.88,
-     "original_currency": "USD",
-     "source_url": "https://protonvpn.com/ja/pricing"
+     "original_price": 10500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1437005085"
     },
     {
      "name": "Proton Unlimited",
-     "price_jpy": 17982,
+     "price_jpy": 1790,
+     "billing_cycle": "monthly",
+     "original_price": 1790,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1437005085"
+    },
+    {
+     "name": "Proton Unlimited",
+     "price_jpy": 14400,
      "billing_cycle": "yearly",
-     "original_price": 119.88,
-     "original_currency": "USD",
-     "source_url": "https://protonvpn.com/ja/pricing"
+     "original_price": 14400,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1437005085"
     }
    ],
    "checked_on": "2026-10-08",
-   "notes": "USD建て（1ドル=150円で換算）。掲載は2年プラン終了後の12か月ごとの更新価格。2年プラン初回はVPN Plus $83.76（$3.49/月）、Unlimited $191.76（$7.99/月）。月払い価格はページ上で未確認"
+   "notes": "日本のApp Store公式アプリ（販売元 Proton AG）のApp内課金で確認。期間表示は「Proton Unlimited (1 month)」のみで、他は金額から月額/年額と推定。Web（protonvpn.com）ではUSD表示で2年プラン等の割引あり、価格が異なる場合あり"
   },
   {
    "slug": "rakuten-mobile",
@@ -13226,7 +14068,7 @@
    "official_url": "https://www.uqwimax.jp/mobile/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: プラン一覧ページに金額表示なし（コミコミプランバリュー、トクトクプラン2）、その後WebFetch予算切れ"
+   "notes": "料金未確認: プラン一覧ページ（/mobile/plan/）に基本プランの金額表示なし（コミコミプランバリュー、トクトクプラン2。オプションは増量オプションⅡ 550円/月等の記載あり）、プラン詳細ページは取得エラー"
   },
   {
    "slug": "virusbuster",
@@ -13337,7 +14179,14 @@
    "official_url": "https://www.ymobile.jp/",
    "plans": [],
    "checked_on": "2026-10-08",
-   "notes": "料金未確認: プランページの基本料金がJS表示で取得不可（シンプル3 S/M/L）、その後WebFetch予算切れ"
+   "notes": "料金未確認: プランページ（シンプル3）・ソフトバンク公式プレスリリースとも取得エラー"
   }
+ ],
+ "archived": [
+  "au-smartpass",
+  "crunchyroll",
+  "gendai-premium",
+  "hikari-tv-book",
+  "menu-pass"
  ]
 }

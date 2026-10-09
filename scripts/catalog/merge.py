@@ -3,7 +3,7 @@
 使い方: python3 -I scripts/catalog/merge.py <調査フォルダ> [出力先]
 出力先の既定は supabase/seed/catalog.json。
 同じ slug が複数のグループにあるときは、確認済みの料金が多いほうを残す。
-<調査フォルダ>/pass*/result-*.json があれば、それで上書きする。
+<調査フォルダ>/pass*/result-*.json と manual/*.json（手入力）があれば、その順で上書きする。
 """
 import glob
 import json
@@ -27,7 +27,7 @@ CATEGORIES = [
 CATEGORY_OVERRIDES = {"kindle-unlimited": "books", "grammarly": "work", "figma": "work"}
 
 # 終了したサービス・日本で使えないサービス
-EXCLUDE = {"gendai-premium", "crunchyroll", "au-smartpass"}
+EXCLUDE = {"gendai-premium", "crunchyroll", "au-smartpass", "hikari-tv-book", "menu-pass"}
 # 既存の契約が参照しているプラン名に合わせる
 PLAN_RENAMES = {("youtube-premium", "YouTube Premium"): "個人"}
 CYCLE_SUFFIXES = {
@@ -60,12 +60,14 @@ cats = {s for s, _ in CATEGORIES}
 merged: dict[str, dict] = {}
 # 再調査（pass2 以降）の結果は、最初の調査より優先して上書きする
 first = sorted(glob.glob(os.path.join(src, "*.json")))
-later = sorted(glob.glob(os.path.join(src, "pass*", "result-*.json")))
+later = sorted(glob.glob(os.path.join(src, "pass*", "result-*.json"))) + sorted(glob.glob(os.path.join(src, "manual", "*.json")))
 for path in first + later:
     for item in json.load(open(path, encoding="utf-8")):
         if item["slug"] in EXCLUDE:
             continue
         item = {k: v for k, v in item.items() if not k.startswith("_")}
+        # 法人向けの高額プラン（年30万円超）は個人の構成に関係しないので外す
+        item["plans"] = [p for p in item["plans"] if p["price_jpy"] <= 300000]
         tidy_plan_names(item)
         item["category"] = CATEGORY_OVERRIDES.get(item["slug"], item["category"])
         assert item["category"] in cats, (path, item["slug"], item["category"])
@@ -78,7 +80,11 @@ for path in first + later:
 
 services = sorted(merged.values(), key=lambda s: ([c for c, _ in CATEGORIES].index(s["category"]), s["slug"]))
 json.dump(
-    {"categories": [{"slug": s, "name": n} for s, n in CATEGORIES], "services": services},
+    {
+        "categories": [{"slug": s, "name": n} for s, n in CATEGORIES],
+        "services": services,
+        "archived": sorted(EXCLUDE),  # 本番に入っていれば非表示にする
+    },
     open(out, "w", encoding="utf-8"),
     ensure_ascii=False,
     indent=1,
