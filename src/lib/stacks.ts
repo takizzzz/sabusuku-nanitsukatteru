@@ -108,9 +108,9 @@ export function buildStack(
   };
 }
 
-/** 統計対象（public＋unlisted）のプロフィール */
+/** 統計対象（public＋unlisted）のプロフィール。運営のサンプルは含めない */
 export function statProfiles(idx: Index): Profile[] {
-  return idx.ds.profiles.filter((p) => p.visibility !== "private");
+  return idx.ds.profiles.filter((p) => p.visibility !== "private" && !p.isSample);
 }
 
 /** 一覧に出せるプロフィール（public のみ） */

@@ -1,3 +1,4 @@
+import { SampleBadge } from "./sample-badge";
 import Link from "next/link";
 import type { Stack } from "@/lib/stacks";
 import { relativeDay, yen } from "@/lib/format";
@@ -68,6 +69,7 @@ function ExploreCard({ stack, showComment }: { stack: Stack; showComment: boolea
                 <h3 className="truncate font-headline-sm text-headline-sm font-bold text-on-surface transition-colors group-hover:text-primary">
                   @{profile.handle}
                 </h3>
+                {profile.isSample && <SampleBadge />}
                 <span className="shrink-0 text-[11px] text-outline md:hidden">・{updated}</span>
               </div>
               <span className="truncate font-body-sm text-body-sm text-on-surface-variant md:font-label-sm md:text-label-sm md:font-normal">
@@ -191,6 +193,7 @@ function FeedCard({ stack, showComment }: { stack: Stack; showComment: boolean }
           <div className="flex min-w-0 flex-col">
             <div className="flex min-w-0 items-center gap-1.5">
               <span className="max-w-[65%] shrink-0 truncate font-headline-sm text-headline-sm text-on-surface group-hover:text-primary">@{profile.handle}</span>
+              {profile.isSample && <SampleBadge />}
               {profile.occupation && (
                 <span className="min-w-0 truncate rounded bg-surface-container-high px-1.5 py-0.5 font-label-sm text-label-sm text-on-surface-variant">
                   {profile.occupation}

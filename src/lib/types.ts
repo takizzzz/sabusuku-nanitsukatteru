@@ -40,6 +40,8 @@ export type Profile = {
   ageRange: string | null;
   bio: string | null;
   visibility: Visibility;
+  /** 運営が作成したサンプル。集計には含めない */
+  isSample: boolean;
   tags: string[];
   createdAt: string;
   updatedAt: string;

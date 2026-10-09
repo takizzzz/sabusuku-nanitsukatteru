@@ -7,6 +7,11 @@ export const CATEGORY_COLORS: Record<string, string> = {
   music: "#059669",
   work: "#0891b2",
   learning: "#d97706",
+  books: "#c2410c",
+  news: "#475569",
+  game: "#7c3aed",
+  dev: "#0f766e",
+  life: "#db2777",
   other: "#78716c",
 };
 

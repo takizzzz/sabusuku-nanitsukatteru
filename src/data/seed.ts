@@ -10,17 +10,16 @@ import type {
   Service,
   UserSubscription,
 } from "@/lib/types";
+import catalog from "../../supabase/seed/catalog.json";
 
 const PRICE_CHECKED_AT = "2026-10-01";
 
-export const categories: Category[] = [
-  { id: 1, slug: "ai", name: "生成AI", sortOrder: 1 },
-  { id: 2, slug: "video", name: "動画", sortOrder: 2 },
-  { id: 3, slug: "music", name: "音楽", sortOrder: 3 },
-  { id: 4, slug: "work", name: "仕事ツール", sortOrder: 4 },
-  { id: 5, slug: "learning", name: "学習", sortOrder: 5 },
-  { id: 6, slug: "other", name: "その他", sortOrder: 6 },
-];
+export const categories: Category[] = catalog.categories.map((c, i) => ({
+  id: i + 1,
+  slug: c.slug,
+  name: c.name,
+  sortOrder: i + 1,
+}));
 
 type ServiceSeed = [
   slug: string,
@@ -65,32 +64,61 @@ const serviceSeeds: ServiceSeed[] = [
 ];
 
 const categoryBySlug = new Map(categories.map((c) => [c.slug, c]));
+const catalogBySlug = new Map(catalog.services.map((s) => [s.slug, s]));
+const seededSlugs = new Set(serviceSeeds.map(([slug]) => slug));
 
-export const services: Service[] = serviceSeeds.map(
-  ([slug, name, company, category, color, url, , affiliate]) => ({
+// 構成で使う上の28件はプラン番号を固定したいのでそのまま。残りは本番と同じサービスマスタから足す
+const extraServices = catalog.services.filter((s) => !seededSlugs.has(s.slug));
+
+export const services: Service[] = [
+  ...serviceSeeds.map(([slug, name, company, category, color, url, , affiliate]) => ({
     id: `svc-${slug}`,
     slug,
     name,
     company,
-    categoryId: categoryBySlug.get(category)!.id,
+    categoryId: categoryBySlug.get(catalogBySlug.get(slug)?.category ?? category)!.id,
     logoUrl: null,
     brandColor: color,
     officialUrl: url,
     affiliateUrl: affiliate ? `${url}?ref=placeholder` : null,
     affiliateActive: Boolean(affiliate),
-  }),
-);
-
-export const plans: Plan[] = serviceSeeds.flatMap(([slug, , , , , , planSeeds]) =>
-  planSeeds.map(([name, price, cycle], i) => ({
-    id: `plan-${slug}-${i}`,
-    serviceId: `svc-${slug}`,
-    name,
-    price,
-    billingCycle: cycle ?? "monthly",
-    priceCheckedAt: PRICE_CHECKED_AT,
   })),
-);
+  ...extraServices.map((s) => ({
+    id: `svc-${s.slug}`,
+    slug: s.slug,
+    name: s.name,
+    company: s.company,
+    categoryId: categoryBySlug.get(s.category)!.id,
+    logoUrl: null,
+    brandColor: s.brand_color,
+    officialUrl: s.official_url,
+    affiliateUrl: null,
+    affiliateActive: false,
+  })),
+];
+
+export const plans: Plan[] = [
+  ...serviceSeeds.flatMap(([slug, , , , , , planSeeds]) =>
+    planSeeds.map(([name, price, cycle], i) => ({
+      id: `plan-${slug}-${i}`,
+      serviceId: `svc-${slug}`,
+      name,
+      price,
+      billingCycle: (cycle ?? "monthly") as Plan["billingCycle"],
+      priceCheckedAt: PRICE_CHECKED_AT,
+    })),
+  ),
+  ...extraServices.flatMap((s) =>
+    s.plans.map((p, i) => ({
+      id: `plan-${s.slug}-${i}`,
+      serviceId: `svc-${s.slug}`,
+      name: p.name,
+      price: p.price_jpy,
+      billingCycle: p.billing_cycle as Plan["billingCycle"],
+      priceCheckedAt: s.checked_on,
+    })),
+  ),
+];
 
 // ---------------------------------------------------------------
 // 構成（ユーザーと契約）
@@ -359,6 +387,7 @@ export const profiles: Profile[] = stackSeeds.map((s, i) => ({
   ageRange: s.age,
   bio: s.bio,
   visibility: s.visibility ?? "public",
+  isSample: false,
   tags: s.tags,
   createdAt: `2026-0${(i % 9) + 1}-10T00:00:00Z`,
   updatedAt: `${s.updated}T12:00:00Z`,

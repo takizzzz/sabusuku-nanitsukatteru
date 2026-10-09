@@ -139,6 +139,11 @@ const CATEGORY_ICONS: Record<string, string> = {
   music: "music_note",
   work: "work",
   learning: "school",
+  books: "menu_book",
+  news: "newspaper",
+  game: "sports_esports",
+  dev: "terminal",
+  life: "favorite",
 };
 
 /** カテゴリのアイコン名 */

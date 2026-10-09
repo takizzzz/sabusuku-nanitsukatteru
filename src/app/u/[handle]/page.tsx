@@ -1,3 +1,4 @@
+import { SampleBadge, SampleNotice } from "@/components/sample-badge";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -99,6 +100,12 @@ export default async function StackPage({ params }: PageProps<"/u/[handle]">) {
         <span className="font-label-sm text-label-sm text-outline">最終更新: {slashDate(profile.updatedAt)}</span>
       </div>
 
+      {profile.isSample && (
+        <div className="mb-space-md px-gutter-mobile lg:px-0">
+          <SampleNotice />
+        </div>
+      )}
+
       {/* プロフィール＋操作（SP は操作バーが上、PC はカードの右） */}
       <section className="flex flex-col gap-3 px-gutter-mobile lg:mb-space-lg lg:flex-row lg:items-center lg:justify-between lg:gap-space-md lg:rounded-xl lg:bg-surface-container-lowest lg:p-space-lg lg:shadow-md">
         <div className="order-first flex flex-wrap items-center gap-1.5 py-0.5 lg:order-last lg:shrink-0 lg:justify-end lg:gap-space-xs">
@@ -115,6 +122,7 @@ export default async function StackPage({ params }: PageProps<"/u/[handle]">) {
           <div className="flex min-w-0 flex-col self-center lg:mb-1 lg:flex-row lg:flex-wrap lg:items-center lg:gap-space-xs">
             <h1 className="truncate font-headline-sm text-headline-sm text-on-surface lg:font-headline-md lg:text-headline-md">{profile.displayName}</h1>
             <span className="font-body-sm text-body-sm text-outline lg:text-on-surface-variant">@{profile.handle}</span>
+            {profile.isSample && <SampleBadge />}
             <div className="mt-1 flex flex-wrap items-center gap-1.5 lg:contents">
               {profile.occupation && (
                 <span className="rounded-full bg-surface-container px-2 py-0.5 font-label-sm text-label-sm font-medium text-on-surface-variant lg:bg-surface-container-high lg:px-space-xs lg:text-on-surface">
