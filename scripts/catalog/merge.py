@@ -26,6 +26,8 @@ CATEGORIES = [
 # 調査後に分類を見直したもの
 CATEGORY_OVERRIDES = {"kindle-unlimited": "books", "grammarly": "work", "figma": "work"}
 
+# 終了したサービス・日本で使えないサービス
+EXCLUDE = {"gendai-premium", "crunchyroll", "au-smartpass"}
 # 既存の契約が参照しているプラン名に合わせる
 PLAN_RENAMES = {("youtube-premium", "YouTube Premium"): "個人"}
 CYCLE_SUFFIXES = {
@@ -61,6 +63,8 @@ first = sorted(glob.glob(os.path.join(src, "*.json")))
 later = sorted(glob.glob(os.path.join(src, "pass*", "result-*.json")))
 for path in first + later:
     for item in json.load(open(path, encoding="utf-8")):
+        if item["slug"] in EXCLUDE:
+            continue
         item = {k: v for k, v in item.items() if not k.startswith("_")}
         tidy_plan_names(item)
         item["category"] = CATEGORY_OVERRIDES.get(item["slug"], item["category"])
