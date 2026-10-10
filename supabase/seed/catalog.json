@@ -595,9 +595,46 @@
    "category": "ai",
    "brand_color": null,
    "official_url": "https://gamma.app/ja",
-   "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 第三者サイトの情報が食い違うため未登録。SOZOH media（2026年9月6日更新）はPlus 月1,440円/年17,280円、Pro 月2,500円/年30,000円、Ultra 月13,274円としつつ年払い28%割引とも書き、月額×12＝年額で矛盾。costbench（2026年7月確認）はPlus $10/月・年払い$8/月、Pro $20/月・$15/月、Ultra $100/月。eesel.ai（2026年6月）はPlus $9、Pro $18、Ultra $90。公式ヘルプはPlus/Pro/Ultra（年払い最大28%割引、Ultraは月払いのみ）と説明するが金額なし"
+   "plans": [
+    {
+     "name": "Plus",
+     "price_jpy": 1500,
+     "billing_cycle": "monthly",
+     "original_price": 10,
+     "original_currency": "USD",
+     "source_url": "https://costbench.com/software/ai-presentations/gamma",
+     "source_type": "third_party"
+    },
+    {
+     "name": "Plus",
+     "price_jpy": 14400,
+     "billing_cycle": "yearly",
+     "original_price": 96,
+     "original_currency": "USD",
+     "source_url": "https://costbench.com/software/ai-presentations/gamma",
+     "source_type": "third_party"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 3000,
+     "billing_cycle": "monthly",
+     "original_price": 20,
+     "original_currency": "USD",
+     "source_url": "https://costbench.com/software/ai-presentations/gamma",
+     "source_type": "third_party"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 27000,
+     "billing_cycle": "yearly",
+     "original_price": 180,
+     "original_currency": "USD",
+     "source_url": "https://costbench.com/software/ai-presentations/gamma",
+     "source_type": "third_party"
+    }
+   ],
+   "checked_on": "2026-10-10",
+   "notes": "公式以外の情報源（costbench、2026年7月1日確認）で確認。USD建て（1ドル=150円で換算）。Plus 月払い$10・年払い$8/月（年$96）、Pro 月払い$20・年払い$15/月（年$180）。hackceleration（2026年6月更新）も同じPlus/Pro価格。Ultraはcostbench $100/月、hackceleration $90/月と食い違い（costbenchの年払い$39/月は公式ヘルプの「Ultraは月払いのみ」と矛盾）のため未登録。aipicks.jp（10/11更新、年不明）はPlus $9・Pro $18・Ultra $90（年払い時）。公式料金ページ（gamma.app/ja/pricing）は金額をJS描画で取得できず、「地域により税金が加算される場合あり」との記載。日本向け円価格・税込額は未確認"
   },
   {
    "slug": "gemini",
@@ -1932,9 +1969,46 @@
    "category": "ai",
    "brand_color": null,
    "official_url": "https://www.recraft.ai/",
-   "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 第三者サイトの情報が食い違うため未登録。costbench（2026年7月確認）はBasic $12.50/月（年払い$10/月）・Pro $20/月（$16/月）としつつ同ページFAQではBasic $12・Advanced $33・Pro $60と記載、eesel.ai（2026年9月21日更新）はPro「年払いで月$10〜」のみ。公式ブログ（2024年9月）はBasic/Advanced/Proのプラン名のみで金額なし"
+   "plans": [
+    {
+     "name": "Basic",
+     "price_jpy": 1875,
+     "billing_cycle": "monthly",
+     "original_price": 12.5,
+     "original_currency": "USD",
+     "source_url": "https://costbench.com/software/ai-image-generators/recraft/",
+     "source_type": "third_party"
+    },
+    {
+     "name": "Basic",
+     "price_jpy": 18000,
+     "billing_cycle": "yearly",
+     "original_price": 120,
+     "original_currency": "USD",
+     "source_url": "https://pricingsaas.com/companies/recraft",
+     "source_type": "third_party"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 3000,
+     "billing_cycle": "monthly",
+     "original_price": 20,
+     "original_currency": "USD",
+     "source_url": "https://costbench.com/software/ai-image-generators/recraft/",
+     "source_type": "third_party"
+    },
+    {
+     "name": "Pro",
+     "price_jpy": 28800,
+     "billing_cycle": "yearly",
+     "original_price": 192,
+     "original_currency": "USD",
+     "source_url": "https://pricingsaas.com/companies/recraft",
+     "source_type": "third_party"
+    }
+   ],
+   "checked_on": "2026-10-10",
+   "notes": "公式以外の情報源（costbench 2026年7月25日確認、PricingSaaS 2026年7月15日確認）で確認。USD建て（1ドル=150円で換算）。costbenchのプラン表は月払いBasic $12.50・Pro $20、年払いBasic $10/月・Pro $16/月（年額は月額×12で算出）。PricingSaaSも年払いBasic $10/月・Pro $16/月・Teams $18/月で一致。costbenchのFAQ部分には旧プラン（Basic $12・Advanced $33・Pro $60）の記載が残るが、両サイトのプラン表が一致したため採用。公式料金ページ（recraft.ai/pricing）は金額がJS描画で取得できず"
   },
   {
    "slug": "replit",
@@ -3285,8 +3359,8 @@
    "brand_color": "#9146ff",
    "official_url": "https://www.twitch.tv/turbo",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 公式（twitch.tv/turbo）は価格をJS描画で取得できず。第三者情報は食い違い（subger.com 2026年10月更新: $9.99/月・米国のみ掲載、本文は$8.99；Creator Handbook（日付なし）: $8.99→$11.99に値上げ）で日本向け円価格も見つからず未登録"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: 公式ページ・公式ヘルプとも取得不可。esports.gg（2023年5月25日）に2023年5月の値上げ後の日本価格「¥1,499.00 JPY」/月（米国$11.99）の記載があるが2023年の情報で、2024年以降に日本価格が変わっていないことを確認できる資料が見つからず未登録。subger.com（2026年10月更新）は米国$9.99/本文$8.99と不整合"
   },
   {
    "slug": "u-next",
@@ -3576,8 +3650,8 @@
    "brand_color": null,
    "official_url": "https://www.clubdam.com/member/",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: clubdam.com は取得エラー。第三者ではWikipedia（ja）に「300コース(315円/月)」「500コース(525円/月)」とあるが2012年当時（税5%）の情報で、現在の1000/800/500/300コースの価格は見つからず"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: clubdam.com（/member/、/app/damtomo/premium/）は取得エラー。第5パスで日本語検索・App Store/Google Play・第三者記事を探したが、現行コースの金額を明記した2024年以降のページは見つからず（アプリ達人 2026年6月29日記事も「公式サイトで確認」とのみ）。Wikipedia（ja）の315円/525円は2012年当時の情報で未採用"
   },
   {
    "slug": "digital-concert-hall",
@@ -3708,8 +3782,8 @@
    "brand_color": null,
    "official_url": "https://www.joysound.com/utasuki/premium/index.htm",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 公式料金ページはrobots.txtで取得不可（第3パス）。第4パスで第三者サイトを検索したが価格を明記したページが見つからず（3rd-in百科は有料版の存在のみ記載）。毎月継続・6か月・12か月の3コースあり（公式ヘルプ）"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: 公式料金ページはrobots.txtで取得不可。第5パスで日本語検索を複数回行ったが価格を明記した第三者ページは見つからず。App Storeの「分析採点JOYSOUND」（XING）はスタンダードプラン 1ヶ月¥580・1年¥5,800等の別サービスの課金で、うたスキプレミアムとは別。毎月継続・6か月・12か月の3コースあり（公式ヘルプ）"
   },
   {
    "slug": "kkbox",
@@ -3843,8 +3917,8 @@
    "brand_color": null,
    "official_url": "https://ml.naxos.jp/",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 公式サイト（ml.naxos.jp）が403で取得不可。第三者の検索結果も2005年の記事や図書館向け案内のみで、現在の個人会員価格を記載したページは見つからず"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: 公式サイト（ml.naxos.jp）は403。第5パスでGoogle Play（NML日本語版、2017年更新）を確認したが料金記載なし（ブラウザで有料会員登録と記載のみ）。日本語・英語検索でも2024年以降に個人会員の円価格を明記したページは見つからず（Impress 2005年記事や図書館向け案内のみ）"
   },
   {
    "slug": "qobuz",
@@ -4890,9 +4964,19 @@
    "category": "news",
    "brand_color": null,
    "official_url": "https://www.japantimes.co.jp/",
-   "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 購読ページ（japantimes.co.jp/sub）は価格を取得できず、公式ヘルプ（support.japantimes.co.jp）のプラン変更記事（2025-04-15更新）にも金額なし。学割終了後の案内記事（2022-06-09）にPREMIUM月額¥3,000/$30の記載があるが古いため未登録。第三者の価格掲載ページも見つからず"
+   "plans": [
+    {
+     "name": "PREMIUM",
+     "price_jpy": 3000,
+     "billing_cycle": "monthly",
+     "original_price": 3000,
+     "original_currency": "JPY",
+     "source_url": "https://support.japantimes.co.jp/hc/en-us/articles/5889449266457-About-the-student-discount",
+     "source_type": "official"
+    }
+   ],
+   "checked_on": "2026-10-10",
+   "notes": "公式ヘルプ「About the student discount」（2026年9月17日更新）で、学割（月¥800/$8、最大24か月）終了後は通常のPremiumデジタル購読「¥3,000 / $30 per month」と確認。税込かどうかの明記なし。STANDARDプラン・年額プランの金額は未確認（購読ページはJS描画）"
   },
   {
    "slug": "jbpress-premium",
@@ -5137,8 +5221,8 @@
    "brand_color": null,
    "official_url": "https://xtech.nikkei.com/",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: xtech.nikkei.com、購読プランページ（info.nikkei.com/nxt/subscription/）、手続きページ（bpreg.nikkeibp.co.jp）がいずれも robots.txt で取得不可。第三者サイトでも個人向け有料会員の金額を明記した2025〜2026年のページは見つからず"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: 公式サイト・購読ページはrobots.txtで取得不可（第4パス）。第5パスで公式App Store（id6757509622）・Google Playを確認したがApp内課金なし・会員登録はウェブのみで金額記載なし。Wikipedia（ja）・Fujisan・第三者記事（shopowner-support 2026年4月更新）にも個人有料会員の金額記載なし"
   },
   {
    "slug": "note-premium",
@@ -5260,8 +5344,8 @@
    "brand_color": null,
    "official_url": "https://www.sankei.com/",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 公式サイトはアクセスブロック、App Storeアプリは課金なし（Web申込のみ）。第三者情報も確定できず（マネーライフハック 2026年9月27日更新: 電子版単独で月990円〜2,750円とプラン名なしの幅表示；subger.com 2026年3月16日確認: 「基本プラン」¥1,980・期間表記なし）"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: 公式サイトはアクセスブロック、App Storeアプリ（ver.2.0.15、2025年4月24日）は閲覧専用で課金・価格記載なし。第5パスでも第三者情報は確定できず（マネーライフハック 2026年9月27日更新: 電子版単独プラン「月額990円〜2,750円」とプラン名なしの幅表示；subger.com 2026年10月更新・価格確認2026年3月16日: 「産経電子版 基本プラン」¥1,980・期間表記なし）で、両者が整合しないため未登録"
   },
   {
    "slug": "shikiho-online",
@@ -5346,9 +5430,37 @@
    "category": "news",
    "brand_color": null,
    "official_url": "https://www.tokyo-np.co.jp/",
-   "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 公式サイトがrobots.txtでクロール禁止、公式App StoreにもApp内課金・料金の記載なし。Wikipedia（ja）に旧「電子版」の月額3,450円の記載があるが時点不明で、2024年11月14日に電子版を統合して始まった東京新聞デジタルの価格かは確認できないため未登録"
+   "plans": [
+    {
+     "name": "スタンダード",
+     "price_jpy": 1700,
+     "billing_cycle": "monthly",
+     "original_price": 1700,
+     "original_currency": "JPY",
+     "source_url": "https://xexeq.jp/blogs/media/topics26541",
+     "source_type": "third_party"
+    },
+    {
+     "name": "プレミアム",
+     "price_jpy": 3450,
+     "billing_cycle": "monthly",
+     "original_price": 3450,
+     "original_currency": "JPY",
+     "source_url": "https://xexeq.jp/blogs/media/topics26541",
+     "source_type": "third_party"
+    },
+    {
+     "name": "学割",
+     "price_jpy": 1944,
+     "billing_cycle": "monthly",
+     "original_price": 1944,
+     "original_currency": "JPY",
+     "source_url": "https://xexeq.jp/blogs/media/topics26541",
+     "source_type": "third_party"
+    }
+   ],
+   "checked_on": "2026-10-10",
+   "notes": "公式以外の情報源（XEXEQ、2024年11月27日記事）で確認。2024年11月14日開始。税込/税抜の明記なし（新聞購読料の慣例から税込とみなした）。学割はプレミアム相当の機能。ほかに宅配購読者向け「宅配プレミアム」（宅配料金＋300円、朝刊のみ月3,700円・朝夕刊月4,280円）と無料のエントリープランあり。申込月無料。公式サイトはrobots.txtで取得不可"
   },
   {
    "slug": "toyokeizai-online",
@@ -5386,8 +5498,8 @@
    "brand_color": "#000000",
    "official_url": "https://wired.jp/",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: wired.jpがアクセスブロック（SITE_BLOCKED）。第三者情報はKAI-YOU（2019-10-05公開）の「月額980円」のみで古いため未登録。2025〜2026年の価格掲載ページは見つからず"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: wired.jpがアクセスブロック。第5パスで日本語検索・Wikipedia（ja、2019年10月開始の記載のみで価格なし）・Fujisan（雑誌定期購読 1年14,586円のみでSZメンバーシップの記載なし）を確認したが、2024年以降の価格掲載ページは見つからず。KAI-YOU（2019-10-05）の「月額980円」は古いため未登録"
   },
   {
    "slug": "wsj-japan",
@@ -5396,9 +5508,19 @@
    "category": "news",
    "brand_color": null,
    "official_url": "https://jp.wsj.com/",
-   "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 公式サイトはアクセスブロック、日本のApp StoreのApp内課金は同名・別価格で特定できず。第4パスで見つかった価格は2012年12月17日の公式プレスリリース（digitalpr.jp、月約1,729円）のみで古すぎるため未採用。2025〜2026年の価格を明記した第三者ページは見つからず"
+   "plans": [
+    {
+     "name": "Digital Access",
+     "price_jpy": 29920,
+     "billing_cycle": "yearly",
+     "original_price": 29920,
+     "original_currency": "JPY",
+     "source_url": "https://www.fujisan.co.jp/product/1281682266/",
+     "source_type": "third_party"
+    }
+   ],
+   "checked_on": "2026-10-10",
+   "notes": "公式以外の情報源（雑誌販売サイトFujisan.co.jp、2026年10月時点の販売ページ）で確認。Fujisan経由の「Digital Access 個人/法人1年（一括払い）52週 29,920円（税込）」で、米国版に加え日本版・週末版も閲覧可。月額プランの記載なし。WSJ直販の価格は公式サイトがアクセスブロックのため未確認で、直販とは異なる可能性あり。2012年12月の公式プレスリリース（月約1,729円）は古いため不採用"
   },
   {
    "slug": "apple-arcade",
@@ -5436,8 +5558,8 @@
    "brand_color": "#0d4ea6",
    "official_url": "https://www.dqx.jp/online/",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 公式サイトは取得エラー。Wikipedia（ja）に月額「3キャラコース1,200円・4キャラコース1,400円・5キャラコース1,500円」（Switch/PC、PS4は5キャラのみ1,500円）とあるが時点不明で、2023年11月に発表されたVer.7での月額値上げ後の価格か確認できないため未登録。同ページの3日385円/10日715円/30日1,650円は3DS版等の利用券（ASCII 2015年記事の税抜350/650/1,500円と一致）"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: 公式サイトは取得エラー。第5パスで2024年以降の価格を探したが、電撃オンライン（2026年1月12日）は「利用料金は公式サイトを確認」とのみ記載、ファミ通・GAME Watch（2025〜2026年）はパッケージのセール価格のみ。ファン運営wiki（wikiwiki.jp/vipdedqx、2024年8月13日更新）は3キャラ30日1,000円・4キャラ1,300円・5キャラ1,500円とWikipedia（ja、3キャラ1,200円・4キャラ1,400円・5キャラ1,500円）と食い違い、どちらも料金の時点が不明で信頼性も低いため未登録"
   },
   {
    "slug": "ea-play",
@@ -5888,8 +6010,8 @@
    "brand_color": null,
    "official_url": "https://pso2.jp/players/",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 公式サイトで料金ページを特定できず。第三者（Game8 2025年11月更新、GAME Watch 2021年8月）でもプレミアムセット単体のAC/円価格の記載なし（パッケージ同梱の「プレミアムセット15日×2」のみ）"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: 第5パスでpso2.jp（/players/support/premium/は404、サイトマップは取得エラー）、Game8（2025年11月・12月更新の2記事）、Wikipedia（ja）、英語のbumped.orgの検索結果を確認したが、プレミアムセットのAC/円価格を明記したページは見つからず（Game8は「値引きされることがある」とのみ）"
   },
   {
    "slug": "roblox-premium",
@@ -5965,8 +6087,8 @@
    "brand_color": "#00b2e3",
    "official_url": "https://www.viveport.com/plan/infinity",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 公式ページは価格をJS描画、公式ヘルプ（service.viveport.com、2023年2月更新）にも金額記載なし。第三者の価格記事は2019年の開始時（$12.99/月・$99/年など）のものしかなく、2025〜2026年の価格・日本円価格は見つからず"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: 公式ページは価格をJS描画、公式ヘルプにも金額なし。第5パスで英語・日本語検索、公式ブログ（blog.vive.com、2019年3月1日、金額なし）、SOGI（台湾、2019年12月6日: 月NT$419・年払い月NT$289）を確認したが、いずれも2019年の情報で2024年以降の価格・日本円価格は見つからず"
   },
   {
    "slug": "world-of-warcraft",
@@ -9700,9 +9822,19 @@
    "category": "dev",
    "brand_color": "#000000",
    "official_url": "https://www.jetbrains.com/ja-jp/",
-   "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 最新の日本円価格が見つからず。公式ブログ（2025年7月31日、2025年10月1日からの値上げ告知）は本文がJS描画で取得できず。第三者のheise（2025年）は個人向けAll Products Pack 年€289→€299、IntelliJ IDEA Ultimate 年€169→€199・月€16.90→€19.90（いずれも税別、ユーロ）、ComponentSource（2025年8月20日）は法人向けSRP All Products Pack $979、IntelliJ IDEA $719。公式の日本円価格表PDFは2025年1月改定時のもので10月の値上げ前"
+   "plans": [
+    {
+     "name": "IntelliJ IDEA Ultimate",
+     "price_jpy": 27860,
+     "billing_cycle": "yearly",
+     "original_price": 27860,
+     "original_currency": "JPY",
+     "source_url": "https://forest.watch.impress.co.jp/docs/news/2070383.html",
+     "source_type": "third_party"
+    }
+   ],
+   "checked_on": "2026-10-10",
+   "notes": "公式以外の情報源（窓の杜、2025年12月11日記事）で確認。IntelliJ IDEA Ultimate 個人利用 年額27,860円（初年度、2年目以降は継続割引あり）。税込/税抜の明記なし。All Products Packなど他製品の2025年10月値上げ後の円価格は見つからず（公式ブログは本文がJS描画、購入ページは取得エラー）。heise（2025年）はAll Products Pack個人年€299（税別）と報道"
   },
   {
    "slug": "koyeb",
@@ -9963,9 +10095,28 @@
    "category": "dev",
    "brand_color": "#77b52a",
    "official_url": "https://www.navicat.com/ja/",
-   "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 公式英語ストア（navicat.com/en/store/navicat-premium-plan）はサブスクリプションの金額がJS描画で空欄（永続ライセンスUSD 1,299のみ表示）。第三者のITreview（2023年7月）は永続ライセンスの円価格のみで古く、現行サブスク価格は見つからず"
+   "plans": [
+    {
+     "name": "Premium",
+     "price_jpy": 12000,
+     "billing_cycle": "monthly",
+     "original_price": 12000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1594061654",
+     "source_type": "official"
+    },
+    {
+     "name": "Premium",
+     "price_jpy": 120000,
+     "billing_cycle": "yearly",
+     "original_price": 120000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/id1594061654",
+     "source_type": "official"
+    }
+   ],
+   "checked_on": "2026-10-10",
+   "notes": "公式の日本Mac App Store「Navicat Premium 17」（PremiumSoft CyberTech）のApp内課金「Monthly Subscription ¥12,000」「Yearly Subscription ¥120,000」で確認（Mac App Store経由の価格）。公式Webストアはサブスク金額をJS描画で取得できず（navicat.com/ja/store/navicat-premium-planは404）。Capterra（2026年10月）はEnterprise $69.99/月・Non-Commercial $34.99/月（USD、直販）と記載"
   },
   {
    "slug": "neon",
@@ -12708,9 +12859,19 @@
    "category": "learning",
    "brand_color": null,
    "official_url": "https://todomath.com/",
-   "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: App Storeに年額8,800円〜13,000円・2年13,800円〜20,000円の同名項目が複数あり特定できず。第4パスで第三者記事を検索したが価格明記のページなし（アプリオ 2020年4月記事は年単位サブスクとのみ記載）"
+   "plans": [
+    {
+     "name": "12か月プラン",
+     "price_jpy": 10600,
+     "billing_cycle": "yearly",
+     "original_price": 10600,
+     "original_currency": "JPY",
+     "source_url": "https://app-liv.jp/666465255/",
+     "source_type": "third_party"
+    }
+   ],
+   "checked_on": "2026-10-10",
+   "notes": "公式以外の情報源（アプリブ app-liv.jp、2026年4月6日更新）で確認。12か月プラン 年額10,600円（2人まで利用可、7日間無料体験）。公式App Storeには年額8,800円〜13,000円・2年13,800円〜20,000円の同名項目が複数あり（人数別等と思われる）、1人用・3人以上などの他プランは特定できず。Google Play（2026年7月更新）には価格記載なし"
   },
   {
    "slug": "udemy",
@@ -13237,8 +13398,8 @@
    "brand_color": "#d7000f",
    "official_url": "https://demae-can.com/",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 公式サイトが403。第4パスで出前館のプレスリリース（Digital PR Platform、2025年10〜12月）を確認したが、DEMAE-CAN PASSの記載はなく、送料無料等の特典はLINEヤフーの「LYPプレミアム」（月額508円〜）会員向けとして案内されている。DEMAE-CAN PASSは終了またはLYPプレミアム特典に移行した可能性あり（未確認）"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: 公式サイトが403。第5パスで検索しても「DEMAE-CAN PASS」の2024年以降の情報は見つからず、出前館のプレスリリース（Digital PR Platform、2026年4月1日）も特典はLINEヤフーの「LYPプレミアム」会員向けとして案内。DEMAE-CAN PASSは終了またはLYPプレミアム特典に移行した可能性が高い（未確認）"
   },
   {
    "slug": "docomo-bike-share",
@@ -13434,9 +13595,28 @@
    "category": "life",
    "brand_color": "#f47d31",
    "official_url": "https://www.headspace.com/ja",
-   "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 日本のApp Storeページ（apps.apple.com/jp/app/id493145008）は英国向けの£9.99/月・£49.99/年のみ表示で円価格なし。第三者でも日本円価格を明記したページは見つからず"
+   "plans": [
+    {
+     "name": "Headspace",
+     "price_jpy": 1949,
+     "billing_cycle": "monthly",
+     "original_price": 12.99,
+     "original_currency": "USD",
+     "source_url": "https://resubs.app/ja/subscriptions/headspace",
+     "source_type": "third_party"
+    },
+    {
+     "name": "Headspace",
+     "price_jpy": 10499,
+     "billing_cycle": "yearly",
+     "original_price": 69.99,
+     "original_currency": "USD",
+     "source_url": "https://subger.com/ja/service/headspace-meditation",
+     "source_type": "third_party"
+    }
+   ],
+   "checked_on": "2026-10-10",
+   "notes": "公式以外の情報源（ReSubs（日付記載なし、「日本では月約$12.99」と記載）、Subger（価格確認日2026年3月16日、米国価格 月$12.99・年$69.99））で確認。USD建て（1ドル=150円で換算）。日本円の価格はどこにも見つからず。公式の日本向けApp Store・Google Play（2026年10月8日更新）の説明文は英ポンド建て（月£9.99・年£49.99）で、実際の日本での請求額はアプリ内表示で異なる可能性あり。headspace.com/ja/subscriptions は取得エラー"
   },
   {
    "slug": "jaf",
@@ -13967,8 +14147,8 @@
    "brand_color": null,
    "official_url": "https://www.sleepcycle.com/",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 日本のApp StoreにPremiumのApp内課金が¥350〜¥6,400で10件並ぶが期間表示なし。第4パスで第三者（App Pricing Lab、2026年5月7日）も確認したが米ドルで9件並ぶだけで期間・日本価格は不明、価格明記の日本語記事も見つからず"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: 日本のApp StoreにPremiumのApp内課金が¥350〜¥6,400で10件並ぶが期間表示なし。第5パスでも期間付きの2024年以降の日本円価格は見つからず（Appllio 2021年8月24日: 年額3,200円（税込）は古い；みん評のユーザー投稿 2026年4月26日「年間3000円」は個人の口コミで信頼性不足）"
   },
   {
    "slug": "snaq-me",
@@ -14484,9 +14664,55 @@
    "category": "other",
    "brand_color": "#ed1c24",
    "official_url": "https://www.bitdefender.co.jp/",
-   "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: bitdefender.co.jp が robots.txt で取得不可、bitdefender.com/ja-jp も取得エラー。第三者でも日本向けの円価格（定価）を明記したページは見つからず（海外のセール価格のみ）"
+   "plans": [
+    {
+     "name": "Total Security",
+     "price_jpy": 1500,
+     "billing_cycle": "monthly",
+     "original_price": 1500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/bitdefender-mobile-security/id1255893012",
+     "source_type": "official"
+    },
+    {
+     "name": "Total Security",
+     "price_jpy": 8380,
+     "billing_cycle": "yearly",
+     "original_price": 8380,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/bitdefender-mobile-security/id1255893012",
+     "source_type": "official"
+    },
+    {
+     "name": "Ultimate Security Individual",
+     "price_jpy": 17000,
+     "billing_cycle": "yearly",
+     "original_price": 17000,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/bitdefender-mobile-security/id1255893012",
+     "source_type": "official"
+    },
+    {
+     "name": "Mobile Security",
+     "price_jpy": 470,
+     "billing_cycle": "monthly",
+     "original_price": 470,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/bitdefender-mobile-security/id1255893012",
+     "source_type": "official"
+    },
+    {
+     "name": "Mobile Security",
+     "price_jpy": 3500,
+     "billing_cycle": "yearly",
+     "original_price": 3500,
+     "original_currency": "JPY",
+     "source_url": "https://apps.apple.com/jp/app/bitdefender-mobile-security/id1255893012",
+     "source_type": "official"
+    }
+   ],
+   "checked_on": "2026-10-10",
+   "notes": "公式の日本App Store（Bitdefender Mobile Security）のApp内課金で確認（項目名に Monthly/Yearly・月間/年間の表記あり）。iOSアプリ内課金の価格で、PC向けパッケージやウェブ直販の価格とは異なる可能性あり。ほかにプレミアムVPN 月¥890・年¥8,990あり。bitdefender.co.jp はrobots.txtで取得不可"
   },
   {
    "slug": "bitwarden",
@@ -15779,8 +16005,8 @@
    "brand_color": "#fd5068",
    "official_url": "https://tinder.com/ja",
    "plans": [],
-   "checked_on": "2026-10-09",
-   "notes": "料金未確認: 第三者の情報が古いか不整合のため未登録。mybest（日付なし）はPlus 1か月2,200円（Android/iOS）・1,971円（Web）、Gold 4,300円、Platinum 3,300〜3,400円とGoldがPlatinumより高く不自然、駅探（2023年6月）は支払方法別の3表がどれに対応するか不明。公式App Store（日本）はTinder Plus ¥1,200、Tinder Gold ¥1,700〜¥3,400など期間表示なし"
+   "checked_on": "2026-10-10",
+   "notes": "料金未確認: 第三者の情報が古いか不整合のため未登録。mybest（日付なし）はPlus 1か月2,200円（Android/iOS）・1,971円（Web）、Gold 4,300円、Platinum 3,300〜3,400円とGoldがPlatinumより高く不自然、駅探（2023年6月）は古い。subger.com（2026年10月）・resubs.app（日付なし）は米国USDや他国価格のみで日本円価格なし。Tinderは年齢等で価格が変わるとの報道もあり。公式App Store（日本）はTinder Plus ¥1,200、Tinder Gold ¥1,700〜¥3,400など期間表示なし"
   },
   {
    "slug": "ulike",
