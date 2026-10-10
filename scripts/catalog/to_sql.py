@@ -80,6 +80,9 @@ where p.service_id = s.id
   and not exists (select 1 from _plan x where x.slug = s.slug and x.name = p.name and x.cycle = p.billing_cycle)
   and not exists (select 1 from user_subscriptions u where u.plan_id = p.id);
 
+-- 終了したサービスなどは非表示にする（契約の記録は残す）
+update services set status = 'archived' where slug in ({", ".join(q(x) for x in data.get("archived", [])) or "null"});
+
 -- 最初に入れた仮の料金（確認日 2026-10-01）は、契約に使われていなければ削除
 delete from plans p
 where p.price_checked_at = '2026-10-01'
